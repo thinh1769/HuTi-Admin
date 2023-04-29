@@ -1,0 +1,60 @@
+PODS:
+  - Alamofire (5.6.4)
+  - AWSCore (2.30.4)
+  - AWSS3 (2.30.4):
+    - AWSCore (= 2.30.4)
+  - IQKeyboardManagerSwift (6.5.11)
+  - MBProgressHUD (1.2.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SDWebImage (5.15.6):
+    - SDWebImage/Core (= 5.15.6)
+  - SDWebImage/Core (5.15.6)
+  - SnapKit (5.6.0)
+  - SVPullToRefresh (0.4.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - AWSS3
+  - IQKeyboardManagerSwift
+  - MBProgressHUD
+  - RxCocoa
+  - RxSwift
+  - SDWebImage
+  - SnapKit (~> 5.6.0)
+  - SVPullToRefresh
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AWSCore
+    - AWSS3
+    - IQKeyboardManagerSwift
+    - MBProgressHUD
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDWebImage
+    - SnapKit
+    - SVPullToRefresh
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  AWSCore: 19b8233fe2d0ed3ccf5cff833a615814282cdc90
+  AWSS3: 1c5540cbe98d8ae5e24f44dcca25796ddba16058
+  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SDWebImage: d47d81bea8a77187896b620dc79c3c528e8906b9
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+
+PODFILE CHECKSUM: acb65181b2a779f37eb9bd4827e37487c715ea32
+
+COCOAPODS: 1.12.1

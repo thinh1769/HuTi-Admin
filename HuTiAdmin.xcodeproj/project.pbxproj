@@ -7,23 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24EAD00D8234E2A57038397D /* Pods_HuTiAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */; };
 		820AB77529FD272E00883112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB77429FD272E00883112 /* AppDelegate.swift */; };
 		820AB77729FD272E00883112 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB77629FD272E00883112 /* SceneDelegate.swift */; };
-		820AB77929FD272E00883112 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB77829FD272E00883112 /* ViewController.swift */; };
-		820AB77C29FD272E00883112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820AB77A29FD272E00883112 /* Main.storyboard */; };
 		820AB77E29FD273100883112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820AB77D29FD273100883112 /* Assets.xcassets */; };
 		820AB78129FD273100883112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820AB77F29FD273100883112 /* LaunchScreen.storyboard */; };
+		820AB79029FD2A0D00883112 /* HuTiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB78F29FD2A0D00883112 /* HuTiViewController.swift */; };
+		820AB79229FD2A4E00883112 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB79129FD2A4E00883112 /* MainTabBarController.swift */; };
+		820AB79529FD2ACE00883112 /* HuTiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB79429FD2ACE00883112 /* HuTiConstants.swift */; };
+		820AB79729FD2AEB00883112 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB79629FD2AEB00883112 /* ServiceConstants.swift */; };
+		820AB79A29FD2C4B00883112 /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB79929FD2C4B00883112 /* UserDefault+Ext.swift */; };
+		820AB79D29FD2C8500883112 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB79C29FD2C8500883112 /* User.swift */; };
+		820AB7A029FD3B8B00883112 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB79E29FD3B8B00883112 /* PostViewController.swift */; };
+		820AB7A129FD3B8B00883112 /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AB79F29FD3B8B00883112 /* PostViewController.xib */; };
+		820AB7A629FD40AE00883112 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7A429FD40AE00883112 /* PostViewCell.swift */; };
+		820AB7A729FD40AE00883112 /* PostViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AB7A529FD40AE00883112 /* PostViewCell.xib */; };
+		820AB7AC29FD437C00883112 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7AB29FD437C00883112 /* BaseService.swift */; };
+		820AB7AE29FD43A200883112 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7AD29FD43A200883112 /* AuthService.swift */; };
+		820AB7B029FD43BE00883112 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7AF29FD43BE00883112 /* AddressService.swift */; };
+		820AB7B229FD43D900883112 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7B129FD43D900883112 /* PostService.swift */; };
+		820AB7B429FD43FC00883112 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7B329FD43FC00883112 /* ProjectService.swift */; };
+		820AB7B629FD440F00883112 /* AWSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7B529FD440F00883112 /* AWSService.swift */; };
+		820AB7B829FD442F00883112 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7B729FD442F00883112 /* Post.swift */; };
+		820AB7BA29FD444900883112 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7B929FD444900883112 /* Project.swift */; };
+		820AB7BC29FD445A00883112 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7BB29FD445A00883112 /* Address.swift */; };
+		820AB7BE29FD446C00883112 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7BD29FD446C00883112 /* Asset.swift */; };
+		820AB7C029FD448000883112 /* AssetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7BF29FD448000883112 /* AssetDataModel.swift */; };
+		820AB7C229FD449F00883112 /* ResponseMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7C129FD449F00883112 /* ResponseMain.swift */; };
+		820AB7C429FD452600883112 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7C329FD452600883112 /* PostViewModel.swift */; };
+		820AB7C829FD481F00883112 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7C629FD481F00883112 /* SignInViewController.swift */; };
+		820AB7C929FD481F00883112 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AB7C729FD481F00883112 /* SignInViewController.xib */; };
+		820AB7CB29FD495D00883112 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7CA29FD495D00883112 /* SignInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4857B845CE9A23319E119EE6 /* Pods-HuTiAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuTiAdmin.debug.xcconfig"; path = "Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		820AB77129FD272E00883112 /* HuTiAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuTiAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820AB77429FD272E00883112 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		820AB77629FD272E00883112 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		820AB77829FD272E00883112 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		820AB77B29FD272E00883112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		820AB77D29FD273100883112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		820AB78029FD273100883112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		820AB78229FD273100883112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		820AB78F29FD2A0D00883112 /* HuTiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuTiViewController.swift; sourceTree = "<group>"; };
+		820AB79129FD2A4E00883112 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		820AB79429FD2ACE00883112 /* HuTiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuTiConstants.swift; sourceTree = "<group>"; };
+		820AB79629FD2AEB00883112 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
+		820AB79929FD2C4B00883112 /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
+		820AB79C29FD2C8500883112 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		820AB79E29FD3B8B00883112 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		820AB79F29FD3B8B00883112 /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
+		820AB7A429FD40AE00883112 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
+		820AB7A529FD40AE00883112 /* PostViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewCell.xib; sourceTree = "<group>"; };
+		820AB7AB29FD437C00883112 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		820AB7AD29FD43A200883112 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		820AB7AF29FD43BE00883112 /* AddressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; };
+		820AB7B129FD43D900883112 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		820AB7B329FD43FC00883112 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
+		820AB7B529FD440F00883112 /* AWSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSService.swift; sourceTree = "<group>"; };
+		820AB7B729FD442F00883112 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		820AB7B929FD444900883112 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		820AB7BB29FD445A00883112 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		820AB7BD29FD446C00883112 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		820AB7BF29FD448000883112 /* AssetDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDataModel.swift; sourceTree = "<group>"; };
+		820AB7C129FD449F00883112 /* ResponseMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMain.swift; sourceTree = "<group>"; };
+		820AB7C329FD452600883112 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		820AB7C629FD481F00883112 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		820AB7C729FD481F00883112 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		820AB7CA29FD495D00883112 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HuTiAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuTiAdmin.release.xcconfig"; path = "Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +83,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24EAD00D8234E2A57038397D /* Pods_HuTiAdmin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CF765FD68BECBE5D707A849 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4857B845CE9A23319E119EE6 /* Pods-HuTiAdmin.debug.xcconfig */,
+				94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		820AB76829FD272E00883112 = {
 			isa = PBXGroup;
 			children = (
 				820AB77329FD272E00883112 /* HuTiAdmin */,
 				820AB77229FD272E00883112 /* Products */,
+				6CF765FD68BECBE5D707A849 /* Pods */,
+				B2C4B8EA6B0D1DCB78A884DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +120,143 @@
 		820AB77329FD272E00883112 /* HuTiAdmin */ = {
 			isa = PBXGroup;
 			children = (
-				820AB77429FD272E00883112 /* AppDelegate.swift */,
-				820AB77629FD272E00883112 /* SceneDelegate.swift */,
-				820AB77829FD272E00883112 /* ViewController.swift */,
-				820AB77A29FD272E00883112 /* Main.storyboard */,
-				820AB77D29FD273100883112 /* Assets.xcassets */,
-				820AB77F29FD273100883112 /* LaunchScreen.storyboard */,
+				820AB78829FD28CE00883112 /* Application */,
+				820AB78E29FD29EB00883112 /* BaseClass */,
+				820AB79329FD2AA300883112 /* Constants */,
+				820AB79829FD2C3300883112 /* Extensions */,
+				820AB78929FD291E00883112 /* Resource */,
+				820AB79B29FD2C7500883112 /* Models */,
+				820AB78A29FD295E00883112 /* Modules */,
+				820AB7A229FD406F00883112 /* Cell */,
+				820AB7AA29FD435000883112 /* Service */,
 				820AB78229FD273100883112 /* Info.plist */,
 			);
 			path = HuTiAdmin;
+			sourceTree = "<group>";
+		};
+		820AB78829FD28CE00883112 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				820AB77429FD272E00883112 /* AppDelegate.swift */,
+				820AB77629FD272E00883112 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		820AB78929FD291E00883112 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				820AB77D29FD273100883112 /* Assets.xcassets */,
+				820AB77F29FD273100883112 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		820AB78A29FD295E00883112 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				820AB7C529FD47EA00883112 /* SignIn */,
+				820AB7A829FD411400883112 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		820AB78E29FD29EB00883112 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				820AB78F29FD2A0D00883112 /* HuTiViewController.swift */,
+				820AB79129FD2A4E00883112 /* MainTabBarController.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		820AB79329FD2AA300883112 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				820AB79429FD2ACE00883112 /* HuTiConstants.swift */,
+				820AB79629FD2AEB00883112 /* ServiceConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		820AB79829FD2C3300883112 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				820AB79929FD2C4B00883112 /* UserDefault+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		820AB79B29FD2C7500883112 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				820AB79C29FD2C8500883112 /* User.swift */,
+				820AB7B729FD442F00883112 /* Post.swift */,
+				820AB7B929FD444900883112 /* Project.swift */,
+				820AB7BB29FD445A00883112 /* Address.swift */,
+				820AB7BD29FD446C00883112 /* Asset.swift */,
+				820AB7BF29FD448000883112 /* AssetDataModel.swift */,
+				820AB7C129FD449F00883112 /* ResponseMain.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		820AB7A229FD406F00883112 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				820AB7A329FD408700883112 /* PostViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		820AB7A329FD408700883112 /* PostViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				820AB7A429FD40AE00883112 /* PostViewCell.swift */,
+				820AB7A529FD40AE00883112 /* PostViewCell.xib */,
+			);
+			path = PostViewCell;
+			sourceTree = "<group>";
+		};
+		820AB7A829FD411400883112 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				820AB79E29FD3B8B00883112 /* PostViewController.swift */,
+				820AB7C329FD452600883112 /* PostViewModel.swift */,
+				820AB79F29FD3B8B00883112 /* PostViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		820AB7AA29FD435000883112 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				820AB7AB29FD437C00883112 /* BaseService.swift */,
+				820AB7AD29FD43A200883112 /* AuthService.swift */,
+				820AB7AF29FD43BE00883112 /* AddressService.swift */,
+				820AB7B129FD43D900883112 /* PostService.swift */,
+				820AB7B329FD43FC00883112 /* ProjectService.swift */,
+				820AB7B529FD440F00883112 /* AWSService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		820AB7C529FD47EA00883112 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				820AB7C629FD481F00883112 /* SignInViewController.swift */,
+				820AB7CA29FD495D00883112 /* SignInViewModel.swift */,
+				820AB7C729FD481F00883112 /* SignInViewController.xib */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		B2C4B8EA6B0D1DCB78A884DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820AB78529FD273100883112 /* Build configuration list for PBXNativeTarget "HuTiAdmin" */;
 			buildPhases = (
+				17EA34E5FC5CF7CF0EBAFF4E /* [CP] Check Pods Manifest.lock */,
 				820AB76D29FD272E00883112 /* Sources */,
 				820AB76E29FD272E00883112 /* Frameworks */,
 				820AB76F29FD272E00883112 /* Resources */,
+				951DC50256B6D3D9D2BA6494 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,36 +319,94 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				820AB7C929FD481F00883112 /* SignInViewController.xib in Resources */,
 				820AB78129FD273100883112 /* LaunchScreen.storyboard in Resources */,
 				820AB77E29FD273100883112 /* Assets.xcassets in Resources */,
-				820AB77C29FD272E00883112 /* Main.storyboard in Resources */,
+				820AB7A729FD40AE00883112 /* PostViewCell.xib in Resources */,
+				820AB7A129FD3B8B00883112 /* PostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17EA34E5FC5CF7CF0EBAFF4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HuTiAdmin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		951DC50256B6D3D9D2BA6494 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		820AB76D29FD272E00883112 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				820AB77929FD272E00883112 /* ViewController.swift in Sources */,
+				820AB79A29FD2C4B00883112 /* UserDefault+Ext.swift in Sources */,
+				820AB7C029FD448000883112 /* AssetDataModel.swift in Sources */,
+				820AB79029FD2A0D00883112 /* HuTiViewController.swift in Sources */,
+				820AB7BE29FD446C00883112 /* Asset.swift in Sources */,
 				820AB77529FD272E00883112 /* AppDelegate.swift in Sources */,
+				820AB7AE29FD43A200883112 /* AuthService.swift in Sources */,
+				820AB7B829FD442F00883112 /* Post.swift in Sources */,
+				820AB7BC29FD445A00883112 /* Address.swift in Sources */,
+				820AB79229FD2A4E00883112 /* MainTabBarController.swift in Sources */,
+				820AB7B429FD43FC00883112 /* ProjectService.swift in Sources */,
+				820AB7A629FD40AE00883112 /* PostViewCell.swift in Sources */,
+				820AB7B629FD440F00883112 /* AWSService.swift in Sources */,
 				820AB77729FD272E00883112 /* SceneDelegate.swift in Sources */,
+				820AB7A029FD3B8B00883112 /* PostViewController.swift in Sources */,
+				820AB7CB29FD495D00883112 /* SignInViewModel.swift in Sources */,
+				820AB7B029FD43BE00883112 /* AddressService.swift in Sources */,
+				820AB7B229FD43D900883112 /* PostService.swift in Sources */,
+				820AB79D29FD2C8500883112 /* User.swift in Sources */,
+				820AB79529FD2ACE00883112 /* HuTiConstants.swift in Sources */,
+				820AB79729FD2AEB00883112 /* ServiceConstants.swift in Sources */,
+				820AB7C429FD452600883112 /* PostViewModel.swift in Sources */,
+				820AB7C829FD481F00883112 /* SignInViewController.swift in Sources */,
+				820AB7AC29FD437C00883112 /* BaseService.swift in Sources */,
+				820AB7BA29FD444900883112 /* Project.swift in Sources */,
+				820AB7C229FD449F00883112 /* ResponseMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		820AB77A29FD272E00883112 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				820AB77B29FD272E00883112 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		820AB77F29FD273100883112 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +534,7 @@
 		};
 		820AB78629FD273100883112 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4857B845CE9A23319E119EE6 /* Pods-HuTiAdmin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,9 +545,9 @@
 				INFOPLIST_FILE = HuTiAdmin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +563,7 @@
 		};
 		820AB78729FD273100883112 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,9 +574,9 @@
 				INFOPLIST_FILE = HuTiAdmin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
