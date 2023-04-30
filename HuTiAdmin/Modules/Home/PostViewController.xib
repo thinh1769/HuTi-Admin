@@ -49,6 +49,11 @@
                                 <constraint firstItem="2YF-0r-NU1" firstAttribute="centerY" secondItem="Add-VR-zdT" secondAttribute="centerY" id="E5S-Rh-c1y"/>
                                 <constraint firstItem="2YF-0r-NU1" firstAttribute="centerX" secondItem="Add-VR-zdT" secondAttribute="centerX" id="LHT-Sc-eIW"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTE-G7-YbI">
                             <rect key="frame" x="138.33333333333331" y="0.0" width="133.33333333333331" height="35"/>
@@ -65,6 +70,11 @@
                                 <constraint firstItem="cMd-Fw-dvR" firstAttribute="centerY" secondItem="VTE-G7-YbI" secondAttribute="centerY" id="Wtj-vq-QIw"/>
                                 <constraint firstItem="cMd-Fw-dvR" firstAttribute="centerX" secondItem="VTE-G7-YbI" secondAttribute="centerX" id="cQn-IN-uWb"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeU-bZ-vlR">
                             <rect key="frame" x="276.66666666666669" y="0.0" width="133.33333333333331" height="35"/>
@@ -81,6 +91,11 @@
                                 <constraint firstItem="Qdp-1u-uAa" firstAttribute="centerY" secondItem="oeU-bZ-vlR" secondAttribute="centerY" id="Spx-kL-cP7"/>
                                 <constraint firstItem="Qdp-1u-uAa" firstAttribute="centerX" secondItem="oeU-bZ-vlR" secondAttribute="centerX" id="XXv-q1-Vbz"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <constraints>

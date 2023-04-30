@@ -56,16 +56,16 @@
                     <rect key="frame" x="10" y="129" width="373" height="629"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11X-wm-7cV">
-                            <rect key="frame" x="0.0" y="0.0" width="373" height="845"/>
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="775"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EGn-Oa-8IM">
-                                    <rect key="frame" x="0.0" y="0.0" width="373" height="845"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="373" height="775"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaW-9J-4Pg">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="220"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="150"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mQC-3I-Hgw">
-                                                    <rect key="frame" x="0.0" y="10" width="373" height="200"/>
+                                                    <rect key="frame" x="0.0" y="10" width="373" height="130"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BEf-pP-QTk">
                                                         <size key="itemSize" width="128" height="128"/>
@@ -80,12 +80,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="mQC-3I-Hgw" secondAttribute="trailing" id="3xB-BK-veq"/>
                                                 <constraint firstItem="mQC-3I-Hgw" firstAttribute="leading" secondItem="aaW-9J-4Pg" secondAttribute="leading" id="CSj-vj-YSm"/>
                                                 <constraint firstAttribute="bottom" secondItem="mQC-3I-Hgw" secondAttribute="bottom" constant="10" id="nAg-nd-2FB"/>
-                                                <constraint firstAttribute="height" constant="220" id="rmw-Zw-0ok"/>
+                                                <constraint firstAttribute="height" constant="150" id="rmw-Zw-0ok"/>
                                                 <constraint firstItem="mQC-3I-Hgw" firstAttribute="top" secondItem="aaW-9J-4Pg" secondAttribute="top" constant="10" id="wDe-wI-SuZ"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98w-oe-wgn">
-                                            <rect key="frame" x="0.0" y="220" width="373" height="200"/>
+                                            <rect key="frame" x="0.0" y="150" width="373" height="200"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mô tả" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOz-mh-Dmn">
                                                     <rect key="frame" x="10.000000000000004" y="10" width="51.333333333333343" height="85.333333333333329"/>
@@ -106,7 +106,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9F-sZ-IpQ">
-                                                    <rect key="frame" x="10" y="169.66666666666663" width="353" height="20.333333333333343"/>
+                                                    <rect key="frame" x="10" y="169.66666666666669" width="353" height="20.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -128,7 +128,7 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-ga-1hn" userLabel="propertiesStackView">
-                                            <rect key="frame" x="0.0" y="420" width="373" height="425"/>
+                                            <rect key="frame" x="0.0" y="350" width="373" height="425"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0kW-nR-ge8">
                                                     <rect key="frame" x="0.0" y="0.0" width="373" height="25"/>
@@ -384,6 +384,11 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Duyệt"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="didTapApproveButton:" destination="-1" eventType="touchUpInside" id="g5j-gn-vB4"/>
                             </connections>
@@ -395,6 +400,11 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Từ chối"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="didTapRejectButton:" destination="-1" eventType="touchUpInside" id="VrS-ha-Ney"/>
                             </connections>
@@ -421,7 +431,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x29-Sl-8lS" secondAttribute="bottom" constant="10" id="zG2-gw-nJz"/>
                 <constraint firstItem="ySV-Q4-NqZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="zxc-6E-CAw"/>
             </constraints>
-            <point key="canvasLocation" x="-764" y="25"/>
+            <point key="canvasLocation" x="-993" y="25"/>
         </view>
     </objects>
     <resources>

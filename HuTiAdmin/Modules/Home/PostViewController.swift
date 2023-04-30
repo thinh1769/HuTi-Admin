@@ -48,7 +48,18 @@ class PostViewController: HuTiViewController {
     private func findPost() {
         viewModel.findPost().subscribe { [weak self] posts in
             guard let self = self else { return }
-            self.viewModel.post.accept(posts)
+            if posts.count > 0 {
+                if self.viewModel.page == 1 {
+                    let sortedPost = posts.sorted { $0.createdAt > $1.createdAt }
+                    self.viewModel.post.accept(sortedPost)
+                } else {
+                    let mergePost = self.viewModel.post.value + posts
+                    let sortedPost = mergePost.sorted { $0.createdAt > $1.createdAt }
+                    self.viewModel.post.accept(sortedPost)
+                }
+            } else if self.viewModel.page == 1 {
+                self.viewModel.post.accept([])
+            }
         }.disposed(by: viewModel.bag)
     }
     
@@ -108,18 +119,21 @@ class PostViewController: HuTiViewController {
     
     @objc private func didTapPendingView() {
         didSelectBrowseView(index: 0)
+        viewModel.page = 1
         self.viewModel.findPostParams = ["browseStatus": 0]
         findPost()
     }
     
     @objc private func didTapApprovedView() {
         didSelectBrowseView(index: 1)
+        viewModel.page = 1
         self.viewModel.findPostParams = ["browseStatus": 1]
         findPost()
     }
     
     @objc private func didTapRejectedView() {
         didSelectBrowseView(index: 2)
+        viewModel.page = 1
         self.viewModel.findPostParams = ["browseStatus": 2]
         findPost()
     }
