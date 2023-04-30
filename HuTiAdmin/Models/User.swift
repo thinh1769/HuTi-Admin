@@ -17,5 +17,6 @@ struct User: Codable {
     var gender: String?
     var identityCardNumber: String?
     var likePosts: [String]?
+    var isAdmin: Bool?
     var token: String?
 }

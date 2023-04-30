@@ -24,6 +24,16 @@ class PostViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        setupUI()
+        setupUI()
+    }
+    
+    private func setupUI() {
+        self.selectionStyle = .none
+    }
+    
+    func config(post: Post) {
+        titleLabel.text = post.title
+        priceLabel.text = "\(post.price)"
+        addressLabel.text = post.getFullAddress()
     }
 }

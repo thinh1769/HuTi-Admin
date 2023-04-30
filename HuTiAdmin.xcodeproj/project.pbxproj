@@ -38,6 +38,11 @@
 		820AB7C829FD481F00883112 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7C629FD481F00883112 /* SignInViewController.swift */; };
 		820AB7C929FD481F00883112 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AB7C729FD481F00883112 /* SignInViewController.xib */; };
 		820AB7CB29FD495D00883112 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7CA29FD495D00883112 /* SignInViewModel.swift */; };
+		820AB7CF29FE1E4200883112 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7CD29FE1E4200883112 /* PostDetailViewController.swift */; };
+		820AB7D029FE1E4200883112 /* PostDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AB7CE29FE1E4200883112 /* PostDetailViewController.xib */; };
+		820AB7D229FE1E7F00883112 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7D129FE1E7F00883112 /* PostDetailViewModel.swift */; };
+		820AB7D629FE5E8E00883112 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7D429FE5E8E00883112 /* ImageCell.swift */; };
+		820AB7D729FE5E8E00883112 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AB7D529FE5E8E00883112 /* ImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +79,11 @@
 		820AB7C629FD481F00883112 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		820AB7C729FD481F00883112 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		820AB7CA29FD495D00883112 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		820AB7CD29FE1E4200883112 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		820AB7CE29FE1E4200883112 /* PostDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailViewController.xib; sourceTree = "<group>"; };
+		820AB7D129FE1E7F00883112 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
+		820AB7D429FE5E8E00883112 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		820AB7D529FE5E8E00883112 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HuTiAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuTiAdmin.release.xcconfig"; path = "Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +167,7 @@
 			children = (
 				820AB7C529FD47EA00883112 /* SignIn */,
 				820AB7A829FD411400883112 /* Home */,
+				820AB7CC29FE0E9100883112 /* PostDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -204,6 +215,7 @@
 		820AB7A229FD406F00883112 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				820AB7D329FE5E6D00883112 /* ImageCell */,
 				820AB7A329FD408700883112 /* PostViewCell */,
 			);
 			path = Cell;
@@ -249,6 +261,25 @@
 				820AB7C729FD481F00883112 /* SignInViewController.xib */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		820AB7CC29FE0E9100883112 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				820AB7CD29FE1E4200883112 /* PostDetailViewController.swift */,
+				820AB7D129FE1E7F00883112 /* PostDetailViewModel.swift */,
+				820AB7CE29FE1E4200883112 /* PostDetailViewController.xib */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		820AB7D329FE5E6D00883112 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				820AB7D429FE5E8E00883112 /* ImageCell.swift */,
+				820AB7D529FE5E8E00883112 /* ImageCell.xib */,
+			);
+			path = ImageCell;
 			sourceTree = "<group>";
 		};
 		B2C4B8EA6B0D1DCB78A884DD /* Frameworks */ = {
@@ -320,6 +351,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				820AB7C929FD481F00883112 /* SignInViewController.xib in Resources */,
+				820AB7D029FE1E4200883112 /* PostDetailViewController.xib in Resources */,
+				820AB7D729FE5E8E00883112 /* ImageCell.xib in Resources */,
 				820AB78129FD273100883112 /* LaunchScreen.storyboard in Resources */,
 				820AB77E29FD273100883112 /* Assets.xcassets in Resources */,
 				820AB7A729FD40AE00883112 /* PostViewCell.xib in Resources */,
@@ -381,6 +414,7 @@
 				820AB79029FD2A0D00883112 /* HuTiViewController.swift in Sources */,
 				820AB7BE29FD446C00883112 /* Asset.swift in Sources */,
 				820AB77529FD272E00883112 /* AppDelegate.swift in Sources */,
+				820AB7D629FE5E8E00883112 /* ImageCell.swift in Sources */,
 				820AB7AE29FD43A200883112 /* AuthService.swift in Sources */,
 				820AB7B829FD442F00883112 /* Post.swift in Sources */,
 				820AB7BC29FD445A00883112 /* Address.swift in Sources */,
@@ -393,11 +427,13 @@
 				820AB7CB29FD495D00883112 /* SignInViewModel.swift in Sources */,
 				820AB7B029FD43BE00883112 /* AddressService.swift in Sources */,
 				820AB7B229FD43D900883112 /* PostService.swift in Sources */,
+				820AB7CF29FE1E4200883112 /* PostDetailViewController.swift in Sources */,
 				820AB79D29FD2C8500883112 /* User.swift in Sources */,
 				820AB79529FD2ACE00883112 /* HuTiConstants.swift in Sources */,
 				820AB79729FD2AEB00883112 /* ServiceConstants.swift in Sources */,
 				820AB7C429FD452600883112 /* PostViewModel.swift in Sources */,
 				820AB7C829FD481F00883112 /* SignInViewController.swift in Sources */,
+				820AB7D229FE1E7F00883112 /* PostDetailViewModel.swift in Sources */,
 				820AB7AC29FD437C00883112 /* BaseService.swift in Sources */,
 				820AB7BA29FD444900883112 /* Project.swift in Sources */,
 				820AB7C229FD449F00883112 /* ResponseMain.swift in Sources */,

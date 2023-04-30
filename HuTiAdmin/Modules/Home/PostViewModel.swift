@@ -14,8 +14,13 @@ class PostViewModel {
     let post = BehaviorRelay<[Post]>(value: [])
     let postService = PostService()
     var page = 1
+    var findPostParams = ["browseStatus": 0]
     
     func getAllPosts() -> Observable<[Post]> {
         return postService.getAllPost(page: page)
+    }
+    
+    func findPost() -> Observable<[Post]> {
+        return postService.findPost(param: findPostParams, page: page)
     }
 }

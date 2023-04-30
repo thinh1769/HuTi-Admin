@@ -22,9 +22,9 @@ struct Post: Codable {
     var lat: Double
     var long: Double
     var userId: String
-    var userName: String
+    var userName: String?
     var createdAt: Double
-    var thumbnail: String /// lấy image đầu tiên trong mảng images
+    var thumbnail: String? /// lấy image đầu tiên trong mảng images
     
     func getFullAddress() -> String {
         return "\(address), \(wardName), \(districtName), \(provinceName)"
@@ -69,5 +69,9 @@ struct PostDetail: Codable {
     var username: String?
     var contactName: String?
     var contactPhoneNumber: String?
+    
+    func getFullAddress() -> String {
+        return "\(address), \(wardName), \(districtName), \(provinceName)"
+    }
 }
 
