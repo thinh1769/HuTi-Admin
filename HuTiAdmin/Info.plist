@@ -24,5 +24,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>HuTi cần vị trí của bạn!</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>HuTi cần sử dụng thư viện ảnh của bạn!</string>
 </dict>
 </plist>

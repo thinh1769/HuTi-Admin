@@ -105,7 +105,7 @@ class AddProjectViewModel {
         }
     }
     
-    func addNewPost(address: String, long: Double, lat: Double, name: String, description: String, acreage: Double, price: Int, bedroom: Int, bathroom: Int, floor: Int, wayIn: Double, facade: Double, contactName: String, contactPhoneNumber: String) -> Observable<Project> {
+    func addNewProject(long: Double, lat: Double, name: String, description: String, acreage: String, minPrice: Double, maxPrice: Double, legal: String, building: Int, apartment: Int, investor: String) -> Observable<Project> {
         
         /// Required Field
         newProjectParams.updateValue(self.type.value[selectedType], forKey: "projectType")
@@ -120,41 +120,35 @@ class AddProjectViewModel {
         newProjectParams.updateValue(name, forKey: "name")
         newProjectParams.updateValue(description, forKey: "description")
         newProjectParams.updateValue(acreage, forKey: "acreage")
-        newProjectParams.updateValue(price, forKey: "price")
-        newProjectParams.updateValue(getPriceRange(price: price), forKey: "priceRange")
+        newProjectParams.updateValue("\(minPrice) - \(maxPrice) triệu/m2", forKey: "price")
+        newProjectParams.updateValue(getPriceRange(price: minPrice), forKey: "priceRange")
         newProjectParams.updateValue(imagesNameList, forKey: "images")
+        newProjectParams.updateValue(legal, forKey: "legal")
+        newProjectParams.updateValue(building, forKey: "building")
+        newProjectParams.updateValue(apartment, forKey: "apartment")
+        newProjectParams.updateValue(investor, forKey: "investor")
+        newProjectParams.updateValue(self.status.value[selectedStatus], forKey: "status")
        
-        //// Đang làm add project
+        print("newProjectParams = \(newProjectParams)")
+        
         return projectService.addProject(params: newProjectParams)
     }
     
-    private func getPriceRange(price: Int) -> String {
-        if price < 500000000 {
-            return PickerData.price[1]
-        } else if price < 800000000 {
-            return PickerData.price[2]
-        } else if price < 1000000000 {
-            return PickerData.price[3]
-        } else if price < 2000000000 {
-            return PickerData.price[4]
-        } else if price < 3000000000 {
-            return PickerData.price[5]
-        } else if price < 5000000000 {
-            return PickerData.price[6]
-        } else if price < 7000000000 {
-            return PickerData.price[7]
-        } else if price < 10000000000 {
-            return PickerData.price[8]
-        } else if price < 20000000000 {
-            return PickerData.price[9]
-        } else if price < 30000000000 {
-            return PickerData.price[10]
-        } else if price < 40000000000 {
-            return PickerData.price[11]
-        } else if price < 60000000000 {
-            return PickerData.price[12]
+    private func getPriceRange(price: Double) -> String {
+        if price < 5 {
+            return PickerData.projectPrice[1]
+        } else if price < 10 {
+            return PickerData.projectPrice[2]
+        } else if price < 20 {
+            return PickerData.projectPrice[3]
+        } else if price < 35 {
+            return PickerData.projectPrice[4]
+        } else if price < 50 {
+            return PickerData.projectPrice[5]
+        } else if price < 80 {
+            return PickerData.projectPrice[6]
         } else {
-            return PickerData.price[13]
+            return PickerData.projectPrice[7]
         }
     }
     

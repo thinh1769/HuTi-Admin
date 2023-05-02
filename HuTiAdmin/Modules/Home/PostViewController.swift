@@ -69,7 +69,7 @@ class PostViewController: HuTiViewController {
     }
     
     private func setupPostTableView() {
-        postTableView.rowHeight = 150
+        postTableView.rowHeight = 120
         postTableView.register(PostViewCell.nib, forCellReuseIdentifier: PostViewCell.reusableIdentifier)
         
         viewModel.post.asObservable()
@@ -83,7 +83,6 @@ class PostViewController: HuTiViewController {
             .subscribe { [weak self] element in
                 guard let self = self else { return }
                 let vc = PostDetailViewController.instance(postId: element.id ?? "")
-//                vc.delegate = self
                 self.navigateTo(vc)
             }.disposed(by: viewModel.bag)
         

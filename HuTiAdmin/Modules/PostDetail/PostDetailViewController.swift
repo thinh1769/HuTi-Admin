@@ -16,6 +16,7 @@ class PostDetailViewController: HuTiViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var acreageLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var legalLabel: UILabel!
@@ -33,7 +34,13 @@ class PostDetailViewController: HuTiViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var projectNameLabel: UILabel!
     @IBOutlet weak var projectView: UIStackView!
-    
+    @IBOutlet weak var funitureView: UIStackView!
+    @IBOutlet weak var bedroomView: UIStackView!
+    @IBOutlet weak var bathroomView: UIStackView!
+    @IBOutlet weak var floorView: UIStackView!
+    @IBOutlet weak var balconyView: UIStackView!
+    @IBOutlet weak var wayInView: UIStackView!
+    @IBOutlet weak var facadeView: UIStackView!
     
     var viewModel = PostDetailViewModel()
     private var locationManager = CLLocationManager()
@@ -67,6 +74,7 @@ class PostDetailViewController: HuTiViewController {
         guard let post = viewModel.postDetail else { return }
         titleLabel.text = post.title
         addressLabel.text = post.getFullAddress()
+        typeLabel.text = post.realEstateType
         acreageLabel.text = "\(post.acreage) m2"
         priceLabel.text = "\((post.price).formattedWithSeparator)đ"
         legalLabel.text = post.legal
@@ -88,6 +96,39 @@ class PostDetailViewController: HuTiViewController {
         }
         pinRealEstateLocation()
     
+        unhiddenAllView()
+        switch viewModel.postDetail?.realEstateType {
+        case RealEstateType.apartment:
+            self.floorView.isHidden = true
+            self.wayInView.isHidden = true
+            self.facadeView.isHidden = true
+        case RealEstateType.projectLand:
+            self.funitureView.isHidden = true
+            self.bedroomView.isHidden = true
+            self.bathroomView.isHidden = true
+            self.floorView.isHidden = true
+            self.balconyView.isHidden = true
+        case RealEstateType.land:
+            self.funitureView.isHidden = true
+            self.bedroomView.isHidden = true
+            self.bathroomView.isHidden = true
+            self.floorView.isHidden = true
+            self.balconyView.isHidden = true
+        case RealEstateType.codontel:
+            self.floorView.isHidden = true
+            self.wayInView.isHidden = true
+            self.facadeView.isHidden = true
+        case RealEstateType.wareHouseFactory:
+            self.bedroomView.isHidden = true
+            self.floorView.isHidden = true
+            self.balconyView.isHidden = true
+        case RealEstateType.office:
+            self.floorView.isHidden = true
+        case RealEstateType.shopKiosk:
+            self.bedroomView.isHidden = true
+        default:
+            return
+        }
     }
     
     private func setupImageCollectionView() {
@@ -128,6 +169,15 @@ class PostDetailViewController: HuTiViewController {
         pinRealEstateLocation()
     }
     
+    private func unhiddenAllView() {
+        funitureView.isHidden = false
+        bedroomView.isHidden = false
+        bathroomView.isHidden = false
+        floorView.isHidden = false
+        balconyView.isHidden = false
+        wayInView.isHidden = false
+        facadeView.isHidden = false
+    }
 }
 
 extension PostDetailViewController: CLLocationManagerDelegate {

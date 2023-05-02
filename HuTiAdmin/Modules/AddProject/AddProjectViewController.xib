@@ -19,13 +19,14 @@
                 <outlet property="currentLocationButton" destination="7bw-nZ-5tk" id="zvh-Sq-dKz"/>
                 <outlet property="descriptionTextView" destination="sRg-nd-seO" id="YeV-lB-c7v"/>
                 <outlet property="districtTextField" destination="qu3-7o-jkQ" id="amb-6p-nRf"/>
-                <outlet property="editLocationButton" destination="AYh-cQ-8MA" id="rbn-W4-Qe0"/>
+                <outlet property="editLocationButton" destination="AYh-cQ-8MA" id="q6n-F1-5FP"/>
                 <outlet property="imageCollectionView" destination="Dtz-Eb-OUh" id="Smm-3T-Kgi"/>
                 <outlet property="investorTextField" destination="RxW-cr-yWs" id="Qgx-hj-zKW"/>
                 <outlet property="legalTextField" destination="fGH-vl-ZHO" id="fyR-Sf-h4Z"/>
                 <outlet property="mapView" destination="bMd-I5-Hw1" id="aAJ-HK-puG"/>
+                <outlet property="maxPriceTextField" destination="uXA-vD-fjI" id="oZa-qY-fgM"/>
+                <outlet property="minPriceTextField" destination="PcC-cw-MMB" id="28a-f7-yMc"/>
                 <outlet property="nameTextField" destination="H1m-aC-t4a" id="v0a-lC-1en"/>
-                <outlet property="priceTextField" destination="PcC-cw-MMB" id="28a-f7-yMc"/>
                 <outlet property="provinceTextField" destination="LBi-S4-4da" id="5Qx-JI-fQ9"/>
                 <outlet property="statusTextField" destination="8gT-5Q-lPr" id="SxW-7R-903"/>
                 <outlet property="submitButton" destination="dpm-me-VOv" id="caJ-uf-wd5"/>
@@ -531,7 +532,7 @@
                                                             </constraints>
                                                             <color key="textColor" name="black"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                            <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igu-G7-SPI" userLabel="separatorView">
                                                             <rect key="frame" x="0.0" y="52" width="364" height="1"/>
@@ -567,23 +568,42 @@
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PcC-cw-MMB" userLabel="priceTextField">
-                                                            <rect key="frame" x="0.0" y="20" width="277" height="30"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PcC-cw-MMB" userLabel="priceTextField">
+                                                            <rect key="frame" x="0.0" y="25" width="100" height="28"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="FkV-6W-uyM"/>
+                                                                <constraint firstAttribute="width" constant="100" id="cPy-TZ-ClP"/>
+                                                                <constraint firstAttribute="height" constant="28" id="lu9-r4-lGZ"/>
                                                             </constraints>
                                                             <color key="textColor" name="black"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         </textField>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="triệu/m2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hX-fx-Mhb">
-                                                            <rect key="frame" x="287" y="28.333333333333258" width="67" height="21.666666666666671"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2H-2R-xwg">
+                                                            <rect key="frame" x="105" y="20" width="69" height="36"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <color key="textColor" name="black"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uXA-vD-fjI" userLabel="priceTextField">
+                                                            <rect key="frame" x="179" y="25" width="100" height="28"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="r7q-fh-e8K"/>
+                                                            </constraints>
+                                                            <color key="textColor" name="black"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        </textField>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="triệu/m2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hX-fx-Mhb">
+                                                            <rect key="frame" x="284" y="28.333333333333258" width="80" height="21.666666666666671"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="kH4-Rj-8DO"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4x-21-yjP" userLabel="separatorView">
-                                                            <rect key="frame" x="0.0" y="52" width="364" height="1"/>
+                                                            <rect key="frame" x="0.0" y="58" width="364" height="1"/>
                                                             <color key="backgroundColor" name="themeText"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="rlF-cz-kl8"/>
@@ -593,17 +613,23 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="55" id="1CU-2E-aMb"/>
+                                                        <constraint firstItem="PcC-cw-MMB" firstAttribute="top" secondItem="Cgd-zi-Fix" secondAttribute="bottom" constant="5" id="4dF-LC-igU"/>
+                                                        <constraint firstItem="r4x-21-yjP" firstAttribute="top" secondItem="PcC-cw-MMB" secondAttribute="bottom" constant="5" id="FqV-0Z-gPG"/>
                                                         <constraint firstItem="Cgd-zi-Fix" firstAttribute="leading" secondItem="Cz9-CU-dDa" secondAttribute="leading" id="JIv-pi-ySJ"/>
-                                                        <constraint firstItem="PcC-cw-MMB" firstAttribute="top" secondItem="Cgd-zi-Fix" secondAttribute="bottom" id="JOd-FO-e2r"/>
                                                         <constraint firstItem="Cgd-zi-Fix" firstAttribute="top" secondItem="Cz9-CU-dDa" secondAttribute="top" id="Jkk-2Y-7a6"/>
-                                                        <constraint firstAttribute="trailing" secondItem="5hX-fx-Mhb" secondAttribute="trailing" constant="10" id="ScV-5f-ZEG"/>
-                                                        <constraint firstItem="5hX-fx-Mhb" firstAttribute="leading" secondItem="PcC-cw-MMB" secondAttribute="trailing" constant="10" id="TUK-ty-jdK"/>
-                                                        <constraint firstItem="r4x-21-yjP" firstAttribute="top" secondItem="PcC-cw-MMB" secondAttribute="bottom" constant="2" id="VF8-Q1-hU5"/>
+                                                        <constraint firstItem="PcC-cw-MMB" firstAttribute="leading" secondItem="Cz9-CU-dDa" secondAttribute="leading" id="LdC-Ub-ONL"/>
+                                                        <constraint firstItem="5hX-fx-Mhb" firstAttribute="leading" secondItem="uXA-vD-fjI" secondAttribute="trailing" constant="5" id="NIa-bi-2eA"/>
+                                                        <constraint firstItem="r4x-21-yjP" firstAttribute="top" secondItem="uXA-vD-fjI" secondAttribute="bottom" constant="5" id="SyL-iH-dh5"/>
+                                                        <constraint firstItem="uXA-vD-fjI" firstAttribute="top" secondItem="Cgd-zi-Fix" secondAttribute="bottom" constant="5" id="ZtV-QO-eKw"/>
                                                         <constraint firstItem="r4x-21-yjP" firstAttribute="leading" secondItem="Cz9-CU-dDa" secondAttribute="leading" id="brC-vj-rZd"/>
-                                                        <constraint firstItem="r4x-21-yjP" firstAttribute="top" secondItem="5hX-fx-Mhb" secondAttribute="bottom" constant="2" id="rhM-1E-QVD"/>
-                                                        <constraint firstItem="PcC-cw-MMB" firstAttribute="leading" secondItem="Cz9-CU-dDa" secondAttribute="leading" id="rua-25-bwy"/>
+                                                        <constraint firstItem="uXA-vD-fjI" firstAttribute="leading" secondItem="q2H-2R-xwg" secondAttribute="trailing" constant="5" id="fw5-l1-yJT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5hX-fx-Mhb" secondAttribute="trailing" id="jqw-O8-nKw"/>
+                                                        <constraint firstItem="r4x-21-yjP" firstAttribute="top" secondItem="5hX-fx-Mhb" secondAttribute="bottom" constant="8" id="mNd-YM-kGs"/>
+                                                        <constraint firstItem="q2H-2R-xwg" firstAttribute="leading" secondItem="PcC-cw-MMB" secondAttribute="trailing" constant="5" id="mtw-5h-n1h"/>
+                                                        <constraint firstItem="r4x-21-yjP" firstAttribute="top" secondItem="q2H-2R-xwg" secondAttribute="bottom" constant="2" id="nLr-Hk-JML"/>
                                                         <constraint firstAttribute="trailing" secondItem="Cgd-zi-Fix" secondAttribute="trailing" id="sgV-yK-AdC"/>
                                                         <constraint firstAttribute="trailing" secondItem="r4x-21-yjP" secondAttribute="trailing" id="wkg-Vu-x4p"/>
+                                                        <constraint firstItem="q2H-2R-xwg" firstAttribute="top" secondItem="Cgd-zi-Fix" secondAttribute="bottom" id="xZZ-HF-yoP"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqa-Ve-gmQ" userLabel="funitureView">
@@ -721,7 +747,7 @@
                                                             </constraints>
                                                             <color key="textColor" name="black"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VY-93-NIN">
                                                             <rect key="frame" x="0.0" y="59" width="364" height="1"/>
@@ -764,7 +790,7 @@
                                                             </constraints>
                                                             <color key="textColor" name="black"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1K-GQ-ulU">
                                                             <rect key="frame" x="0.0" y="52" width="364" height="1"/>
@@ -807,7 +833,7 @@
                                                             </constraints>
                                                             <color key="textColor" name="black"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                            <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWN-zR-51A" userLabel="separatorView">
                                                             <rect key="frame" x="0.0" y="52" width="364" height="1"/>
@@ -948,6 +974,7 @@
                         <constraint firstAttribute="width" constant="30" id="C2q-mi-Zih"/>
                         <constraint firstAttribute="height" constant="30" id="b7g-nJ-ulG"/>
                     </constraints>
+                    <color key="tintColor" name="themeText"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="chevron.left" catalog="system">
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
@@ -975,7 +1002,7 @@
                 <constraint firstItem="dzQ-Jq-Dfq" firstAttribute="top" secondItem="Rvy-Ck-XV1" secondAttribute="bottom" constant="10" id="eU6-CS-h9r"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dzQ-Jq-Dfq" secondAttribute="trailing" id="gz3-Fy-iNG"/>
             </constraints>
-            <point key="canvasLocation" x="-3912" y="217"/>
+            <point key="canvasLocation" x="-3732" y="77"/>
         </view>
     </objects>
     <resources>

@@ -12,6 +12,8 @@ class ImageCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    var onTapRemove: (() -> Void)?
+    
     static var reusableIdentifier: String {
         return String(describing: self)
     }
@@ -40,4 +42,8 @@ class ImageCell: UICollectionViewCell {
         }
     }
 
+    @IBAction func didTapRemove(_ sender: UIButton) {
+        self.onTapRemove?()
+    }
+    
 }

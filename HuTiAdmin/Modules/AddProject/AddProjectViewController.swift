@@ -26,7 +26,8 @@ class AddProjectViewController: HuTiViewController {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var acreageTextField: UITextField!
-    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var minPriceTextField: UITextField!
+    @IBOutlet weak var maxPriceTextField: UITextField!
     @IBOutlet weak var legalTextField: UITextField!
     @IBOutlet weak var statusTextField: UITextField!
     @IBOutlet weak var buildingTextField: UITextField!
@@ -57,57 +58,102 @@ class AddProjectViewController: HuTiViewController {
     
     private func setupUI() {
         setupPickerView()
-//        setupImageCollectionView()
-//        acreageTextField.delegate = self
-////        formattingTextField(sender: priceTextField)
-//        mapView.isUserInteractionEnabled = false
+        setupImageCollectionView()
+        mapView.isUserInteractionEnabled = false
+        mapView.showsUserLocation = true
+        minPriceTextField.delegate = self
+        maxPriceTextField.delegate = self
 //        hidePostButton.isHidden = true
-//        currentLocationButton.isUserInteractionEnabled = false
-//        sellView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickedSellView)))
-//        forRentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickedForRentView)))
-//
-//        provinceTextField.rx.controlEvent([.editingDidEnd,.valueChanged])
-//            .subscribe { [weak self] _ in
-//            guard let self = self,
-//                  let text = self.provinceTextField.text
-//                else { return }
-//            if text.count > 0 {
-//                self.moveCameraToLocation(21.0031177, 105.8201408)
-//            }
-//        }.disposed(by: viewModel.bag)
-//
-//        typeTextField.rx.controlEvent([.editingDidEnd,.valueChanged])
-//            .subscribe { [weak self] _ in
-//            guard let self = self,
-//                  let text = self.typeTextField.text
-//                else { return }
-//            if text.count > 0 {
-//                self.hiddenUnnecessaryView(text: text)
-//            }
-//        }.disposed(by: viewModel.bag)
-//
-//        contactNameTextField.text = UserDefaults.userInfo?.name ?? ""
-//        contactPhoneTextField.text = UserDefaults.userInfo?.phoneNumber
-//
+        currentLocationButton.isUserInteractionEnabled = false
+
+        provinceTextField.rx.controlEvent([.editingDidEnd,.valueChanged])
+            .subscribe { [weak self] _ in
+            guard let self = self,
+                  let text = self.provinceTextField.text
+                else { return }
+            if text.count > 0 {
+                self.moveCameraToLocation(21.0031177, 105.8201408)
+            }
+        }.disposed(by: viewModel.bag)
+        
 //        if viewModel.isEdit {
 //            loadPostDetailForEdit()
 //            hidePostButton.isHidden = false
 //        }
     }
 
+    private func setupImageCollectionView() {
+        imageCollectionView.register(ImageCell.nib, forCellWithReuseIdentifier: ImageCell.reusableIdentifier)
+        
+        viewModel.selectedImage.asObservable()
+            .bind(to: imageCollectionView.rx.items(cellIdentifier: ImageCell.reusableIdentifier, cellType: ImageCell.self)) { [weak self] (index, element, cell) in
+                guard let self = self else { return }
+                cell.config(image: element)
+                
+                cell.onTapRemove = {
+                    self.viewModel.imagesList.remove(at: index)
+                    self.viewModel.imagesNameList.remove(at: index)
+                    self.viewModel.setupDataImageCollectionView()
+                }
+            }.disposed(by: viewModel.bag)
+        
+        imageCollectionView.rx.setDelegate(self).disposed(by: viewModel.bag)
+    }
+    
     @IBAction func didTapEditLocationButton(_ sender: UIButton) {
+        if !viewModel.isEditBtnClicked {
+            editLocationButton.setTitle(CommonConstants.done, for: .normal)
+            mapView.isUserInteractionEnabled = true
+            currentLocationButton.isUserInteractionEnabled = true
+        } else {
+            editLocationButton.setTitle(CommonConstants.edit, for: .normal)
+            mapView.isUserInteractionEnabled = false
+            currentLocationButton.isUserInteractionEnabled = false
+        }
+        viewModel.isEditBtnClicked = !viewModel.isEditBtnClicked
     }
     
     @IBAction func didTapCurrentLocationButton(_ sender: UIButton) {
+        locationManager.startUpdatingLocation()
     }
     
     
     @IBAction func didTapAddImageButton(_ sender: UIButton) {
+        config.filter = .images
+        config.selectionLimit = 10 - viewModel.imagesList.count
         
+        if config.selectionLimit > 0 {
+            let picker = PHPickerViewController(configuration: config)
+            picker.delegate = self
+            self.present(picker, animated: true, completion: nil)
+        } else {
+            showAlert(title: "Chỉ được chọn tối đa 10 hình ảnh")
+        }
     }
     
     @IBAction func didTapSubmitButton(_ sender: UIButton) {
-        
+        showLoading()
+        viewModel.uploadImages {
+            DispatchQueue.main.async {
+                self.viewModel.addNewProject(  long: self.mapView.centerCoordinate.longitude,
+                                               lat: self.mapView.centerCoordinate.latitude,
+                                               name: self.nameTextField.text ?? "",
+                                               description: self.descriptionTextView.text ?? "",
+                                               acreage: self.acreageTextField.text ?? "",
+                                               minPrice: Double(self.minPriceTextField.text ?? "") ?? 0,
+                                               maxPrice: Double(self.maxPriceTextField.text ?? "") ?? 0,
+                                               legal: self.legalTextField.text ?? "",
+                                               building: Int(self.buildingTextField.text ?? "") ?? 0,
+                                               apartment: Int(self.apartmentTextField.text ?? "") ?? 0,
+                                               investor: self.investorTextField.text ?? "")
+                .subscribe { [weak self] _ in
+                    guard let self = self else { return }
+                    self.hideLoading()
+                    self.backToPreviousView()
+                    self.showAlert(title: "Thêm dự án thành công")
+                }.disposed(by: self.viewModel.bag)
+            }
+        }
     }
     
     @IBAction func didTapBackButton(_ sender: UIButton) {
@@ -153,16 +199,26 @@ extension AddProjectViewController: PHPickerViewControllerDelegate {
             item.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
                 guard let self = self else { return }
                 if let image = image {
-//                    self.viewModel.imageSelected = (image as! UIImage).rotate()
-//                    self.viewModel.imagesList.append(self.viewModel.imageSelected)
-//                    self.viewModel.setupDataImageCollectionView()
-//
-//                    let now = Date()
-//                    let timeInterval = now.timeIntervalSince1970
-//                    self.viewModel.imagesNameList.append("\(UserDefaults.userInfo?.id ?? "")_\(timeInterval)")
+                    self.viewModel.imageSelected = (image as! UIImage).rotate()
+                    self.viewModel.imagesList.append(self.viewModel.imageSelected)
+                    self.viewModel.setupDataImageCollectionView()
+
+                    let now = Date()
+                    let timeInterval = now.timeIntervalSince1970
+                    self.viewModel.imagesNameList.append("\(UserDefaults.userInfo?.id ?? "")_\(timeInterval)")
                 }
             }
         }
+    }
+}
+
+extension AddProjectViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == "," {
+            textField.text = (textField.text ?? "") + "."
+            return false
+        }
+        return true
     }
 }
 
@@ -173,7 +229,7 @@ extension AddProjectViewController {
         typePicker.tag = PickerTag.type
         typeTextField.inputAccessoryView = setupPickerToolBar(pickerTag: PickerTag.type)
         
-        viewModel.type.accept(RealEstateType.project)
+        viewModel.type.accept(RealEstateType.addProject)
 
         viewModel.type.subscribe(on: MainScheduler.instance)
             .bind(to: typePicker.rx.itemTitles) { (row, element) in
@@ -268,6 +324,8 @@ extension AddProjectViewController {
         statusTextField.tintColor = .clear
         statusPicker.tag = PickerTag.status
         statusTextField.inputAccessoryView = setupPickerToolBar(pickerTag: PickerTag.status)
+        
+        viewModel.status.accept(PickerData.status)
         
         viewModel.status.subscribe(on: MainScheduler.instance)
             .bind(to: statusPicker.rx.itemTitles) { (row, element) in

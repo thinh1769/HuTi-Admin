@@ -124,6 +124,8 @@ struct RealEstateType {
     
     static let project = ["Tất cả dự án", Self.apartment, "Cao ốc văn phòng", "Trung tâm thương mại", "Khu đô thị mới", "Khu phức hợp", "Nhà ở xã hội", "Khu nghỉ dưỡng, Sinh thái", "Khu công nghiệp", "Biệt thự liền kề", "Shophouse", Self.streetHouse, "Dự án khác"]
     
+    static let addProject = [Self.apartment, "Cao ốc văn phòng", "Trung tâm thương mại", "Khu đô thị mới", "Khu phức hợp", "Nhà ở xã hội", "Khu nghỉ dưỡng, Sinh thái", "Khu công nghiệp", "Biệt thự liền kề", "Shophouse", Self.streetHouse, "Dự án khác"]
+    
     static let all = "Tất cả nhà đất"
     static let apartment = "Căn hộ chung cư"
     static let home = "Nhà riêng"

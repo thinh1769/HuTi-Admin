@@ -50,6 +50,7 @@
 		820AB7E429FFEC5300883112 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7E229FFEC5300883112 /* AddProjectViewController.swift */; };
 		820AB7E529FFEC5300883112 /* AddProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AB7E329FFEC5300883112 /* AddProjectViewController.xib */; };
 		820AB7E729FFEC8C00883112 /* AddProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7E629FFEC8C00883112 /* AddProjectViewModel.swift */; };
+		8221754C2A00E838001A0877 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221754B2A00E838001A0877 /* UIImage+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		820AB7E229FFEC5300883112 /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
 		820AB7E329FFEC5300883112 /* AddProjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProjectViewController.xib; sourceTree = "<group>"; };
 		820AB7E629FFEC8C00883112 /* AddProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewModel.swift; sourceTree = "<group>"; };
+		8221754B2A00E838001A0877 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HuTiAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuTiAdmin.release.xcconfig"; path = "Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +213,7 @@
 			children = (
 				820AB79929FD2C4B00883112 /* UserDefault+Ext.swift */,
 				820AB7D829FFC66900883112 /* Numeric+Ext.swift */,
+				8221754B2A00E838001A0877 /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				820AB77729FD272E00883112 /* SceneDelegate.swift in Sources */,
 				820AB7A029FD3B8B00883112 /* PostViewController.swift in Sources */,
 				820AB7CB29FD495D00883112 /* SignInViewModel.swift in Sources */,
+				8221754C2A00E838001A0877 /* UIImage+Ext.swift in Sources */,
 				820AB7B029FD43BE00883112 /* AddressService.swift in Sources */,
 				820AB7B229FD43D900883112 /* PostService.swift in Sources */,
 				820AB7CF29FE1E4200883112 /* PostDetailViewController.swift in Sources */,

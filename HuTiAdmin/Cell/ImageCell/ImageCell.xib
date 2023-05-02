@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,27 +19,50 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="en0-rc-LgB">
-                        <rect key="frame" x="0.0" y="0.0" width="213" height="96"/>
+                        <rect key="frame" x="0.0" y="5" width="210" height="91"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <integer key="value" value="8"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNM-di-p2g">
+                        <rect key="frame" x="191" y="0.0" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="E86-8z-Mnr"/>
+                            <constraint firstAttribute="height" constant="25" id="Kis-ig-Vg6"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="systemGray5Color"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="xmark.circle.fill" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                        </state>
+                        <connections>
+                            <action selector="didTapRemove:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Lzg-0O-DOF"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="en0-rc-LgB" secondAttribute="trailing" constant="5" id="Ejt-sw-0hq"/>
+                <constraint firstAttribute="trailing" secondItem="en0-rc-LgB" secondAttribute="trailing" constant="8" id="Ejt-sw-0hq"/>
+                <constraint firstItem="LNM-di-p2g" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="I2R-jD-UnZ"/>
                 <constraint firstAttribute="bottom" secondItem="en0-rc-LgB" secondAttribute="bottom" id="JKX-Ep-2WY"/>
-                <constraint firstItem="en0-rc-LgB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Y30-2c-Pro"/>
+                <constraint firstAttribute="trailing" secondItem="LNM-di-p2g" secondAttribute="trailing" constant="2" id="UUt-gI-gai"/>
+                <constraint firstItem="en0-rc-LgB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Y30-2c-Pro"/>
                 <constraint firstItem="en0-rc-LgB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dk8-vg-PeB"/>
             </constraints>
             <size key="customSize" width="218" height="96"/>
             <connections>
                 <outlet property="imageView" destination="en0-rc-LgB" id="tGP-sG-Ljj"/>
             </connections>
-            <point key="canvasLocation" x="258.01526717557249" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="-391" y="-37"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
