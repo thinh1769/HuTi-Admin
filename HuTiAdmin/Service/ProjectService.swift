@@ -26,4 +26,8 @@ class ProjectService: BaseService {
         }
     }
     
+    func addProject(params: [String: Any]) -> Observable<Project> {
+        return request(api: APIConstants.getProjectById.rawValue, method: .post, params: params)
+    }
+    
 }

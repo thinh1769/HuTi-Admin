@@ -22,6 +22,11 @@ class PostViewController: HuTiViewController {
     
     var viewModel = PostViewModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainTabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -141,17 +146,17 @@ class PostViewController: HuTiViewController {
     private func didSelectBrowseView(index: Int) {
         switch index {
         case 0:
-            pendingView.backgroundColor = .systemBrown
+            pendingView.backgroundColor = UIColor(named: ColorName.darkBackground)
             approvedView.backgroundColor = .systemGray5
             rejectedView.backgroundColor = .systemGray5
         case 1:
             pendingView.backgroundColor = .systemGray5
-            approvedView.backgroundColor = .systemBrown
+            approvedView.backgroundColor = UIColor(named: ColorName.darkBackground)
             rejectedView.backgroundColor = .systemGray5
         default:
             pendingView.backgroundColor = .systemGray5
             approvedView.backgroundColor = .systemGray5
-            rejectedView.backgroundColor = .systemBrown
+            rejectedView.backgroundColor = UIColor(named: ColorName.darkBackground)
         }
     }
 }

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,6 +38,7 @@
                                             <constraint firstAttribute="height" constant="20" id="aAJ-24-u3G"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" name="themeText"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyg-il-SOH" userLabel="addressLabel">
@@ -54,8 +56,14 @@
                             <constraint firstAttribute="trailing" secondItem="uyF-g0-M5A" secondAttribute="trailing" constant="10" id="leF-GP-ZhZ"/>
                             <constraint firstAttribute="bottom" secondItem="uyF-g0-M5A" secondAttribute="bottom" constant="10" id="nAb-yy-Iyq"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="background"/>
                 <constraints>
                     <constraint firstItem="ODN-fH-Kyj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Cxm-gL-NrY"/>
                     <constraint firstItem="ODN-fH-Kyj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Hwu-N6-h8j"/>
@@ -69,7 +77,15 @@
                 <outlet property="priceLabel" destination="XxF-fI-A0f" id="Q6S-ja-ohI"/>
                 <outlet property="titleLabel" destination="h7m-GM-WW7" id="6P5-Yw-9Mg"/>
             </connections>
-            <point key="canvasLocation" x="-3" y="-65"/>
+            <point key="canvasLocation" x="243" y="-37"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.98000001907348633" green="0.92900002002716064" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="themeText">
+            <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>

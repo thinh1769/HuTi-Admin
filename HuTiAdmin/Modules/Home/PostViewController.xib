@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,27 +25,29 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tin đăng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ5-uq-3cX">
-                    <rect key="frame" x="166" y="79" width="98.333333333333314" height="30"/>
+                    <rect key="frame" x="158" y="20" width="98.333333333333314" height="30"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                    <color key="textColor" name="themeText"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Amu-MH-DK3">
-                    <rect key="frame" x="10" y="124" width="410" height="35"/>
+                    <rect key="frame" x="10" y="65" width="394" height="35"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Add-VR-zdT">
-                            <rect key="frame" x="0.0" y="0.0" width="133.33333333333334" height="35"/>
+                            <rect key="frame" x="0.0" y="0.0" width="128" height="35"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chờ duyệt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YF-0r-NU1">
-                                    <rect key="frame" x="23.666666666666657" y="6.666666666666659" width="86" height="21.666666666666671"/>
+                                    <rect key="frame" x="21" y="6.6666666666666732" width="86" height="21.666666666666671"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" name="black"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBrownColor"/>
+                            <color key="backgroundColor" name="darkBackground"/>
                             <constraints>
                                 <constraint firstItem="2YF-0r-NU1" firstAttribute="centerY" secondItem="Add-VR-zdT" secondAttribute="centerY" id="E5S-Rh-c1y"/>
                                 <constraint firstItem="2YF-0r-NU1" firstAttribute="centerX" secondItem="Add-VR-zdT" secondAttribute="centerX" id="LHT-Sc-eIW"/>
@@ -56,10 +59,10 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTE-G7-YbI">
-                            <rect key="frame" x="138.33333333333331" y="0.0" width="133.33333333333331" height="35"/>
+                            <rect key="frame" x="133" y="0.0" width="128" height="35"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã duyệt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMd-Fw-dvR">
-                                    <rect key="frame" x="28.999999999999993" y="6.666666666666659" width="75.333333333333314" height="21.666666666666671"/>
+                                    <rect key="frame" x="26.333333333333336" y="6.6666666666666732" width="75.333333333333314" height="21.666666666666671"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -77,10 +80,10 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeU-bZ-vlR">
-                            <rect key="frame" x="276.66666666666669" y="0.0" width="133.33333333333331" height="35"/>
+                            <rect key="frame" x="266" y="0.0" width="128" height="35"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Từ chối" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdp-1u-uAa">
-                                    <rect key="frame" x="36.333333333333314" y="6.666666666666659" width="61" height="21.666666666666671"/>
+                                    <rect key="frame" x="33.666666666666686" y="6.6666666666666732" width="61" height="21.666666666666671"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -102,44 +105,56 @@
                         <constraint firstAttribute="height" constant="35" id="2ep-GQ-CfH"/>
                     </constraints>
                 </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kOl-7K-H9H">
-                    <rect key="frame" x="10" y="169" width="410" height="729"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kOl-7K-H9H">
+                    <rect key="frame" x="10" y="110" width="394" height="626"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNo-84-aKf">
-                    <rect key="frame" x="318" y="69" width="102" height="34.333333333333343"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Đăng xuất"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNo-84-aKf">
+                    <rect key="frame" x="311" y="20" width="83" height="34"/>
+                    <color key="tintColor" name="themeText"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Đăng xuất">
+                        <color key="titleColor" name="gray"/>
+                    </state>
                     <connections>
                         <action selector="didTapSignOutButton:" destination="-1" eventType="touchUpInside" id="Ydj-3T-83t"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="background"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Amu-MH-DK3" secondAttribute="trailing" constant="10" id="6cK-Gd-sru"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kOl-7K-H9H" secondAttribute="bottom" id="74N-89-wyE"/>
                 <constraint firstItem="uJ5-uq-3cX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="7Dh-JX-LAx"/>
                 <constraint firstItem="kOl-7K-H9H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="8EV-Sy-D5D"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jNo-84-aKf" secondAttribute="trailing" constant="10" id="J6f-6s-nuu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jNo-84-aKf" secondAttribute="trailing" constant="20" id="J6f-6s-nuu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kOl-7K-H9H" secondAttribute="trailing" constant="10" id="L62-JA-qEG"/>
                 <constraint firstItem="kOl-7K-H9H" firstAttribute="top" secondItem="Amu-MH-DK3" secondAttribute="bottom" constant="10" id="WP9-VY-bzj"/>
                 <constraint firstItem="uJ5-uq-3cX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gwo-wD-K7H"/>
                 <constraint firstItem="Amu-MH-DK3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="kJD-Uu-6K1"/>
-                <constraint firstItem="jNo-84-aKf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="oJd-CZ-b1P"/>
+                <constraint firstItem="jNo-84-aKf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="oJd-CZ-b1P"/>
                 <constraint firstItem="Amu-MH-DK3" firstAttribute="top" secondItem="uJ5-uq-3cX" secondAttribute="bottom" constant="15" id="zsB-ph-Y8P"/>
             </constraints>
-            <point key="canvasLocation" x="-354" y="104"/>
+            <point key="canvasLocation" x="57" y="82"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="background">
+            <color red="0.98000001907348633" green="0.92900002002716064" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="darkBackground">
+            <color red="0.93900001049041748" green="0.79600000381469727" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="gray">
+            <color red="0.66299998760223389" green="0.65499997138977051" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="themeText">
+            <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

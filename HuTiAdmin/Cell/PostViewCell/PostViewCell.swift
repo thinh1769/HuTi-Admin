@@ -33,7 +33,7 @@ class PostViewCell: UITableViewCell {
     
     func config(post: Post) {
         titleLabel.text = post.title
-        priceLabel.text = "\(post.price)"
+        priceLabel.text = "\((post.price).formattedWithSeparator)đ"
         addressLabel.text = post.getFullAddress()
     }
 }

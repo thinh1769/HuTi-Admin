@@ -15,7 +15,7 @@ class MainTabBarController: UITabBarController {
         let postTab = PostViewController()
         let postNaVC = UINavigationController(rootViewController: postTab)
         
-        let projectTab = PostViewController()
+        let projectTab = ProjectViewController()
         let projectNaVC = UINavigationController(rootViewController: projectTab)
         
         let userTab = PostViewController()
@@ -24,23 +24,17 @@ class MainTabBarController: UITabBarController {
         postTab.title = "Tin đăng"
         projectTab.title = "Dự án"
         userTab.title = "Tài khoản"
-//        sellTab.title = TabBarItemTitle.sell
-//        forRentTab.title = TabBarItemTitle.forRent
-//        projectTab.title = TabBarItemTitle.project
-//        accountTab.title = TabBarItemTitle.account
-//
-//        sellTab.tabBarItem.image = UIImage(named: ImageName.house)
-//        forRentTab.tabBarItem.image = UIImage(named: ImageName.house)
-//        projectTab.tabBarItem.image = UIImage(named: ImageName.project)
-//        accountTab.tabBarItem.image = UIImage(named: ImageName.user)
+
+        postTab.tabBarItem.image = UIImage(named: ImageName.house)
+        projectTab.tabBarItem.image = UIImage(named: ImageName.project)
+        userTab.tabBarItem.image = UIImage(named: ImageName.user)
         
         let tabBarItemList = [postNaVC, projectNaVC, userNaVC]
         
         self.setViewControllers(tabBarItemList, animated: true)
         
-//        self.tabBar.tintColor = UIColor(named: ColorName.themeText)
-//        
-//        self.tabBar.backgroundColor = UIColor(named: ColorName.white)
+        self.tabBar.tintColor = UIColor(named: ColorName.themeText)
+        self.tabBar.backgroundColor = UIColor(named: ColorName.white)
     }
 }
 

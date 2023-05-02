@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import MapKit
+import CoreLocation
 
 class PostDetailViewController: HuTiViewController {
 
@@ -25,9 +27,17 @@ class PostDetailViewController: HuTiViewController {
     @IBOutlet weak var balconyDirectionLabel: UILabel!
     @IBOutlet weak var wayInLabel: UILabel!
     @IBOutlet weak var facadeLabel: UILabel!
-    
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var projectNameLabel: UILabel!
+    @IBOutlet weak var projectView: UIStackView!
+    
+    
     var viewModel = PostDetailViewModel()
+    private var locationManager = CLLocationManager()
+    private let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +46,9 @@ class PostDetailViewController: HuTiViewController {
     }
 
     private func setupUI() {
-        view.backgroundColor = .white
         self.tabBarController?.tabBar.isHidden = true
+        mapView.showsUserLocation = true
+        mapView.layer.cornerRadius = 8
         getPostDetail()
         setupImageCollectionView()
     }
@@ -48,7 +59,6 @@ class PostDetailViewController: HuTiViewController {
             self.viewModel.postDetail = postDetail
             self.loadPostDetail()
             self.viewModel.images.accept(postDetail.images)
-//            self.getProjectInfo()
         } onCompleted: {
         }.disposed(by: viewModel.bag)
     }
@@ -58,7 +68,7 @@ class PostDetailViewController: HuTiViewController {
         titleLabel.text = post.title
         addressLabel.text = post.getFullAddress()
         acreageLabel.text = "\(post.acreage) m2"
-        priceLabel.text = "\(post.price) VNĐ"
+        priceLabel.text = "\((post.price).formattedWithSeparator)đ"
         legalLabel.text = post.legal
         funitureLabel.text = post.funiture
         bedroomLabel.text = "\(post.bedroom ?? 0)"
@@ -69,7 +79,14 @@ class PostDetailViewController: HuTiViewController {
         wayInLabel.text = "\(post.wayIn ?? 0) m"
         facadeLabel.text = "\(post.facade ?? 0) m"
         descriptionLabel.text = post.description
-//        self.pinRealEstateLocation()
+        authorLabel.text = post.contactName
+        phoneLabel.text = post.contactPhoneNumber
+        if let project = post.projectName {
+            projectNameLabel.text = project
+        } else {
+            projectView.isHidden = true
+        }
+        pinRealEstateLocation()
     
     }
     
@@ -105,6 +122,35 @@ class PostDetailViewController: HuTiViewController {
             self.backToPreviousView()
             self.showAlert(title: "Từ chối thành công")
         }.disposed(by: viewModel.bag)
+    }
+    
+    @IBAction func didTapRealEstateLocationButton(_ sender: UIButton) {
+        pinRealEstateLocation()
+    }
+    
+}
+
+extension PostDetailViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
+        mapView.showsUserLocation = true
+    }
+    
+    private func moveCameraToLocation(_ lat: Double, _ long: Double) {
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        mapView.setRegion(region, animated: false)
+    }
+    
+    private func pinRealEstateLocation() {
+        guard let lat = viewModel.postDetail?.lat,
+              let long = viewModel.postDetail?.long
+        else { return }
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        moveCameraToLocation(lat, long)
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinate
+        mapView.addAnnotation(pin)
     }
 }
 

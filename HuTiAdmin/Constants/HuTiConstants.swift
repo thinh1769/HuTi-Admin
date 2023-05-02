@@ -85,6 +85,7 @@ struct ColorName {
     static let redStatusText = "redStatusText"
     static let greenStatusText = "greenStatusText"
     static let purpleStatusText = "purpleStatusText"
+    static let darkBackground = "darkBackground"
 }
 
 struct TabBarItemTitle {
