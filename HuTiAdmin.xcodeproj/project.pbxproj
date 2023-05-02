@@ -51,6 +51,8 @@
 		820AB7E529FFEC5300883112 /* AddProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AB7E329FFEC5300883112 /* AddProjectViewController.xib */; };
 		820AB7E729FFEC8C00883112 /* AddProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB7E629FFEC8C00883112 /* AddProjectViewModel.swift */; };
 		8221754C2A00E838001A0877 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221754B2A00E838001A0877 /* UIImage+Ext.swift */; };
+		8289A87F2A016F770011DDA2 /* ProjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A87D2A016F770011DDA2 /* ProjectViewCell.swift */; };
+		8289A8802A016F770011DDA2 /* ProjectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8289A87E2A016F770011DDA2 /* ProjectViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		820AB7E329FFEC5300883112 /* AddProjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProjectViewController.xib; sourceTree = "<group>"; };
 		820AB7E629FFEC8C00883112 /* AddProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewModel.swift; sourceTree = "<group>"; };
 		8221754B2A00E838001A0877 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		8289A87D2A016F770011DDA2 /* ProjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewCell.swift; sourceTree = "<group>"; };
+		8289A87E2A016F770011DDA2 /* ProjectViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectViewCell.xib; sourceTree = "<group>"; };
 		880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HuTiAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuTiAdmin.release.xcconfig"; path = "Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,9 +155,9 @@
 				820AB79329FD2AA300883112 /* Constants */,
 				820AB79829FD2C3300883112 /* Extensions */,
 				820AB78929FD291E00883112 /* Resource */,
-				820AB79B29FD2C7500883112 /* Models */,
 				820AB78A29FD295E00883112 /* Modules */,
 				820AB7A229FD406F00883112 /* Cell */,
+				820AB79B29FD2C7500883112 /* Models */,
 				820AB7AA29FD435000883112 /* Service */,
 				820AB78229FD273100883112 /* Info.plist */,
 			);
@@ -237,6 +241,7 @@
 			children = (
 				820AB7D329FE5E6D00883112 /* ImageCell */,
 				820AB7A329FD408700883112 /* PostViewCell */,
+				8289A87C2A016D580011DDA2 /* ProjectViewCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -322,6 +327,15 @@
 			path = AddProject;
 			sourceTree = "<group>";
 		};
+		8289A87C2A016D580011DDA2 /* ProjectViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8289A87D2A016F770011DDA2 /* ProjectViewCell.swift */,
+				8289A87E2A016F770011DDA2 /* ProjectViewCell.xib */,
+			);
+			path = ProjectViewCell;
+			sourceTree = "<group>";
+		};
 		B2C4B8EA6B0D1DCB78A884DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +408,7 @@
 				820AB7E529FFEC5300883112 /* AddProjectViewController.xib in Resources */,
 				820AB7C929FD481F00883112 /* SignInViewController.xib in Resources */,
 				820AB7D029FE1E4200883112 /* PostDetailViewController.xib in Resources */,
+				8289A8802A016F770011DDA2 /* ProjectViewCell.xib in Resources */,
 				820AB7D729FE5E8E00883112 /* ImageCell.xib in Resources */,
 				820AB78129FD273100883112 /* LaunchScreen.storyboard in Resources */,
 				820AB77E29FD273100883112 /* Assets.xcassets in Resources */,
@@ -476,6 +491,7 @@
 				820AB7CF29FE1E4200883112 /* PostDetailViewController.swift in Sources */,
 				820AB7DD29FFEA9400883112 /* ProjectViewController.swift in Sources */,
 				820AB79D29FD2C8500883112 /* User.swift in Sources */,
+				8289A87F2A016F770011DDA2 /* ProjectViewCell.swift in Sources */,
 				820AB79529FD2ACE00883112 /* HuTiConstants.swift in Sources */,
 				820AB7E429FFEC5300883112 /* AddProjectViewController.swift in Sources */,
 				820AB79729FD2AEB00883112 /* ServiceConstants.swift in Sources */,
