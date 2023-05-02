@@ -41,6 +41,7 @@ class PostDetailViewController: HuTiViewController {
     @IBOutlet weak var balconyView: UIStackView!
     @IBOutlet weak var wayInView: UIStackView!
     @IBOutlet weak var facadeView: UIStackView!
+    @IBOutlet weak var isSellLabel: UILabel!
     
     var viewModel = PostDetailViewModel()
     private var locationManager = CLLocationManager()
@@ -75,6 +76,11 @@ class PostDetailViewController: HuTiViewController {
         titleLabel.text = post.title
         addressLabel.text = post.getFullAddress()
         typeLabel.text = post.realEstateType
+        if post.isSell {
+            isSellLabel.text = TabBarItemTitle.sell
+        } else {
+            isSellLabel.text = TabBarItemTitle.forRent
+        }
         acreageLabel.text = "\(post.acreage) m2"
         priceLabel.text = "\((post.price).formattedWithSeparator)đ"
         legalLabel.text = post.legal
@@ -136,7 +142,7 @@ class PostDetailViewController: HuTiViewController {
         
         viewModel.images.asObservable()
             .bind(to: imageCollectionView.rx.items(cellIdentifier: ImageCell.reusableIdentifier, cellType: ImageCell.self)) { (index, element, cell) in
-                cell.configImage(imageName: element)
+                cell.configImage(imageName: element, isEnableRemove: false)
             }.disposed(by: viewModel.bag)
         
         imageCollectionView.rx.setDelegate(self).disposed(by: viewModel.bag)

@@ -31,6 +31,7 @@
                 <outlet property="funitureView" destination="1Pd-lW-DAu" id="7sc-ud-AVF"/>
                 <outlet property="houseDirectionLabel" destination="llh-e0-JxT" id="lrT-dE-QUr"/>
                 <outlet property="imageCollectionView" destination="mQC-3I-Hgw" id="Wu3-HW-t2t"/>
+                <outlet property="isSellLabel" destination="6Is-GL-EeV" id="Rqf-cZ-PXh"/>
                 <outlet property="legalLabel" destination="zgo-Vs-Dgg" id="PvD-nl-1lq"/>
                 <outlet property="mapView" destination="6cd-O2-tCj" id="3cw-b0-Sxf"/>
                 <outlet property="phoneLabel" destination="g0I-Mw-5Sp" id="Cju-2e-KQd"/>
@@ -74,10 +75,10 @@
                     <rect key="frame" x="10" y="109" width="410" height="729"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11X-wm-7cV">
-                            <rect key="frame" x="0.0" y="0.0" width="410" height="1374.3333333333333"/>
+                            <rect key="frame" x="0.0" y="0.0" width="410" height="1414.3333333333333"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EGn-Oa-8IM">
-                                    <rect key="frame" x="0.0" y="0.0" width="410" height="1374.3333333333333"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="410" height="1414.3333333333333"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaW-9J-4Pg">
                                             <rect key="frame" x="0.0" y="0.0" width="410" height="200"/>
@@ -156,7 +157,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-ga-1hn" userLabel="propertiesStackView">
-                                            <rect key="frame" x="0.0" y="400.00000000000006" width="410" height="974.33333333333348"/>
+                                            <rect key="frame" x="0.0" y="400.00000000000006" width="410" height="1014.3333333333335"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K7D-Ms-JiE">
                                                     <rect key="frame" x="10" y="8" width="392" height="25"/>
@@ -178,8 +179,28 @@
                                                         <constraint firstAttribute="height" constant="25" id="aLk-pk-HQJ"/>
                                                     </constraints>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0kW-nR-ge8">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-60-pxO">
                                                     <rect key="frame" x="10" y="48" width="392" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bán/Cho thuê" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0c-lT-91O">
+                                                            <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bán" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Is-GL-EeV">
+                                                            <rect key="frame" x="196" y="0.0" width="196" height="25"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="7yb-Pq-rVe"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0kW-nR-ge8">
+                                                    <rect key="frame" x="10" y="88" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diện tích" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOu-hL-W78">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -199,7 +220,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MEQ-rN-40O">
-                                                    <rect key="frame" x="10" y="88" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="128" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mức giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gm-KK-wTj">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -219,7 +240,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aGV-48-f4T">
-                                                    <rect key="frame" x="10" y="128" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="168" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pháp lý" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjj-yX-gZD">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -239,7 +260,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1Pd-lW-DAu">
-                                                    <rect key="frame" x="10" y="168" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="208" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nội thất" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQd-t6-guh">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -259,7 +280,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a98-Nd-K0L">
-                                                    <rect key="frame" x="10" y="208" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="248" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phòng ngủ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-0x-orl">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -279,7 +300,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ROE-sR-Pld">
-                                                    <rect key="frame" x="10" y="248" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="288" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phòng tắm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBf-1U-l2w">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -299,7 +320,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V3a-kw-jeb">
-                                                    <rect key="frame" x="10" y="288" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="328" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số tầng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hco-YY-HGJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -319,7 +340,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U9e-te-7lF">
-                                                    <rect key="frame" x="10" y="328" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="368" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hướng nhà" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LG2-db-2Zm">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -339,7 +360,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sz3-xe-alL">
-                                                    <rect key="frame" x="10" y="368" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="408" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hướng ban công" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyA-TB-EQU">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -359,7 +380,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BwA-b8-eao">
-                                                    <rect key="frame" x="10" y="408" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="448" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đường vào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlu-qQ-JHF">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -379,7 +400,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dOR-SZ-Hpq">
-                                                    <rect key="frame" x="10" y="448" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="488" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mặt tiền" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zT2-Gn-PGd">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -399,7 +420,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iPO-18-eu3">
-                                                    <rect key="frame" x="10" y="488" width="392" height="21.666666666666686"/>
+                                                    <rect key="frame" x="10" y="528" width="392" height="21.666666666666629"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Người đăng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nx5-FK-iaw">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="21.666666666666668"/>
@@ -416,7 +437,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KhU-Sk-OU8">
-                                                    <rect key="frame" x="10" y="524.66666666666674" width="392" height="25"/>
+                                                    <rect key="frame" x="10" y="564.66666666666674" width="392" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số điện thoại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFu-YY-24P">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="25"/>
@@ -436,7 +457,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QBb-7a-Eos">
-                                                    <rect key="frame" x="10" y="564.66666666666674" width="392" height="21.666666666666629"/>
+                                                    <rect key="frame" x="10" y="604.66666666666674" width="392" height="21.666666666666629"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dự án" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VG-Y1-E17">
                                                             <rect key="frame" x="0.0" y="0.0" width="196" height="21.666666666666668"/>
@@ -453,7 +474,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVV-mz-mVT">
-                                                    <rect key="frame" x="10" y="601.33333333333326" width="392" height="30"/>
+                                                    <rect key="frame" x="10" y="641.33333333333326" width="392" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vị trí" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZv-04-Mla">
                                                             <rect key="frame" x="0.0" y="3" width="42.333333333333336" height="24"/>
@@ -469,7 +490,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnf-b0-gnV">
-                                                    <rect key="frame" x="10" y="646.33333333333326" width="392" height="320"/>
+                                                    <rect key="frame" x="10" y="686.33333333333326" width="392" height="320"/>
                                                     <subviews>
                                                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-O2-tCj">
                                                             <rect key="frame" x="0.0" y="5" width="392" height="310"/>
@@ -601,7 +622,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x29-Sl-8lS" secondAttribute="bottom" constant="10" id="zG2-gw-nJz"/>
                 <constraint firstItem="ySV-Q4-NqZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="zxc-6E-CAw"/>
             </constraints>
-            <point key="canvasLocation" x="-4377" y="-5"/>
+            <point key="canvasLocation" x="-5255" y="24"/>
         </view>
     </objects>
     <resources>

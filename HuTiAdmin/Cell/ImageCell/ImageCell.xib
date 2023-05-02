@@ -55,6 +55,7 @@
             <size key="customSize" width="218" height="96"/>
             <connections>
                 <outlet property="imageView" destination="en0-rc-LgB" id="tGP-sG-Ljj"/>
+                <outlet property="removeButton" destination="LNM-di-p2g" id="nmY-RX-ONP"/>
             </connections>
             <point key="canvasLocation" x="-391" y="-37"/>
         </collectionViewCell>
