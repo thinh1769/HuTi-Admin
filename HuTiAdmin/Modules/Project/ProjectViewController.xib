@@ -27,7 +27,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fw1-bv-4kM">
-                    <rect key="frame" x="0.0" y="60" width="414" height="676"/>
+                    <rect key="frame" x="10" y="60" width="394" height="676"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iq0-XF-ALu">
@@ -51,15 +51,15 @@
             <color key="backgroundColor" name="background"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fw1-bv-4kM" secondAttribute="bottom" id="80n-Vy-OsE"/>
-                <constraint firstItem="fw1-bv-4kM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BRn-YS-CGa"/>
+                <constraint firstItem="fw1-bv-4kM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="BRn-YS-CGa"/>
                 <constraint firstItem="run-3W-C39" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="CLG-aL-CbS"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fw1-bv-4kM" secondAttribute="trailing" id="LTu-gm-xZE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fw1-bv-4kM" secondAttribute="trailing" constant="10" id="LTu-gm-xZE"/>
                 <constraint firstItem="run-3W-C39" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="N8Z-DO-X01"/>
                 <constraint firstItem="Iq0-XF-ALu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Ymf-at-4D5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Iq0-XF-ALu" secondAttribute="trailing" constant="20" id="qae-0b-5X8"/>
                 <constraint firstItem="fw1-bv-4kM" firstAttribute="top" secondItem="run-3W-C39" secondAttribute="bottom" constant="10" id="zOL-XY-bCk"/>
             </constraints>
-            <point key="canvasLocation" x="388" y="-6"/>
+            <point key="canvasLocation" x="207" y="60"/>
         </view>
     </objects>
     <resources>

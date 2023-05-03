@@ -53,6 +53,9 @@
 		8221754C2A00E838001A0877 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221754B2A00E838001A0877 /* UIImage+Ext.swift */; };
 		8289A87F2A016F770011DDA2 /* ProjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A87D2A016F770011DDA2 /* ProjectViewCell.swift */; };
 		8289A8802A016F770011DDA2 /* ProjectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8289A87E2A016F770011DDA2 /* ProjectViewCell.xib */; };
+		8289A8842A01E2180011DDA2 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A8822A01E2180011DDA2 /* ProjectDetailViewController.swift */; };
+		8289A8852A01E2180011DDA2 /* ProjectDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8289A8832A01E2180011DDA2 /* ProjectDetailViewController.xib */; };
+		8289A8872A01E2280011DDA2 /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A8862A01E2280011DDA2 /* ProjectDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +107,9 @@
 		8221754B2A00E838001A0877 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		8289A87D2A016F770011DDA2 /* ProjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewCell.swift; sourceTree = "<group>"; };
 		8289A87E2A016F770011DDA2 /* ProjectViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectViewCell.xib; sourceTree = "<group>"; };
+		8289A8822A01E2180011DDA2 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
+		8289A8832A01E2180011DDA2 /* ProjectDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectDetailViewController.xib; sourceTree = "<group>"; };
+		8289A8862A01E2280011DDA2 /* ProjectDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewModel.swift; sourceTree = "<group>"; };
 		880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HuTiAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuTiAdmin.release.xcconfig"; path = "Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +196,7 @@
 				820AB7CC29FE0E9100883112 /* PostDetail */,
 				820AB7DA29FFEA6500883112 /* Project */,
 				820AB7E129FFEC3000883112 /* AddProject */,
+				8289A8812A01E1D70011DDA2 /* ProjectDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -336,6 +343,16 @@
 			path = ProjectViewCell;
 			sourceTree = "<group>";
 		};
+		8289A8812A01E1D70011DDA2 /* ProjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8289A8822A01E2180011DDA2 /* ProjectDetailViewController.swift */,
+				8289A8862A01E2280011DDA2 /* ProjectDetailViewModel.swift */,
+				8289A8832A01E2180011DDA2 /* ProjectDetailViewController.xib */,
+			);
+			path = ProjectDetail;
+			sourceTree = "<group>";
+		};
 		B2C4B8EA6B0D1DCB78A884DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +428,7 @@
 				8289A8802A016F770011DDA2 /* ProjectViewCell.xib in Resources */,
 				820AB7D729FE5E8E00883112 /* ImageCell.xib in Resources */,
 				820AB78129FD273100883112 /* LaunchScreen.storyboard in Resources */,
+				8289A8852A01E2180011DDA2 /* ProjectDetailViewController.xib in Resources */,
 				820AB77E29FD273100883112 /* Assets.xcassets in Resources */,
 				820AB7A729FD40AE00883112 /* PostViewCell.xib in Resources */,
 				820AB7A129FD3B8B00883112 /* PostViewController.xib in Resources */,
@@ -473,12 +491,14 @@
 				820AB7E029FFEAAA00883112 /* ProjectViewModel.swift in Sources */,
 				820AB7BE29FD446C00883112 /* Asset.swift in Sources */,
 				820AB77529FD272E00883112 /* AppDelegate.swift in Sources */,
+				8289A8842A01E2180011DDA2 /* ProjectDetailViewController.swift in Sources */,
 				820AB7D629FE5E8E00883112 /* ImageCell.swift in Sources */,
 				820AB7AE29FD43A200883112 /* AuthService.swift in Sources */,
 				820AB7B829FD442F00883112 /* Post.swift in Sources */,
 				820AB7BC29FD445A00883112 /* Address.swift in Sources */,
 				820AB79229FD2A4E00883112 /* MainTabBarController.swift in Sources */,
 				820AB7B429FD43FC00883112 /* ProjectService.swift in Sources */,
+				8289A8872A01E2280011DDA2 /* ProjectDetailViewModel.swift in Sources */,
 				820AB7D929FFC66A00883112 /* Numeric+Ext.swift in Sources */,
 				820AB7A629FD40AE00883112 /* PostViewCell.swift in Sources */,
 				820AB7B629FD440F00883112 /* AWSService.swift in Sources */,

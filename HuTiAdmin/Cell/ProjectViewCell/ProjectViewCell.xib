@@ -118,11 +118,11 @@
             <connections>
                 <outlet property="addressLabel" destination="ifm-nn-zaB" id="RIC-pE-C95"/>
                 <outlet property="investorLabel" destination="Xnj-c8-A9u" id="Bjc-yg-j1V"/>
-                <outlet property="nameLabel" destination="wBf-3z-ZyN" id="amZ-Kn-f7y"/>
+                <outlet property="nameLabel" destination="6b2-5i-2jk" id="Q6w-CW-ACk"/>
                 <outlet property="statusLabel" destination="Is8-x6-Juj" id="KFz-hE-Vkg"/>
                 <outlet property="statusView" destination="dDg-TI-VhR" id="KkJ-Ao-sjI"/>
             </connections>
-            <point key="canvasLocation" x="-85" y="-79"/>
+            <point key="canvasLocation" x="368" y="-102"/>
         </tableViewCell>
     </objects>
     <resources>
