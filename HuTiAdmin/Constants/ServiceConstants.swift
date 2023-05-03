@@ -54,6 +54,7 @@ enum APIConstants: String {
     case updateProject = "project/"
     case likePost = "user/like-post/"
     case dislikePost = "user/dislike-post/"
+    case blockUser = "user/change-active-status/"
     
     var method: HTTPMethodSupport {
         switch self {
@@ -106,6 +107,8 @@ enum APIConstants: String {
         case .likePost:
             return .put
         case .dislikePost:
+            return .put
+        case .blockUser:
             return .put
         }
     }

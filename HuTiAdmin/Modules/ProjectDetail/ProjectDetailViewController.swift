@@ -34,6 +34,11 @@ class ProjectDetailViewController: HuTiViewController {
     private var locationManager = CLLocationManager()
     private let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.mainTabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

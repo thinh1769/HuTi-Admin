@@ -15,6 +15,11 @@ class UserViewController: HuTiViewController {
     
     var viewModel = UserViewModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.mainTabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -34,15 +39,14 @@ class UserViewController: HuTiViewController {
                 } else {
                     self.viewModel.user.accept(self.viewModel.user.value + users)
                 }
-            }
-            else if self.viewModel.page == 1 {
+            } else if self.viewModel.page == 1 {
                 self.viewModel.user.accept([])
             }
         }.disposed(by: viewModel.bag)
     }
     
     private func setupTableView() {
-        userTableView.rowHeight = 80
+        userTableView.rowHeight = 70
         userTableView.separatorStyle = .none
         
         userTableView.register(UserViewCell.nib, forCellReuseIdentifier: UserViewCell.reusableIdentifier)
@@ -52,13 +56,13 @@ class UserViewController: HuTiViewController {
                 cell.config(user: element)
             }.disposed(by: viewModel.bag)
         
-//        userTableView.rx
-//            .modelSelected(Project.self)
-//            .subscribe { [weak self] element in
-//                guard let self = self else { return }
-//                let vc = ProjectDetailViewController.instance(projectId: element.id ?? "")
-//                self.navigateTo(vc)
-//            }.disposed(by: viewModel.bag)
+        userTableView.rx
+            .modelSelected(User.self)
+            .subscribe { [weak self] element in
+                guard let self = self else { return }
+                let vc = UserDetailViewController.instance(user: element)
+                self.navigateTo(vc)
+            }.disposed(by: viewModel.bag)
         
         addPullToRefresh()
         infiniteScroll()
@@ -80,11 +84,13 @@ class UserViewController: HuTiViewController {
     }
     
     private func infiniteScroll() {
-        userTableView.addInfiniteScrolling { [weak self] in
-            guard let self = self else { return }
-            self.viewModel.page += 1
-            self.getListUser()
-            self.userTableView.infiniteScrollingView.stopAnimating()
+        if viewModel.user.value.count >= CommonConstants.pageSize {
+            userTableView.addInfiniteScrolling { [weak self] in
+                guard let self = self else { return }
+                self.viewModel.page += 1
+                self.getListUser()
+                self.userTableView.infiniteScrollingView.stopAnimating()
+            }
         }
     }
 }

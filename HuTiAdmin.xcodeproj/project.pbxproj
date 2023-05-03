@@ -56,6 +56,9 @@
 		8276A1802A02092700F24D19 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276A17F2A02092700F24D19 /* UserViewModel.swift */; };
 		8276A1842A0209E400F24D19 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276A1822A0209E400F24D19 /* UserViewCell.swift */; };
 		8276A1852A0209E400F24D19 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8276A1832A0209E400F24D19 /* UserViewCell.xib */; };
+		8276A18A2A02616000F24D19 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276A1882A02616000F24D19 /* UserDetailViewController.swift */; };
+		8276A18B2A02616000F24D19 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8276A1892A02616000F24D19 /* UserDetailViewController.xib */; };
+		8276A18D2A02616C00F24D19 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276A18C2A02616C00F24D19 /* UserDetailViewModel.swift */; };
 		8289A87F2A016F770011DDA2 /* ProjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A87D2A016F770011DDA2 /* ProjectViewCell.swift */; };
 		8289A8802A016F770011DDA2 /* ProjectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8289A87E2A016F770011DDA2 /* ProjectViewCell.xib */; };
 		8289A8842A01E2180011DDA2 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A8822A01E2180011DDA2 /* ProjectDetailViewController.swift */; };
@@ -115,6 +118,9 @@
 		8276A17F2A02092700F24D19 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		8276A1822A0209E400F24D19 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		8276A1832A0209E400F24D19 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
+		8276A1882A02616000F24D19 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		8276A1892A02616000F24D19 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
+		8276A18C2A02616C00F24D19 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		8289A87D2A016F770011DDA2 /* ProjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewCell.swift; sourceTree = "<group>"; };
 		8289A87E2A016F770011DDA2 /* ProjectViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectViewCell.xib; sourceTree = "<group>"; };
 		8289A8822A01E2180011DDA2 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 				820AB7E129FFEC3000883112 /* AddProject */,
 				8289A8812A01E1D70011DDA2 /* ProjectDetail */,
 				8276A17A2A02090300F24D19 /* User */,
+				8276A1872A02614200F24D19 /* UserDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -365,6 +372,16 @@
 			path = UserViewCell;
 			sourceTree = "<group>";
 		};
+		8276A1872A02614200F24D19 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8276A1882A02616000F24D19 /* UserDetailViewController.swift */,
+				8276A18C2A02616C00F24D19 /* UserDetailViewModel.swift */,
+				8276A1892A02616000F24D19 /* UserDetailViewController.xib */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
 		8289A87C2A016D580011DDA2 /* ProjectViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +481,7 @@
 				820AB77E29FD273100883112 /* Assets.xcassets in Resources */,
 				820AB7A729FD40AE00883112 /* PostViewCell.xib in Resources */,
 				8276A1852A0209E400F24D19 /* UserViewCell.xib in Resources */,
+				8276A18B2A02616000F24D19 /* UserDetailViewController.xib in Resources */,
 				820AB7A129FD3B8B00883112 /* PostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,7 +563,9 @@
 				820AB7CF29FE1E4200883112 /* PostDetailViewController.swift in Sources */,
 				820AB7DD29FFEA9400883112 /* ProjectViewController.swift in Sources */,
 				820AB79D29FD2C8500883112 /* User.swift in Sources */,
+				8276A18A2A02616000F24D19 /* UserDetailViewController.swift in Sources */,
 				8289A87F2A016F770011DDA2 /* ProjectViewCell.swift in Sources */,
+				8276A18D2A02616C00F24D19 /* UserDetailViewModel.swift in Sources */,
 				820AB79529FD2ACE00883112 /* HuTiConstants.swift in Sources */,
 				820AB7E429FFEC5300883112 /* AddProjectViewController.swift in Sources */,
 				8276A1842A0209E400F24D19 /* UserViewCell.swift in Sources */,

@@ -15,6 +15,11 @@ class ProjectViewController: HuTiViewController {
     
     var viewModel = ProjectViewModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.mainTabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -83,11 +88,13 @@ class ProjectViewController: HuTiViewController {
     }
     
     private func infiniteScroll() {
-        projectTableView.addInfiniteScrolling { [weak self] in
-            guard let self = self else { return }
-            self.viewModel.page += 1
-            self.getListProject()
-            self.projectTableView.infiniteScrollingView.stopAnimating()
+        if viewModel.project.value.count >= CommonConstants.pageSize {
+            projectTableView.addInfiniteScrolling { [weak self] in
+                guard let self = self else { return }
+                self.viewModel.page += 1
+                self.getListProject()
+                self.projectTableView.infiniteScrollingView.stopAnimating()
+            }
         }
     }
 }

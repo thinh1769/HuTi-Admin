@@ -215,6 +215,7 @@ extension PostDetailViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: imageCollectionView.bounds.width / 2, height: imageCollectionView.bounds.height)
     }
 }
+
 extension PostDetailViewController {
     class func instance(postId: String) -> PostDetailViewController {
         let controller = PostDetailViewController(nibName: ClassNibName.PostDetailViewController, bundle: Bundle.main)

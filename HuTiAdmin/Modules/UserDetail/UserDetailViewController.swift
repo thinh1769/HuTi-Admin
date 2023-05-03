@@ -1,46 +1,54 @@
 //
-//  HomeViewController.swift
+//  UserDetailViewController.swift
 //  HuTiAdmin
 //
-//  Created by Nguyễn Thịnh on 29/04/2023.
+//  Created by Nguyễn Thịnh on 03/05/2023.
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
-class PostViewController: HuTiViewController {
+class UserDetailViewController: HuTiViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var postTableView: UITableView!
-    @IBOutlet weak var pendingView: UIView!
-    @IBOutlet weak var pendingLabel: UILabel!
-    @IBOutlet weak var approvedLabel: UILabel!
-    @IBOutlet weak var approvedView: UIView!
-    @IBOutlet weak var rejectedView: UIView!
-    @IBOutlet weak var rejectLabel: UILabel!
+    @IBOutlet weak var userInfoView: UIView!
+    @IBOutlet weak var blockButton: UIButton!
     
-    var viewModel = PostViewModel()
+    var viewModel = UserDetailViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mainTabBarController?.tabBar.isHidden = false
+        self.mainTabBarController?.tabBar.isHidden = true
+        if let user = viewModel.user,
+           let isActive = user.isActive {
+            if isActive {
+                blockButton.setTitle("Chặn", for: .normal)
+            } else {
+                blockButton.setTitle("Bỏ chặn", for: .normal)
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
     }
 
     private func setupUI() {
-        findPost()
         setupPostTableView()
-        setupBrowseView()
+        loadUserInfo()
+        getPostByUser()
+        
+        userInfoView.layer.masksToBounds = true
+        userInfoView.layer.borderColor = UIColor(named: ColorName.themeText)?.cgColor
+        userInfoView.layer.borderWidth = 1
     }
     
-    private func findPost() {
-        viewModel.findPost().subscribe { [weak self] posts in
+    private func getPostByUser() {
+        viewModel.getPostByUser().subscribe { [weak self] posts in
             guard let self = self else { return }
             if posts.count > 0 {
                 if self.viewModel.page == 1 {
@@ -57,8 +65,16 @@ class PostViewController: HuTiViewController {
         }.disposed(by: viewModel.bag)
     }
     
+    private func loadUserInfo() {
+        guard let user = viewModel.user else { return }
+        nameLabel.text = user.name
+        phoneLabel.text = user.phoneNumber
+        emailLabel.text = user.email ?? ""
+    }
+    
     private func setupPostTableView() {
         postTableView.rowHeight = 120
+        postTableView.separatorStyle = .none
         postTableView.register(PostViewCell.nib, forCellReuseIdentifier: PostViewCell.reusableIdentifier)
         
         viewModel.post.asObservable()
@@ -78,14 +94,36 @@ class PostViewController: HuTiViewController {
         postTableViewAddPullToRefresh()
         postTableViewInfiniteScroll()
     }
-
+    
+    @IBAction func didTapCallButton(_ sender: Any) {
+        if let phoneCallURL = URL(string: "tel://\(viewModel.user?.phoneNumber ?? "")") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
+    
+    @IBAction func didTapBlockButton(_ sender: UIButton) {
+        viewModel.blockUser().subscribe { [weak self] _ in
+            guard let self = self else { return }
+            self.navigationController?.popToRootViewController(animated: true)
+            self.showAlert(title: "Chặn tài khoản thành công")
+        }.disposed(by: viewModel.bag)
+    }
+    
+    @IBAction func didTapBackButton(_ sender: UIButton) {
+        backToPreviousView()
+    }
+    
     private func postTableViewAddPullToRefresh() {
         postTableView.addPullToRefresh { [weak self] in
             guard let self = self else { return }
             self.postTableView.backgroundView = nil
             self.viewModel.post.accept([])
             self.viewModel.page = 1
-            self.findPost()
+            self.getPostByUser()
             self.postTableView.pullToRefreshView.stopAnimating()
         }
     }
@@ -95,58 +133,17 @@ class PostViewController: HuTiViewController {
             postTableView.addInfiniteScrolling { [weak self] in
                 guard let self = self else { return }
                 self.viewModel.page += 1
-                self.findPost()
+                self.getPostByUser()
                 self.postTableView.infiniteScrollingView.stopAnimating()
             }
         }
     }
+}
 
-    private func setupBrowseView() {
-        pendingView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapPendingView)))
-        approvedView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapApprovedView)))
-        rejectedView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapRejectedView)))
-    }
-    
-    @IBAction func didTapSignOutButton(_ sender: UIButton) {
-        let vc = SignInViewController()
-        navigateTo(vc)
-    }
-    
-    @objc private func didTapPendingView() {
-        didSelectBrowseView(index: 0)
-        viewModel.page = 1
-        self.viewModel.findPostParams = ["browseStatus": 0]
-        findPost()
-    }
-    
-    @objc private func didTapApprovedView() {
-        didSelectBrowseView(index: 1)
-        viewModel.page = 1
-        self.viewModel.findPostParams = ["browseStatus": 1]
-        findPost()
-    }
-    
-    @objc private func didTapRejectedView() {
-        didSelectBrowseView(index: 2)
-        viewModel.page = 1
-        self.viewModel.findPostParams = ["browseStatus": 2]
-        findPost()
-    }
-    
-    private func didSelectBrowseView(index: Int) {
-        switch index {
-        case 0:
-            pendingView.backgroundColor = UIColor(named: ColorName.darkBackground)
-            approvedView.backgroundColor = .systemGray5
-            rejectedView.backgroundColor = .systemGray5
-        case 1:
-            pendingView.backgroundColor = .systemGray5
-            approvedView.backgroundColor = UIColor(named: ColorName.darkBackground)
-            rejectedView.backgroundColor = .systemGray5
-        default:
-            pendingView.backgroundColor = .systemGray5
-            approvedView.backgroundColor = .systemGray5
-            rejectedView.backgroundColor = UIColor(named: ColorName.darkBackground)
-        }
+extension UserDetailViewController {
+    class func instance(user: User) -> UserDetailViewController {
+        let controller = UserDetailViewController(nibName: ClassNibName.UserDetailViewController, bundle: Bundle.main)
+        controller.viewModel.user = user
+        return controller
     }
 }
