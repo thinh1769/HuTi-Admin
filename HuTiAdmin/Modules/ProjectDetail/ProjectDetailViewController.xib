@@ -343,6 +343,21 @@
                         <constraint firstAttribute="bottom" secondItem="yLB-Nd-aAC" secondAttribute="bottom" id="qGP-gx-BJn"/>
                     </constraints>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GA8-Ak-kwL">
+                    <rect key="frame" x="364" y="20" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Aam-cE-e0a"/>
+                        <constraint firstAttribute="height" constant="30" id="zBY-ZC-gcU"/>
+                    </constraints>
+                    <color key="tintColor" name="themeText"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="edit">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="16"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapEditProject:" destination="-1" eventType="touchUpInside" id="KTa-AX-8Zd"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="background"/>
@@ -352,7 +367,9 @@
                 <constraint firstItem="zm1-51-bKO" firstAttribute="leading" secondItem="ccH-Un-EKA" secondAttribute="trailing" constant="10" id="90s-bQ-7ge"/>
                 <constraint firstItem="Xz9-EL-yBp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="GEb-qm-iqI"/>
                 <constraint firstItem="hf1-e9-Nb6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GFU-zG-tjr"/>
+                <constraint firstItem="GA8-Ak-kwL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="IJh-Mu-Z4w"/>
                 <constraint firstItem="ccH-Un-EKA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Vx7-mV-GFE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GA8-Ak-kwL" secondAttribute="trailing" constant="20" id="YkB-v1-0BZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xz9-EL-yBp" secondAttribute="trailing" constant="10" id="cgW-oy-Hlu"/>
                 <constraint firstItem="Xz9-EL-yBp" firstAttribute="top" secondItem="ccH-Un-EKA" secondAttribute="bottom" constant="10" id="fgy-oB-nee"/>
                 <constraint firstAttribute="trailing" secondItem="hf1-e9-Nb6" secondAttribute="trailing" id="gQY-h5-kzm"/>
@@ -360,11 +377,12 @@
                 <constraint firstItem="zm1-51-bKO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="uLX-ZS-VvH"/>
                 <constraint firstItem="zm1-51-bKO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yEZ-D8-Cr9"/>
             </constraints>
-            <point key="canvasLocation" x="20" y="149"/>
+            <point key="canvasLocation" x="-546" y="36"/>
         </view>
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="edit" width="32" height="32"/>
         <image name="mappin" catalog="system" width="106" height="128"/>
         <namedColor name="background">
             <color red="0.98000001907348633" green="0.92900002002716064" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

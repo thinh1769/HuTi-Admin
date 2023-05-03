@@ -22,13 +22,13 @@ class ProjectViewController: HuTiViewController {
     
     private func setupUI() {
         setupTableView()
-        findProject(param: viewModel.findProjectParams)
+        getListProject()
         addPullToRefresh()
         infiniteScroll()
     }
     
-    private func findProject(param: [String: Any]) {
-        viewModel.findProject(param: param).subscribe { [weak self] projects in
+    private func getListProject() {
+        viewModel.getProject().subscribe { [weak self] projects in
             guard let self = self else { return }
             if projects.count > 0 {
                 if self.viewModel.page == 1 {
@@ -79,15 +79,14 @@ class ProjectViewController: HuTiViewController {
     private func refreshData() {
         viewModel.page = 1
         viewModel.project.accept([])
-        viewModel.findProjectParams = [String: Any]()
-        findProject(param: viewModel.findProjectParams)
+        getListProject()
     }
     
     private func infiniteScroll() {
         projectTableView.addInfiniteScrolling { [weak self] in
             guard let self = self else { return }
             self.viewModel.page += 1
-            self.findProject(param: self.viewModel.findProjectParams)
+            self.getListProject()
             self.projectTableView.infiniteScrollingView.stopAnimating()
         }
     }

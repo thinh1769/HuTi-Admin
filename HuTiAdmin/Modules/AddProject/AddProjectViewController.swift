@@ -76,26 +76,60 @@ class AddProjectViewController: HuTiViewController {
             }
         }.disposed(by: viewModel.bag)
         
-//        if viewModel.isEdit {
-//            loadPostDetailForEdit()
-//            hidePostButton.isHidden = false
-//        }
+        if viewModel.isEdit {
+            loadProjectForEdit()
+            submitButton.setTitle("Lưu", for: .normal)
+        }
+    }
+    
+    private func loadProjectForEdit() {
+        guard let project = viewModel.project else { return }
+        typeTextField.text = project.projectType
+        provinceTextField.text = project.provinceName
+        districtTextField.text = project.districtName
+        wardTextField.text = project.wardName
+        moveCameraToLocation(project.lat, project.long)
+        nameTextField.text = project.name
+        descriptionTextView.text = project.description
+        acreageTextField.text = "\(project.acreage)"
+        minPriceTextField.text = "\(project.minPrice)"
+        maxPriceTextField.text = "\(project.maxPrice)"
+        statusTextField.text = project.status
+        legalTextField.text = project.legal
+        buildingTextField.text = "\(project.building ?? 0)"
+        apartmentTextField.text = "\(project.apartment ?? 0)"
+        investorTextField.text = project.investor
+        viewModel.imagesName.accept(project.images)
+        viewModel.imagesNameList = project.images
     }
 
     private func setupImageCollectionView() {
         imageCollectionView.register(ImageCell.nib, forCellWithReuseIdentifier: ImageCell.reusableIdentifier)
         
-        viewModel.selectedImage.asObservable()
-            .bind(to: imageCollectionView.rx.items(cellIdentifier: ImageCell.reusableIdentifier, cellType: ImageCell.self)) { [weak self] (index, element, cell) in
-                guard let self = self else { return }
-                cell.config(image: element)
-                
-                cell.onTapRemove = {
-                    self.viewModel.imagesList.remove(at: index)
-                    self.viewModel.imagesNameList.remove(at: index)
-                    self.viewModel.setupDataImageCollectionView()
-                }
-            }.disposed(by: viewModel.bag)
+        if !viewModel.isEdit {
+            viewModel.selectedImage.asObservable()
+                .bind(to: imageCollectionView.rx.items(cellIdentifier: ImageCell.reusableIdentifier, cellType: ImageCell.self)) { [weak self] (index, element, cell) in
+                    guard let self = self else { return }
+                    cell.config(image: element)
+                    
+                    cell.onTapRemove = {
+                        self.viewModel.imagesList.remove(at: index)
+                        self.viewModel.imagesNameList.remove(at: index)
+                        self.viewModel.setupDataImageCollectionView()
+                    }
+                }.disposed(by: viewModel.bag)
+        } else {
+            viewModel.imagesName.asObservable()
+                .bind(to: imageCollectionView.rx.items(cellIdentifier: ImageCell.reusableIdentifier, cellType: ImageCell.self)) { [weak self] (index, element, cell) in
+                    guard let self = self else { return }
+                    cell.configImage(imageName: element, isEnableRemove: true)
+
+                    cell.onTapRemove = {
+                        self.viewModel.imagesNameList.remove(at: index)
+                        self.viewModel.imagesName.accept(self.viewModel.imagesNameList)
+                    }
+                }.disposed(by: viewModel.bag)
+        }
         
         imageCollectionView.rx.setDelegate(self).disposed(by: viewModel.bag)
     }
@@ -132,27 +166,52 @@ class AddProjectViewController: HuTiViewController {
     }
     
     @IBAction func didTapSubmitButton(_ sender: UIButton) {
-        showLoading()
-        viewModel.uploadImages {
-            DispatchQueue.main.async {
-                self.viewModel.addNewProject(  long: self.mapView.centerCoordinate.longitude,
-                                               lat: self.mapView.centerCoordinate.latitude,
-                                               name: self.nameTextField.text ?? "",
-                                               description: self.descriptionTextView.text ?? "",
-                                               acreage: self.acreageTextField.text ?? "",
-                                               minPrice: Double(self.minPriceTextField.text ?? "") ?? 0,
-                                               maxPrice: Double(self.maxPriceTextField.text ?? "") ?? 0,
-                                               legal: self.legalTextField.text ?? "",
-                                               building: Int(self.buildingTextField.text ?? "") ?? 0,
-                                               apartment: Int(self.apartmentTextField.text ?? "") ?? 0,
-                                               investor: self.investorTextField.text ?? "")
-                .subscribe { [weak self] _ in
-                    guard let self = self else { return }
-                    self.hideLoading()
-                    self.backToPreviousView()
-                    self.showAlert(title: "Thêm dự án thành công")
-                }.disposed(by: self.viewModel.bag)
+        if !viewModel.isEdit {
+            showLoading()
+            viewModel.uploadImages {
+                DispatchQueue.main.async {
+                    self.viewModel.addNewProject(  long: self.mapView.centerCoordinate.longitude,
+                                                   lat: self.mapView.centerCoordinate.latitude,
+                                                   name: self.nameTextField.text ?? "",
+                                                   description: self.descriptionTextView.text ?? "",
+                                                   acreage: self.acreageTextField.text ?? "",
+                                                   minPrice: Double(self.minPriceTextField.text ?? "") ?? 0,
+                                                   maxPrice: Double(self.maxPriceTextField.text ?? "") ?? 0,
+                                                   legal: self.legalTextField.text ?? "",
+                                                   building: Int(self.buildingTextField.text ?? "") ?? 0,
+                                                   apartment: Int(self.apartmentTextField.text ?? "") ?? 0,
+                                                   investor: self.investorTextField.text ?? "")
+                    .subscribe { [weak self] _ in
+                        guard let self = self else { return }
+                        self.hideLoading()
+                        self.backToPreviousView()
+                        self.showAlert(title: "Thêm dự án thành công")
+                    }.disposed(by: self.viewModel.bag)
+                }
             }
+        } else if viewModel.checkUpdateProject(typeTextField.text ?? "",
+                                               provinceTextField.text ?? "",
+                                               districtTextField.text ?? "",
+                                               wardTextField.text ?? "",
+                                               mapView.centerCoordinate.latitude,
+                                               mapView.centerCoordinate.longitude,
+                                               nameTextField.text ?? "",
+                                               descriptionTextView.text,
+                                               acreageTextField.text ?? "",
+                                               minPriceTextField.text ?? "",
+                                               maxPriceTextField.text ?? "",
+                                               legalTextField.text ?? "",
+                                               statusTextField.text ?? "",
+                                               buildingTextField.text ?? "",
+                                               apartmentTextField.text ?? "",
+                                               investorTextField.text ?? "") {
+            viewModel.updateProject().subscribe { [weak self] _ in
+                guard let self = self else { return }
+                self.navigationController?.popToRootViewController(animated: true)
+                self.showAlert(title: "Chỉnh sửa thông tin dự án thành công")
+            }.disposed(by: viewModel.bag)
+        } else {
+            self.showAlert(title: "Bạn chưa chỉnh sửa thông tin dự án")
         }
     }
     
@@ -383,5 +442,14 @@ extension AddProjectViewController {
     
     @objc private func cancelPicker() {
         view.window?.endEditing(true)
+    }
+}
+
+extension AddProjectViewController {
+    class func instance(isEdit: Bool, project: Project?) -> AddProjectViewController {
+        let controller = AddProjectViewController(nibName: ClassNibName.AddProjectViewController, bundle: Bundle.main)
+        controller.viewModel.isEdit = isEdit
+        controller.viewModel.project = project
+        return controller
     }
 }

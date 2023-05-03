@@ -32,9 +32,9 @@ class AddProjectViewModel {
     var imagesNameList = [String]()
     var searchProjectParams = [String: Any]()
     var isEdit = false
-    var post: PostDetail?
+    var project: Project?
     var projectDetail: Project?
-    var updatePostParams = [String: Any]()
+    var updateProjectParams = [String: Any]()
     var newProjectParams = [String: Any]()
 
     func setupDataImageCollectionView() {
@@ -120,7 +120,8 @@ class AddProjectViewModel {
         newProjectParams.updateValue(name, forKey: "name")
         newProjectParams.updateValue(description, forKey: "description")
         newProjectParams.updateValue(acreage, forKey: "acreage")
-        newProjectParams.updateValue("\(minPrice) - \(maxPrice) triệu/m2", forKey: "price")
+        newProjectParams.updateValue(minPrice, forKey: "minPrice")
+        newProjectParams.updateValue(maxPrice, forKey: "maxPrice")
         newProjectParams.updateValue(getPriceRange(price: minPrice), forKey: "priceRange")
         newProjectParams.updateValue(imagesNameList, forKey: "images")
         newProjectParams.updateValue(legal, forKey: "legal")
@@ -179,200 +180,125 @@ class AddProjectViewModel {
         return sortedWard
     }
     
-//    func checkUpdatePost(_ realEstateType: String,
-//                         _ province: String,
-//                         _ district: String,
-//                         _ ward: String,
-//                         _ address: String,
-//                         _ project: String,
-//                         _ lat: Double,
-//                         _ long: Double,
-//                         _ title: String,
-//                         _ description: String,
-//                         _ acreage: String,
-//                         _ price: String,
-//                         _ legal: String,
-//                         _ funiture: String,
-//                         _ bedroom: String,
-//                         _ bathroom: String,
-//                         _ floor: String,
-//                         _ houseDirection: String,
-//                         _ balconyDirection: String,
-//                         _ wayIn: String,
-//                         _ facade: String,
-//                         _ contactName: String,
-//                         _ contactNumber: String) -> Bool {
-//        guard let post = self.post else { return false }
-//        var isUpdated = false
-//
-//        /// Required Field
-//        if isSelectedSell != post.isSell {
-//            isUpdated = true
-//            updatePostParams.updateValue(isSelectedSell, forKey: "isSell")
-//        }
-//
-//        if realEstateType != post.realEstateType {
-//            isUpdated = true
-//            updatePostParams.updateValue(realEstateType, forKey: "realEstateType")
-//        }
-//
-//        if province != post.provinceName {
-//            isUpdated = true
-//            updatePostParams.updateValue(self.province.value[selectedProvince].name, forKey: "provinceName")
-//            updatePostParams.updateValue(self.province.value[selectedProvince].id, forKey: "provinceCode")
-//        }
-//
-//        if district != post.districtName {
-//            isUpdated = true
-//            updatePostParams.updateValue(district, forKey: "districtName")
-//            updatePostParams.updateValue(self.district.value[selectedDistrict].id, forKey: "districtCode")
-//        }
-//
-//        if ward != post.wardName {
-//            isUpdated = true
-//            updatePostParams.updateValue(ward, forKey: "wardName")
-//            updatePostParams.updateValue(self.ward.value[selectedWard].id, forKey: "wardCode")
-//        }
-//
-//        if address != post.address {
-//            isUpdated = true
-//            updatePostParams.updateValue(address, forKey: "address")
-//        }
-//
-//        if lat != post.lat {
-//            isUpdated = true
-//            updatePostParams.updateValue(lat, forKey: "lat")
-//        }
-//
-//        if long != post.long {
-//            isUpdated = true
-//            updatePostParams.updateValue(long, forKey: "long")
-//        }
-//
-//        if title != post.title {
-//            isUpdated = true
-//            updatePostParams.updateValue(title, forKey: "title")
-//        }
-//
-//        if description != post.description {
-//            isUpdated = true
-//            updatePostParams.updateValue(description, forKey: "description")
-//        }
-//
-//
-//        if let parseAcreage = Double(acreage),
-//           parseAcreage != post.acreage {
-//            isUpdated = true
-//            updatePostParams.updateValue(parseAcreage, forKey: "acreage")
-//            updatePostParams.updateValue(getAcreageRange(acreage: parseAcreage), forKey: "acreageRange")
-//        }
-//
-//        if let parsePrice = Int(price),
-//           parsePrice != post.price {
-//            isUpdated = true
-//            updatePostParams.updateValue(parsePrice, forKey: "price")
-//            updatePostParams.updateValue(getPriceRange(price: parsePrice), forKey: "priceRange")
-//        }
-//
-//        if legal != post.legal {
-//            isUpdated = true
-//            updatePostParams.updateValue(self.legal.value[selectedLegal], forKey: "legal")
-//        }
-//
-//        if contactName != post.contactName {
-//            isUpdated = true
-//            updatePostParams.updateValue(contactName, forKey: "contactName")
-//        }
-//
-//        if contactNumber != post.contactPhoneNumber {
-//            isUpdated = true
-//            updatePostParams.updateValue(contactNumber, forKey: "contactNumber")
-//        }
-//
-//        if imagesNameList.sorted() != post.images.sorted() {
-//            isUpdated = true
-//            updatePostParams.updateValue(imagesNameList, forKey: "images")
-//        }
-//
-//        /// Non required Field
-//        if selectedProject > -1 {
-//            isUpdated = true
-//            updatePostParams.updateValue(self.project.value[selectedProject].name, forKey: "projectName")
-//            updatePostParams.updateValue(self.project.value[selectedProject].id, forKey: "project")
-//        }
-//
-//        if selectedFuniture > -1 {
-//            isUpdated = true
-//            updatePostParams.updateValue(self.funiture.value[selectedFuniture], forKey: "funiture")
-//        }
-//
-//        if let bedroom = Int(bedroom) {
-//            if let postBedroom = post.bedroom {
-//                if bedroom != postBedroom {
-//                    isUpdated = true
-//                    updatePostParams.updateValue(bedroom, forKey: "bedroom")
-//                    updatePostParams.updateValue(getBedroomRange(bedroom: bedroom), forKey: "bedroomRange")
-//                }
-//            } else if bedroom > 0 {
-//                isUpdated = true
-//                updatePostParams.updateValue(bedroom, forKey: "bedroom")
-//                updatePostParams.updateValue(getBedroomRange(bedroom: bedroom), forKey: "bedroomRange")
-//            }
-//        }
-//
-//        if let bathroom = Int(bathroom) {
-//            if let postBathroom = post.bathroom {
-//                if bathroom != postBathroom {
-//                    isUpdated = true
-//                    updatePostParams.updateValue(bathroom, forKey: "bathroom")
-//                }
-//            } else if bathroom > 0 {
-//                isUpdated = true
-//                updatePostParams.updateValue(bathroom, forKey: "bathroom")
-//            }
-//        }
-//
-//        if let floor = Int(floor) {
-//            if let postFloor = post.floor {
-//                if floor != postFloor {
-//                    isUpdated = true
-//                    updatePostParams.updateValue(floor, forKey: "floor")
-//                }
-//            } else if floor > 0 {
-//                isUpdated = true
-//                updatePostParams.updateValue(floor, forKey: "floor")
-//            }
-//        }
-//
-//        if selectedHouseDirection > -1 {
-//            isUpdated = true
-//            updatePostParams.updateValue(self.houseDirection.value[selectedHouseDirection], forKey: "houseDirection")
-//        }
-//
-//        if selectedBalconyDirection > -1 {
-//            isUpdated = true
-//            updatePostParams.updateValue(self.balconyDirection.value[selectedBalconyDirection], forKey: "balconyDirection")
-//        }
-//
-//        if let postWayIn = post.wayIn,
-//           let parseWayIn = Double(wayIn),
-//           parseWayIn != postWayIn {
-//            isUpdated = true
-//            updatePostParams.updateValue(parseWayIn, forKey: "wayIn")
-//        }
-//
-//        if let postFacade = post.facade,
-//           let parseFacade = Double(facade),
-//           parseFacade != postFacade {
-//            isUpdated = true
-//            updatePostParams.updateValue(parseFacade, forKey: "facade")
-//        }
-//        return isUpdated
-//    }
+    func checkUpdateProject(_ type: String,
+                            _ province: String,
+                            _ district: String,
+                            _ ward: String,
+                            _ lat: Double,
+                            _ long: Double,
+                            _ name: String,
+                            _ description: String,
+                            _ acreage: String,
+                            _ minPrice: String,
+                            _ maxPrice: String,
+                            _ legal: String,
+                            _ status: String,
+                            _ building: String,
+                            _ apartment: String,
+                            _ invertor: String) -> Bool {
+        guard let project = self.project else { return false }
+        var isUpdated = false
+
+        /// Required Field
+        if type != project.projectType {
+            isUpdated = true
+            updateProjectParams.updateValue(type, forKey: "projectType")
+        }
+
+        if province != project.provinceName {
+            isUpdated = true
+            updateProjectParams.updateValue(self.province.value[selectedProvince].name, forKey: "provinceName")
+            updateProjectParams.updateValue(self.province.value[selectedProvince].id, forKey: "provinceCode")
+        }
+
+        if district != project.districtName {
+            isUpdated = true
+            updateProjectParams.updateValue(district, forKey: "districtName")
+            updateProjectParams.updateValue(self.district.value[selectedDistrict].id, forKey: "districtCode")
+        }
+
+        if ward != project.wardName {
+            isUpdated = true
+            updateProjectParams.updateValue(ward, forKey: "wardName")
+            updateProjectParams.updateValue(self.ward.value[selectedWard].id, forKey: "wardCode")
+        }
+
+        if lat != project.lat {
+            isUpdated = true
+            updateProjectParams.updateValue(lat, forKey: "lat")
+        }
+
+        if long != project.long {
+            isUpdated = true
+            updateProjectParams.updateValue(long, forKey: "long")
+        }
+
+        if name != project.name {
+            isUpdated = true
+            updateProjectParams.updateValue(name, forKey: "name")
+        }
+
+        if description != project.description {
+            isUpdated = true
+            updateProjectParams.updateValue(description, forKey: "description")
+        }
+
+        if acreage != project.acreage {
+            isUpdated = true
+            updateProjectParams.updateValue(acreage, forKey: "acreage")
+        }
+
+        if let parseMinPrice = Double(minPrice),
+           parseMinPrice != project.minPrice {
+            isUpdated = true
+            updateProjectParams.updateValue(parseMinPrice, forKey: "minPrice")
+            updateProjectParams.updateValue(getPriceRange(price: parseMinPrice), forKey: "priceRange")
+        }
+        
+        if let parseMaxPrice = Double(maxPrice),
+           parseMaxPrice != project.maxPrice {
+            isUpdated = true
+            updateProjectParams.updateValue(parseMaxPrice, forKey: "maxPrice")
+        }
+
+        if legal != project.legal {
+            isUpdated = true
+            updateProjectParams.updateValue(legal, forKey: "legal")
+        }
+        
+        if status != project.status {
+            isUpdated = true
+            updateProjectParams.updateValue(status, forKey: "status")
+        }
+
+        if imagesNameList.sorted() != project.images.sorted() {
+            isUpdated = true
+            updateProjectParams.updateValue(imagesNameList, forKey: "images")
+        }
+
+        if let parseBuilding = Int(building),
+           parseBuilding != project.building {
+            isUpdated = true
+            updateProjectParams.updateValue(parseBuilding, forKey: "building")
+        }
+        
+        if let parseApartment = Int(apartment),
+           parseApartment != project.apartment {
+            isUpdated = true
+            updateProjectParams.updateValue(parseApartment, forKey: "apartment")
+        }
+        
+        if invertor != project.investor {
+            isUpdated = true
+            updateProjectParams.updateValue(invertor, forKey: "investor")
+        }
+        
+        return isUpdated
+    }
     
-//    func updatePost() -> Observable<Post> {
-//        return postService.updatePost(postId: post?.id ?? "", param: updatePostParams)
-//    }
+    func updateProject() -> Observable<Project> {
+        return projectService.updateProject(projectId: project?.id ?? "", param: updateProjectParams)
+    }
     
     func uploadImages(completion: @escaping () -> Void) {
         let dispatchGroup = DispatchGroup()

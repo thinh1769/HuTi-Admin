@@ -73,11 +73,7 @@ class ProjectDetailViewController: HuTiViewController {
         configStatusView(project.status)
         projectTypeLabel.text = project.projectType
         acreageLabel.text = "\(project.acreage)"
-        if let price = project.price {
-            priceLabel.text = price
-        } else {
-            priceView.isHidden = true
-        }
+        priceLabel.text = project.getPrice()
         
         if let building = project.building {
             buildingLabel.text = "\(building)"
@@ -111,6 +107,12 @@ class ProjectDetailViewController: HuTiViewController {
             }.disposed(by: viewModel.bag)
         
         imageCollectionView.rx.setDelegate(self).disposed(by: viewModel.bag)
+    }
+    
+    
+    @IBAction func didTapEditProject(_ sender: UIButton) {
+        let vc = AddProjectViewController.instance(isEdit: true, project: viewModel.project)
+        navigateTo(vc)
     }
     
     private func configStatusView(_ status: String) {

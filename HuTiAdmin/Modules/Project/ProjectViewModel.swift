@@ -13,10 +13,9 @@ class ProjectViewModel {
     let bag = DisposeBag()
     let projectService = ProjectService()
     let project = BehaviorRelay<[Project]>(value: [])
-    var findProjectParams = [String: Any]()
     var page = 1
     
-    func findProject(param: [String: Any]) -> Observable<[Project]> {
-        return projectService.findProject(params: param, page: page)
+    func getProject() -> Observable<[Project]> {
+        return projectService.getListProjects(page: page)
     }
 }

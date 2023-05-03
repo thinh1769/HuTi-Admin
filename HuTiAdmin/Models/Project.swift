@@ -16,7 +16,8 @@ struct Project: Codable {
     var wardCode: String
     var wardName: String
     var name: String
-    var price: String?
+    var minPrice: Double
+    var maxPrice: Double
     var priceRange: String?
     var status: String
     var openForSaleTime: String?
@@ -34,5 +35,9 @@ struct Project: Codable {
     
     func getFullAddress() -> String {
         return "\(wardName), \(districtName), \(provinceName)"
+    }
+    
+    func getPrice() -> String {
+        return "\(minPrice) - \(maxPrice) triệu/m2"
     }
 }

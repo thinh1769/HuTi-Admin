@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
         let projectTab = ProjectViewController()
         let projectNaVC = UINavigationController(rootViewController: projectTab)
         
-        let userTab = PostViewController()
+        let userTab = UserViewController()
         let userNaVC = UINavigationController(rootViewController: userTab)
         
         postTab.title = "Tin đăng"
