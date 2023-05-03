@@ -36,6 +36,7 @@ enum APIConstants: String {
     case resetPassword = "user/reset-password"
     case confirmOTP = "user/confirm-otp"
     case updateInfo = "user/update-info"
+    case getAllUser = "user/"
     case getAllProvinces = "province"
     case getDistrictsByProvinceId = "district/p"
     case getWardsByDistrictId = "ward/d"
@@ -70,6 +71,8 @@ enum APIConstants: String {
             return .post
         case .updateInfo:
             return .put
+        case .getAllUser:
+            return .get
         case .getAllProvinces:
             return .get
         case .getDistrictsByProvinceId:

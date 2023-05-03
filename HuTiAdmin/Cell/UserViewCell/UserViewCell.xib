@@ -44,17 +44,31 @@
                                     <constraint firstAttribute="height" constant="25" id="xDV-Dg-oNg"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qn4-Hw-Cl7">
+                                <rect key="frame" x="70" y="36" width="219" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="UCc-S4-Skf" secondAttribute="bottom" constant="5" id="0n8-B5-ryc"/>
+                            <constraint firstItem="qn4-Hw-Cl7" firstAttribute="top" secondItem="1V2-b0-lIL" secondAttribute="bottom" constant="5" id="CBg-Yh-FQY"/>
+                            <constraint firstItem="qn4-Hw-Cl7" firstAttribute="leading" secondItem="IGJ-DU-gLZ" secondAttribute="trailing" constant="10" id="Hgh-te-kIl"/>
                             <constraint firstItem="IGJ-DU-gLZ" firstAttribute="centerY" secondItem="TdG-1Y-qmj" secondAttribute="centerY" id="I3I-J6-paf"/>
                             <constraint firstItem="1V2-b0-lIL" firstAttribute="leading" secondItem="IGJ-DU-gLZ" secondAttribute="trailing" constant="10" id="O1d-V8-0O1"/>
                             <constraint firstItem="1V2-b0-lIL" firstAttribute="top" secondItem="TdG-1Y-qmj" secondAttribute="top" constant="10" id="T0d-UZ-avx"/>
                             <constraint firstAttribute="trailing" secondItem="UCc-S4-Skf" secondAttribute="trailing" constant="5" id="UxB-UT-Qo6"/>
                             <constraint firstAttribute="trailing" secondItem="1V2-b0-lIL" secondAttribute="trailing" constant="10" id="cIE-YB-qZa"/>
                             <constraint firstItem="IGJ-DU-gLZ" firstAttribute="leading" secondItem="TdG-1Y-qmj" secondAttribute="leading" constant="10" id="hRN-gw-l53"/>
+                            <constraint firstItem="UCc-S4-Skf" firstAttribute="leading" secondItem="qn4-Hw-Cl7" secondAttribute="trailing" constant="10" id="m85-aO-f8x"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <color key="backgroundColor" name="background"/>
@@ -69,6 +83,7 @@
             <connections>
                 <outlet property="isInactiveImage" destination="UCc-S4-Skf" id="uUj-JD-DiC"/>
                 <outlet property="nameLabel" destination="1V2-b0-lIL" id="X9m-AE-w6e"/>
+                <outlet property="phoneLabel" destination="qn4-Hw-Cl7" id="9eA-PT-njT"/>
             </connections>
             <point key="canvasLocation" x="193" y="-51"/>
         </tableViewCell>
@@ -81,6 +96,9 @@
         </namedColor>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="gray">
+            <color red="0.66299998760223389" green="0.65499997138977051" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="themeText">
             <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

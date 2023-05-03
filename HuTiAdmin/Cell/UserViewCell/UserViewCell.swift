@@ -10,16 +10,40 @@ import UIKit
 class UserViewCell: UITableViewCell {
     @IBOutlet weak var isInactiveImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
+    static var reusableIdentifier: String {
+        return String(describing: self)
+    }
+    
+    static var nib: UINib {
+        return UINib(nibName: String(describing: self), bundle: nil)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupUI()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    private func setupUI() {
+        self.selectionStyle = .none
+        isInactiveImage.isHidden = true
+    }
+    
+    func config(user: User) {
+        nameLabel.text = user.name
+        phoneLabel.text = user.phoneNumber
+        if let isActive = user.isActive {
+            if isActive {
+                isInactiveImage.isHidden = true
+            } else {
+                isInactiveImage.isHidden = false
+            }
+        }
     }
     
 }

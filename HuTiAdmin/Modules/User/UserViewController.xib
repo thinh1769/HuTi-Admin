@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserViewController" customModule="HuTiAdmin" customModuleProvider="target">
             <connections>
+                <outlet property="userTableView" destination="1MV-bC-TOo" id="f2x-nI-4YX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,7 +41,7 @@
                 <constraint firstItem="1XU-kB-FYP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lmJ-Ma-au1"/>
                 <constraint firstItem="1MV-bC-TOo" firstAttribute="top" secondItem="1XU-kB-FYP" secondAttribute="bottom" constant="10" id="v62-fe-2bC"/>
             </constraints>
-            <point key="canvasLocation" x="119" y="188"/>
+            <point key="canvasLocation" x="-139" y="156"/>
         </view>
     </objects>
     <resources>

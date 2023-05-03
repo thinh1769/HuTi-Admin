@@ -18,5 +18,6 @@ struct User: Codable {
     var identityCardNumber: String?
     var likePosts: [String]?
     var isAdmin: Bool?
+    var isActive: Bool?
     var token: String?
 }
