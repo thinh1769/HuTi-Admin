@@ -84,13 +84,13 @@ class UserViewController: HuTiViewController {
     }
     
     private func infiniteScroll() {
-        if viewModel.user.value.count >= CommonConstants.pageSize {
-            userTableView.addInfiniteScrolling { [weak self] in
-                guard let self = self else { return }
+        userTableView.addInfiniteScrolling { [weak self] in
+            guard let self = self else { return }
+            if self.viewModel.user.value.count >= CommonConstants.pageSize {
                 self.viewModel.page += 1
                 self.getListUser()
-                self.userTableView.infiniteScrollingView.stopAnimating()
             }
+            self.userTableView.infiniteScrollingView.stopAnimating()
         }
     }
 }

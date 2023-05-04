@@ -91,13 +91,13 @@ class PostViewController: HuTiViewController {
     }
     
     private func postTableViewInfiniteScroll() {
-        if viewModel.post.value.count >= CommonConstants.pageSize {
-            postTableView.addInfiniteScrolling { [weak self] in
-                guard let self = self else { return }
+        postTableView.addInfiniteScrolling { [weak self] in
+            guard let self = self else { return }
+            if self.viewModel.post.value.count >= CommonConstants.pageSize {
                 self.viewModel.page += 1
                 self.findPost()
-                self.postTableView.infiniteScrollingView.stopAnimating()
             }
+            self.postTableView.infiniteScrollingView.stopAnimating()
         }
     }
 

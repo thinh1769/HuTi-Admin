@@ -28,7 +28,7 @@ class PostService: BaseService {
     }
     
     func getPostByUserId(page: Int, userId: String) -> Observable<[Post]> {
-        return request(api: "\(APIConstants.getPostByUserId.rawValue)\(userId)?page=\(page)", method: .get)
+        return request(api: "\(APIConstants.getPostByUserForAdmin.rawValue)\(userId)?page=\(page)", method: .get)
     }
     
     func getFavoritePost(page: Int) -> Observable<[Post]> {

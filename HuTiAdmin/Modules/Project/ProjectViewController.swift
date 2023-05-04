@@ -88,13 +88,13 @@ class ProjectViewController: HuTiViewController {
     }
     
     private func infiniteScroll() {
-        if viewModel.project.value.count >= CommonConstants.pageSize {
-            projectTableView.addInfiniteScrolling { [weak self] in
-                guard let self = self else { return }
+        projectTableView.addInfiniteScrolling { [weak self] in
+            guard let self = self else { return }
+            if self.viewModel.project.value.count >= CommonConstants.pageSize {
                 self.viewModel.page += 1
                 self.getListProject()
-                self.projectTableView.infiniteScrollingView.stopAnimating()
             }
+            self.projectTableView.infiniteScrollingView.stopAnimating()
         }
     }
 }
