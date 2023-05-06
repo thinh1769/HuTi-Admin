@@ -81,7 +81,7 @@ class UserDetailViewController: HuTiViewController {
         
         viewModel.post.asObservable()
             .bind(to: postTableView.rx.items(cellIdentifier: PostViewCell.reusableIdentifier, cellType: PostViewCell.self)) { (index, element, cell) in
-                cell.config(post: element)
+                cell.config(post: element, isShowBrowseStatus: true)
 
             }.disposed(by: viewModel.bag)
         

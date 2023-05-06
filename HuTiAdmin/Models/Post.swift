@@ -19,6 +19,7 @@ struct Post: Codable {
     var districtName: String
     var wardCode: String
     var wardName: String
+    var browseStatus: Int?
     var lat: Double
     var long: Double
     var userId: String

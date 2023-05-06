@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,10 +43,44 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyg-il-SOH" userLabel="addressLabel">
-                                        <rect key="frame" x="0.0" y="45" width="418" height="41"/>
+                                        <rect key="frame" x="0.0" y="45" width="418" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ge0-1W-Pia">
+                                        <rect key="frame" x="0.0" y="61" width="418" height="25"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-dR-Hux">
+                                                <rect key="frame" x="343" y="5" width="70" height="20"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã duyệt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-nU-nMh">
+                                                        <rect key="frame" x="9.6666666666666856" y="3.0000000000000009" width="51" height="14.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" name="greenStatusText"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="greenStatusBackground"/>
+                                                <constraints>
+                                                    <constraint firstItem="IGn-nU-nMh" firstAttribute="centerX" secondItem="MEt-dR-Hux" secondAttribute="centerX" id="3q6-KC-yYE"/>
+                                                    <constraint firstAttribute="height" constant="20" id="CBa-nV-lEe"/>
+                                                    <constraint firstAttribute="width" constant="70" id="XCW-gY-NhP"/>
+                                                    <constraint firstItem="IGn-nU-nMh" firstAttribute="centerY" secondItem="MEt-dR-Hux" secondAttribute="centerY" id="a1J-eb-dli"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="BxX-Xq-1EU"/>
+                                            <constraint firstAttribute="bottom" secondItem="MEt-dR-Hux" secondAttribute="bottom" id="nmt-FC-lk5"/>
+                                            <constraint firstAttribute="trailing" secondItem="MEt-dR-Hux" secondAttribute="trailing" constant="5" id="t6F-wS-XFE"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -74,18 +109,30 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addressLabel" destination="Nyg-il-SOH" id="oXB-jG-Eu9"/>
+                <outlet property="bottomBrowseView" destination="ge0-1W-Pia" id="fqw-QW-fK9"/>
+                <outlet property="browseStatusLabel" destination="IGn-nU-nMh" id="9Vg-qg-6HO"/>
+                <outlet property="browseStatusView" destination="MEt-dR-Hux" id="MCg-rh-el1"/>
                 <outlet property="priceLabel" destination="XxF-fI-A0f" id="Q6S-ja-ohI"/>
                 <outlet property="titleLabel" destination="h7m-GM-WW7" id="6P5-Yw-9Mg"/>
             </connections>
-            <point key="canvasLocation" x="243" y="-37"/>
+            <point key="canvasLocation" x="-93" y="-73"/>
         </tableViewCell>
     </objects>
     <resources>
         <namedColor name="background">
             <color red="0.98000001907348633" green="0.92900002002716064" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="greenStatusBackground">
+            <color red="0.9100000262260437" green="1" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="greenStatusText">
+            <color red="0.0" green="0.63700002431869507" blue="0.36899998784065247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="themeText">
             <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
