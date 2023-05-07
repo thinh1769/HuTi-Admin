@@ -12,6 +12,7 @@ import RxCocoa
 class SignInViewController: HuTiViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
+    @IBOutlet weak var changeSecureTextButton: UIButton!
     
     var viewModel = SignInViewModel()
     
@@ -50,5 +51,16 @@ class SignInViewController: HuTiViewController {
             } onCompleted: {
                 self.hideLoading()
             }.disposed(by: viewModel.bag)
+    }
+    
+    
+    @IBAction func didTapChangeSecurePassTextFieldButton(_ sender: UIButton) {
+        if passTextField.isSecureTextEntry {
+            passTextField.isSecureTextEntry = false
+            changeSecureTextButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        } else {
+            passTextField.isSecureTextEntry = true
+            changeSecureTextButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        }
     }
 }

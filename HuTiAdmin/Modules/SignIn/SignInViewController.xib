@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="HuTiAdmin" customModuleProvider="target">
             <connections>
+                <outlet property="changeSecureTextButton" destination="hlg-Ib-Tf5" id="MJG-tC-AkW"/>
                 <outlet property="emailTextField" destination="s9p-cE-G7e" id="zx6-gR-ulD"/>
                 <outlet property="passTextField" destination="0yU-XL-H4s" id="5xz-A3-1FR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -46,6 +47,9 @@
                             <color key="tintColor" name="themeText"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="eye" catalog="system"/>
+                            <connections>
+                                <action selector="didTapChangeSecurePassTextFieldButton:" destination="-1" eventType="touchUpInside" id="VT1-wn-0x8"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,7 +144,7 @@
                 <constraint firstItem="ezw-yL-xVY" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="roM-yW-aoL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fwc-LG-wg4" secondAttribute="trailing" constant="20" id="uB5-Ef-33w"/>
             </constraints>
-            <point key="canvasLocation" x="-230" y="-37"/>
+            <point key="canvasLocation" x="164" y="-83"/>
         </view>
     </objects>
     <resources>
