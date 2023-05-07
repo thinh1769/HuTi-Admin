@@ -10,7 +10,7 @@ import UIKit
 class UserViewCell: UITableViewCell {
     @IBOutlet weak var isInactiveImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     static var reusableIdentifier: String {
         return String(describing: self)
@@ -36,7 +36,7 @@ class UserViewCell: UITableViewCell {
     
     func config(user: User) {
         nameLabel.text = user.name
-        phoneLabel.text = user.phoneNumber
+        emailLabel.text = user.email
         if let isActive = user.isActive {
             if isActive {
                 isInactiveImage.isHidden = true

@@ -13,7 +13,7 @@ class SignInViewModel {
     let bag = DisposeBag()
     let authService = AuthService()
     
-    func signIn(phoneNumber: String, password: String) -> Observable<User> {
-        return authService.signIn(phoneNumber: phoneNumber, password: password)
+    func signIn(email: String, password: String) -> Observable<User> {
+        return authService.signIn(email: email, password: password)
     }
 }

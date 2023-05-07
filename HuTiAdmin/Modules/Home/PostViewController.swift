@@ -108,6 +108,7 @@ class PostViewController: HuTiViewController {
     }
     
     @IBAction func didTapSignOutButton(_ sender: UIButton) {
+        UserDefaults.userInfo = nil
         let vc = SignInViewController()
         navigateTo(vc)
     }

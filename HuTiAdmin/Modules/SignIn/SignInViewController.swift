@@ -6,25 +6,28 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SignInViewController: HuTiViewController {
-    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     
     var viewModel = SignInViewModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.mainTabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailTextField.text = "thinh1769@gmail.com"
+        passTextField.text = "11111"
     }
 
     @IBAction func didTapSignInButton(_ sender: UIButton) {
-        guard let phoneNumber = phoneTextField.text,
-              phoneNumber.count == 10
-        else {
-            self.showAlert(title: Alert.numberOfPhoneNumber)
-            return
-        }
+        guard let email = emailTextField.text else { return }
         guard let password = passTextField.text,
               password.count > 4,
               password.count < 21
@@ -33,7 +36,7 @@ class SignInViewController: HuTiViewController {
             return
         }
         showLoading()
-        viewModel.signIn(phoneNumber: phoneNumber, password: password)
+        viewModel.signIn(email: email, password: password)
             .subscribe { [weak self] user in
                 guard let self = self else { return}
                 UserDefaults.userInfo = user
