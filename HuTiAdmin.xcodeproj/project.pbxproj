@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		24EAD00D8234E2A57038397D /* Pods_HuTiAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */; };
+		8209454E2A1647E300D7DA25 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209454C2A1647E300D7DA25 /* ReportViewController.swift */; };
+		8209454F2A1647E300D7DA25 /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8209454D2A1647E300D7DA25 /* ReportViewController.xib */; };
+		820945512A1648F200D7DA25 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820945502A1648F200D7DA25 /* ReportViewModel.swift */; };
+		820945532A16493600D7DA25 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820945522A16493600D7DA25 /* Report.swift */; };
+		820945572A16607600D7DA25 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820945562A16607600D7DA25 /* ReportService.swift */; };
+		8209455F2A1662BA00D7DA25 /* ReportViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209455D2A1662BA00D7DA25 /* ReportViewCell.swift */; };
+		820945602A1662BA00D7DA25 /* ReportViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8209455E2A1662BA00D7DA25 /* ReportViewCell.xib */; };
+		820945642A16694800D7DA25 /* ReportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820945622A16694800D7DA25 /* ReportDetailViewController.swift */; };
+		820945652A16694800D7DA25 /* ReportDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820945632A16694800D7DA25 /* ReportDetailViewController.xib */; };
 		820AB77529FD272E00883112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB77429FD272E00883112 /* AppDelegate.swift */; };
 		820AB77729FD272E00883112 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AB77629FD272E00883112 /* SceneDelegate.swift */; };
 		820AB77E29FD273100883112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820AB77D29FD273100883112 /* Assets.xcassets */; };
@@ -59,6 +68,7 @@
 		8276A18A2A02616000F24D19 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276A1882A02616000F24D19 /* UserDetailViewController.swift */; };
 		8276A18B2A02616000F24D19 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8276A1892A02616000F24D19 /* UserDetailViewController.xib */; };
 		8276A18D2A02616C00F24D19 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276A18C2A02616C00F24D19 /* UserDetailViewModel.swift */; };
+		8286F70A2A16974600AB669A /* ReportDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286F7092A16974600AB669A /* ReportDetailViewModel.swift */; };
 		8289A87F2A016F770011DDA2 /* ProjectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A87D2A016F770011DDA2 /* ProjectViewCell.swift */; };
 		8289A8802A016F770011DDA2 /* ProjectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8289A87E2A016F770011DDA2 /* ProjectViewCell.xib */; };
 		8289A8842A01E2180011DDA2 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A8822A01E2180011DDA2 /* ProjectDetailViewController.swift */; };
@@ -68,6 +78,15 @@
 
 /* Begin PBXFileReference section */
 		4857B845CE9A23319E119EE6 /* Pods-HuTiAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuTiAdmin.debug.xcconfig"; path = "Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin.debug.xcconfig"; sourceTree = "<group>"; };
+		8209454C2A1647E300D7DA25 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		8209454D2A1647E300D7DA25 /* ReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportViewController.xib; sourceTree = "<group>"; };
+		820945502A1648F200D7DA25 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		820945522A16493600D7DA25 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		820945562A16607600D7DA25 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		8209455D2A1662BA00D7DA25 /* ReportViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewCell.swift; sourceTree = "<group>"; };
+		8209455E2A1662BA00D7DA25 /* ReportViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportViewCell.xib; sourceTree = "<group>"; };
+		820945622A16694800D7DA25 /* ReportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
+		820945632A16694800D7DA25 /* ReportDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportDetailViewController.xib; sourceTree = "<group>"; };
 		820AB77129FD272E00883112 /* HuTiAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuTiAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820AB77429FD272E00883112 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		820AB77629FD272E00883112 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +140,7 @@
 		8276A1882A02616000F24D19 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		8276A1892A02616000F24D19 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		8276A18C2A02616C00F24D19 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		8286F7092A16974600AB669A /* ReportDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewModel.swift; sourceTree = "<group>"; };
 		8289A87D2A016F770011DDA2 /* ProjectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewCell.swift; sourceTree = "<group>"; };
 		8289A87E2A016F770011DDA2 /* ProjectViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectViewCell.xib; sourceTree = "<group>"; };
 		8289A8822A01E2180011DDA2 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +169,35 @@
 				94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8209454B2A1647BE00D7DA25 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				8209454C2A1647E300D7DA25 /* ReportViewController.swift */,
+				820945502A1648F200D7DA25 /* ReportViewModel.swift */,
+				8209454D2A1647E300D7DA25 /* ReportViewController.xib */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		820945582A16624F00D7DA25 /* ReportCell */ = {
+			isa = PBXGroup;
+			children = (
+				8209455D2A1662BA00D7DA25 /* ReportViewCell.swift */,
+				8209455E2A1662BA00D7DA25 /* ReportViewCell.xib */,
+			);
+			path = ReportCell;
+			sourceTree = "<group>";
+		};
+		820945612A16692800D7DA25 /* ReportDetail */ = {
+			isa = PBXGroup;
+			children = (
+				820945622A16694800D7DA25 /* ReportDetailViewController.swift */,
+				8286F7092A16974600AB669A /* ReportDetailViewModel.swift */,
+				820945632A16694800D7DA25 /* ReportDetailViewController.xib */,
+			);
+			path = ReportDetail;
 			sourceTree = "<group>";
 		};
 		820AB76829FD272E00883112 = {
@@ -215,6 +264,8 @@
 				8289A8812A01E1D70011DDA2 /* ProjectDetail */,
 				8276A17A2A02090300F24D19 /* User */,
 				8276A1872A02614200F24D19 /* UserDetail */,
+				8209454B2A1647BE00D7DA25 /* Report */,
+				820945612A16692800D7DA25 /* ReportDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -257,6 +308,7 @@
 				820AB7BD29FD446C00883112 /* Asset.swift */,
 				820AB7BF29FD448000883112 /* AssetDataModel.swift */,
 				820AB7C129FD449F00883112 /* ResponseMain.swift */,
+				820945522A16493600D7DA25 /* Report.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +320,7 @@
 				820AB7A329FD408700883112 /* PostViewCell */,
 				8289A87C2A016D580011DDA2 /* ProjectViewCell */,
 				8276A1812A0209C500F24D19 /* UserViewCell */,
+				820945582A16624F00D7DA25 /* ReportCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -300,6 +353,7 @@
 				820AB7B129FD43D900883112 /* PostService.swift */,
 				820AB7B329FD43FC00883112 /* ProjectService.swift */,
 				820AB7B529FD440F00883112 /* AWSService.swift */,
+				820945562A16607600D7DA25 /* ReportService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -474,10 +528,13 @@
 				820AB7E529FFEC5300883112 /* AddProjectViewController.xib in Resources */,
 				820AB7C929FD481F00883112 /* SignInViewController.xib in Resources */,
 				820AB7D029FE1E4200883112 /* PostDetailViewController.xib in Resources */,
+				8209454F2A1647E300D7DA25 /* ReportViewController.xib in Resources */,
 				8289A8802A016F770011DDA2 /* ProjectViewCell.xib in Resources */,
 				820AB7D729FE5E8E00883112 /* ImageCell.xib in Resources */,
+				820945652A16694800D7DA25 /* ReportDetailViewController.xib in Resources */,
 				820AB78129FD273100883112 /* LaunchScreen.storyboard in Resources */,
 				8289A8852A01E2180011DDA2 /* ProjectDetailViewController.xib in Resources */,
+				820945602A1662BA00D7DA25 /* ReportViewCell.xib in Resources */,
 				820AB77E29FD273100883112 /* Assets.xcassets in Resources */,
 				820AB7A729FD40AE00883112 /* PostViewCell.xib in Resources */,
 				8276A1852A0209E400F24D19 /* UserViewCell.xib in Resources */,
@@ -540,6 +597,7 @@
 				820AB79029FD2A0D00883112 /* HuTiViewController.swift in Sources */,
 				820AB7E729FFEC8C00883112 /* AddProjectViewModel.swift in Sources */,
 				820AB7E029FFEAAA00883112 /* ProjectViewModel.swift in Sources */,
+				8286F70A2A16974600AB669A /* ReportDetailViewModel.swift in Sources */,
 				820AB7BE29FD446C00883112 /* Asset.swift in Sources */,
 				820AB77529FD272E00883112 /* AppDelegate.swift in Sources */,
 				8289A8842A01E2180011DDA2 /* ProjectDetailViewController.swift in Sources */,
@@ -553,6 +611,7 @@
 				820AB7D929FFC66A00883112 /* Numeric+Ext.swift in Sources */,
 				820AB7A629FD40AE00883112 /* PostViewCell.swift in Sources */,
 				820AB7B629FD440F00883112 /* AWSService.swift in Sources */,
+				820945642A16694800D7DA25 /* ReportDetailViewController.swift in Sources */,
 				820AB77729FD272E00883112 /* SceneDelegate.swift in Sources */,
 				820AB7A029FD3B8B00883112 /* PostViewController.swift in Sources */,
 				820AB7CB29FD495D00883112 /* SignInViewModel.swift in Sources */,
@@ -560,12 +619,14 @@
 				8276A1802A02092700F24D19 /* UserViewModel.swift in Sources */,
 				820AB7B029FD43BE00883112 /* AddressService.swift in Sources */,
 				820AB7B229FD43D900883112 /* PostService.swift in Sources */,
+				8209455F2A1662BA00D7DA25 /* ReportViewCell.swift in Sources */,
 				820AB7CF29FE1E4200883112 /* PostDetailViewController.swift in Sources */,
 				820AB7DD29FFEA9400883112 /* ProjectViewController.swift in Sources */,
 				820AB79D29FD2C8500883112 /* User.swift in Sources */,
 				8276A18A2A02616000F24D19 /* UserDetailViewController.swift in Sources */,
 				8289A87F2A016F770011DDA2 /* ProjectViewCell.swift in Sources */,
 				8276A18D2A02616C00F24D19 /* UserDetailViewModel.swift in Sources */,
+				8209454E2A1647E300D7DA25 /* ReportViewController.swift in Sources */,
 				820AB79529FD2ACE00883112 /* HuTiConstants.swift in Sources */,
 				820AB7E429FFEC5300883112 /* AddProjectViewController.swift in Sources */,
 				8276A1842A0209E400F24D19 /* UserViewCell.swift in Sources */,
@@ -573,7 +634,10 @@
 				820AB7C429FD452600883112 /* PostViewModel.swift in Sources */,
 				820AB7C829FD481F00883112 /* SignInViewController.swift in Sources */,
 				820AB7D229FE1E7F00883112 /* PostDetailViewModel.swift in Sources */,
+				820945572A16607600D7DA25 /* ReportService.swift in Sources */,
 				820AB7AC29FD437C00883112 /* BaseService.swift in Sources */,
+				820945512A1648F200D7DA25 /* ReportViewModel.swift in Sources */,
+				820945532A16493600D7DA25 /* Report.swift in Sources */,
 				820AB7BA29FD444900883112 /* Project.swift in Sources */,
 				820AB7C229FD449F00883112 /* ResponseMain.swift in Sources */,
 				8276A17D2A02091C00F24D19 /* UserViewController.swift in Sources */,

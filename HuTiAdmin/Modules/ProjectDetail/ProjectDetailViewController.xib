@@ -377,7 +377,7 @@
                 <constraint firstItem="zm1-51-bKO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="uLX-ZS-VvH"/>
                 <constraint firstItem="zm1-51-bKO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yEZ-D8-Cr9"/>
             </constraints>
-            <point key="canvasLocation" x="45" y="67"/>
+            <point key="canvasLocation" x="177" y="72"/>
         </view>
     </objects>
     <resources>

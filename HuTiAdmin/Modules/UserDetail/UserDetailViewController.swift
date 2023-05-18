@@ -71,7 +71,7 @@ class UserDetailViewController: HuTiViewController {
         guard let user = viewModel.user else { return }
         nameLabel.text = user.name
         phoneLabel.text = user.phoneNumber
-        emailLabel.text = user.email ?? ""
+        emailLabel.text = user.email 
     }
     
     private func setupPostTableView() {
