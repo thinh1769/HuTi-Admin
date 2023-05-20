@@ -12,12 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostViewController" customModule="HuTiAdmin" customModuleProvider="target">
             <connections>
-                <outlet property="approvedLabel" destination="cMd-Fw-dvR" id="Lra-Nx-zal"/>
                 <outlet property="approvedView" destination="VTE-G7-YbI" id="PwC-jV-zYl"/>
-                <outlet property="pendingLabel" destination="2YF-0r-NU1" id="g0y-6k-9v1"/>
                 <outlet property="pendingView" destination="Add-VR-zdT" id="MpV-hh-qvh"/>
                 <outlet property="postTableView" destination="kOl-7K-H9H" id="Eyd-nz-Ks1"/>
-                <outlet property="rejectLabel" destination="uJ5-uq-3cX" id="UfV-1V-Pzq"/>
                 <outlet property="rejectedView" destination="oeU-bZ-vlR" id="fnx-BO-qYo"/>
                 <outlet property="titleLabel" destination="uJ5-uq-3cX" id="Iam-wB-CUm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -136,7 +133,7 @@
                 <constraint firstItem="jNo-84-aKf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="oJd-CZ-b1P"/>
                 <constraint firstItem="Amu-MH-DK3" firstAttribute="top" secondItem="uJ5-uq-3cX" secondAttribute="bottom" constant="15" id="zsB-ph-Y8P"/>
             </constraints>
-            <point key="canvasLocation" x="57" y="82"/>
+            <point key="canvasLocation" x="294" y="54"/>
         </view>
     </objects>
     <resources>

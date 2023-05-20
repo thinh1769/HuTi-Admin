@@ -139,7 +139,8 @@ extension HTTPMethod {
         if methodSupport == .post { return .post }
         else if methodSupport == .get { return .get }
         else if methodSupport == .put { return .put }
-        else if methodSupport == .patch { return .patch}
+        else if methodSupport == .patch { return .patch }
+        else if methodSupport == .delete { return .delete }
         else { return nil }
     }
 }

@@ -15,6 +15,7 @@ import PhotosUI
 
 class AddProjectViewController: HuTiViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var provinceTextField: UITextField!
     @IBOutlet weak var districtTextField: UITextField!
@@ -34,6 +35,7 @@ class AddProjectViewController: HuTiViewController {
     @IBOutlet weak var apartmentTextField: UITextField!
     @IBOutlet weak var investorTextField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var deleteProjectButton: UIButton!
     
     let typePicker = UIPickerView()
     let provincePicker = UIPickerView()
@@ -63,7 +65,6 @@ class AddProjectViewController: HuTiViewController {
         mapView.showsUserLocation = true
         minPriceTextField.delegate = self
         maxPriceTextField.delegate = self
-//        hidePostButton.isHidden = true
         currentLocationButton.isUserInteractionEnabled = false
 
         provinceTextField.rx.controlEvent([.editingDidEnd,.valueChanged])
@@ -79,6 +80,12 @@ class AddProjectViewController: HuTiViewController {
         if viewModel.isEdit {
             loadProjectForEdit()
             submitButton.setTitle("Lưu", for: .normal)
+            titleLabel.text = "Chỉnh sửa dự án"
+            deleteProjectButton.isHidden = false
+        } else {
+            submitButton.setTitle("Thêm dự án", for: .normal)
+            titleLabel.text = "Dự án mới"
+            deleteProjectButton.isHidden = true
         }
     }
     
@@ -225,6 +232,15 @@ class AddProjectViewController: HuTiViewController {
         setupDistrictPickerView()
         setupWardPickerView()
         setupStatusPickerView()
+    }
+    
+    @IBAction func didTapDeleteProjectButton(_ sender: UIButton) {
+        viewModel.deleteProject().subscribe { [weak self] _ in
+            guard let self = self else { return }
+            self.backToPreviousView()
+            self.backToPreviousView()
+            self.showAlert(title: "Xóa dự án thành công")
+        }.disposed(by: viewModel.bag)
     }
     
 }

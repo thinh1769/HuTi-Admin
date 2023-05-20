@@ -14,11 +14,8 @@ class PostViewController: HuTiViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var pendingView: UIView!
-    @IBOutlet weak var pendingLabel: UILabel!
-    @IBOutlet weak var approvedLabel: UILabel!
     @IBOutlet weak var approvedView: UIView!
     @IBOutlet weak var rejectedView: UIView!
-    @IBOutlet weak var rejectLabel: UILabel!
     
     var viewModel = PostViewModel()
     

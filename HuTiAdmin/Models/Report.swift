@@ -11,16 +11,19 @@ struct Report: Codable {
     var id: String?
     var postId: String
     var reportUserId: String
-    var reportUserName: String?
-    var reportUserPhone: String?
+    var reportUserName: String
+    var reportUserPhone: String
+    var reportUserEmail: String
     var postUserId: String
-    var postUserName: String?
-    var postUserPhone: String?
+    var postUserName: String
+    var postUserPhone: String
+    var postUserEmail: String
+    var status: Int
     var postTitle: String
     var content: String
+    var createdAt: Int
     
-//    enum CodingKeys: String, CodingKey {
-//            case id = "id"
-//            case postId = "postId"
-//        }
+    func getDate() -> String {
+        return createdAt.parseDate()
+    }
 }

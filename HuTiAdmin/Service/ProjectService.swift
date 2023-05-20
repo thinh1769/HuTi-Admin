@@ -34,4 +34,7 @@ class ProjectService: BaseService {
         return request(api: APIConstants.updateProject.rawValue + projectId, method: .put, params: param)
     }
     
+    func deleteProject(projectId: String) -> Observable<String> {
+        return request(api: APIConstants.updateProject.rawValue + projectId, method: .delete)
+    }
 }

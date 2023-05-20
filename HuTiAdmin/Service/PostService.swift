@@ -42,5 +42,9 @@ class PostService: BaseService {
     func updatePost(postId: String, param: [String: Any]) -> Observable<Post> {
         return request(api: APIConstants.updatePost.rawValue + postId, method: .put, params: param)
     }
+    
+    func deletePost(postId: String) -> Observable<String> {
+        return request(api: APIConstants.updatePost.rawValue + postId, method: .delete)
+    }
 }
 

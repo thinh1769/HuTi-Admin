@@ -15,6 +15,7 @@ class UserDetailViewModel {
     let authService = AuthService()
     let post = BehaviorRelay<[Post]>(value: [])
     var user: User?
+    var userId = ""
     var page = 1
     
     func getPostByUser() -> Observable<[Post]> {
@@ -23,5 +24,9 @@ class UserDetailViewModel {
     
     func blockUser() -> Observable<User> {
         return authService.blockUser(userId: user?.id ?? "")
+    }
+    
+    func getUserById() -> Observable<User> {
+        return authService.getUserById(userId: userId)
     }
 }

@@ -74,6 +74,7 @@
 		8289A8842A01E2180011DDA2 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A8822A01E2180011DDA2 /* ProjectDetailViewController.swift */; };
 		8289A8852A01E2180011DDA2 /* ProjectDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8289A8832A01E2180011DDA2 /* ProjectDetailViewController.xib */; };
 		8289A8872A01E2280011DDA2 /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A8862A01E2280011DDA2 /* ProjectDetailViewModel.swift */; };
+		82BCB3A42A190AB300F825B7 /* SendEmailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BCB3A32A190AB300F825B7 /* SendEmailPopupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		8289A8822A01E2180011DDA2 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
 		8289A8832A01E2180011DDA2 /* ProjectDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectDetailViewController.xib; sourceTree = "<group>"; };
 		8289A8862A01E2280011DDA2 /* ProjectDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewModel.swift; sourceTree = "<group>"; };
+		82BCB3A32A190AB300F825B7 /* SendEmailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailPopupView.swift; sourceTree = "<group>"; };
 		880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HuTiAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuTiAdmin.release.xcconfig"; path = "Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +268,7 @@
 				8276A1872A02614200F24D19 /* UserDetail */,
 				8209454B2A1647BE00D7DA25 /* Report */,
 				820945612A16692800D7DA25 /* ReportDetail */,
+				82BCB3A22A190A8800F825B7 /* SendEmail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -455,6 +458,14 @@
 			path = ProjectDetail;
 			sourceTree = "<group>";
 		};
+		82BCB3A22A190A8800F825B7 /* SendEmail */ = {
+			isa = PBXGroup;
+			children = (
+				82BCB3A32A190AB300F825B7 /* SendEmailPopupView.swift */,
+			);
+			path = SendEmail;
+			sourceTree = "<group>";
+		};
 		B2C4B8EA6B0D1DCB78A884DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +629,7 @@
 				8221754C2A00E838001A0877 /* UIImage+Ext.swift in Sources */,
 				8276A1802A02092700F24D19 /* UserViewModel.swift in Sources */,
 				820AB7B029FD43BE00883112 /* AddressService.swift in Sources */,
+				82BCB3A42A190AB300F825B7 /* SendEmailPopupView.swift in Sources */,
 				820AB7B229FD43D900883112 /* PostService.swift in Sources */,
 				8209455F2A1662BA00D7DA25 /* ReportViewCell.swift in Sources */,
 				820AB7CF29FE1E4200883112 /* PostDetailViewController.swift in Sources */,

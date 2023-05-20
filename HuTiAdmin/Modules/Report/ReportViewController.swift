@@ -11,6 +11,8 @@ import RxCocoa
 
 class ReportViewController: HuTiViewController {
 
+    @IBOutlet weak var processingView: UIView!
+    @IBOutlet weak var processedView: UIView!
     @IBOutlet weak var reportTableView: UITableView!
     
     var viewModel = ReportViewModel()
@@ -27,6 +29,7 @@ class ReportViewController: HuTiViewController {
     private func setupUI() {
         setupTableView()
         getListReport()
+        setupProcessView()
     }
     
     private func getListReport() {
@@ -38,14 +41,14 @@ class ReportViewController: HuTiViewController {
                 } else {
                     self.viewModel.report.accept(self.viewModel.report.value + reports)
                 }
-            } else if self.viewModel.page == 0 {
+            } else if self.viewModel.page == 1 {
                 self.viewModel.report.accept([])
             }
         }.disposed(by: viewModel.bag)
     }
     
     private func setupTableView() {
-        reportTableView.rowHeight = 100
+        reportTableView.rowHeight = 135
         reportTableView.separatorStyle = .none
         
         reportTableView.register(ReportViewCell.nib, forCellReuseIdentifier: ReportViewCell.reusableIdentifier)
@@ -90,6 +93,36 @@ class ReportViewController: HuTiViewController {
                 self.getListReport()
             }
             self.reportTableView.infiniteScrollingView.stopAnimating()
+        }
+    }
+    
+    private func setupProcessView() {
+        processingView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapProcessingView)))
+        processedView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapProcessedView)))
+    }
+    
+    @objc private func didTapProcessingView() {
+        didSelectProcessView(index: 0)
+        viewModel.page = 1
+        viewModel.reportListStatus = 0
+        getListReport()
+    }
+    
+    @objc private func didTapProcessedView() {
+        didSelectProcessView(index: 1)
+        viewModel.page = 1
+        viewModel.reportListStatus = 1
+        getListReport()
+    }
+    
+    private func didSelectProcessView(index: Int) {
+        switch index {
+        case 0:
+            processingView.backgroundColor = UIColor(named: ColorName.darkBackground)
+            processedView.backgroundColor = .systemGray5
+        default:
+            processingView.backgroundColor = .systemGray5
+            processedView.backgroundColor = UIColor(named: ColorName.darkBackground)
         }
     }
 }

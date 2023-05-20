@@ -41,12 +41,20 @@ class UserDetailViewController: HuTiViewController {
 
     private func setupUI() {
         setupPostTableView()
-        loadUserInfo()
-        getPostByUser()
+        getUserInfo()
         
         userInfoView.layer.masksToBounds = true
         userInfoView.layer.borderColor = UIColor(named: ColorName.themeText)?.cgColor
         userInfoView.layer.borderWidth = 1
+    }
+    
+    private func getUserInfo() {
+        viewModel.getUserById().subscribe { [weak self] user in
+            guard let self = self else { return }
+            self.viewModel.user = user
+            self.loadUserInfo()
+            self.getPostByUser()
+        }.disposed(by: viewModel.bag)
     }
     
     private func getPostByUser() {
@@ -143,9 +151,9 @@ class UserDetailViewController: HuTiViewController {
 }
 
 extension UserDetailViewController {
-    class func instance(user: User) -> UserDetailViewController {
+    class func instance(userId: String) -> UserDetailViewController {
         let controller = UserDetailViewController(nibName: ClassNibName.UserDetailViewController, bundle: Bundle.main)
-        controller.viewModel.user = user
+        controller.viewModel.userId = userId
         return controller
     }
 }

@@ -19,3 +19,14 @@ extension Formatter {
         return formatter
     }()
 }
+
+extension Int {
+    func parseDate() -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(self/1000))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm dd/MM/yyyy"
+
+        let dateString = dateFormatter.string(from: date)
+        return dateString
+    }
+}

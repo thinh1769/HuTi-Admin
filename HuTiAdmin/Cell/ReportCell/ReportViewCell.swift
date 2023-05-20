@@ -11,6 +11,7 @@ class ReportViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var reportUserNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     static var reusableIdentifier: String {
         return String(describing: self)
@@ -38,5 +39,6 @@ class ReportViewCell: UITableViewCell {
     func config(report: Report) {
         titleLabel.text = report.postTitle
         reportUserNameLabel.text = report.reportUserName
+        dateLabel.text = report.getDate()
     }
 }

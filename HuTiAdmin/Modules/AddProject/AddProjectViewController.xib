@@ -17,6 +17,7 @@
                 <outlet property="apartmentTextField" destination="lfp-q8-g0b" id="fYZ-vF-Gjw"/>
                 <outlet property="buildingTextField" destination="iLc-Kw-tWC" id="T5T-tA-qpr"/>
                 <outlet property="currentLocationButton" destination="7bw-nZ-5tk" id="zvh-Sq-dKz"/>
+                <outlet property="deleteProjectButton" destination="mnQ-8g-XOV" id="GhK-mp-ek9"/>
                 <outlet property="descriptionTextView" destination="sRg-nd-seO" id="YeV-lB-c7v"/>
                 <outlet property="districtTextField" destination="qu3-7o-jkQ" id="amb-6p-nRf"/>
                 <outlet property="editLocationButton" destination="AYh-cQ-8MA" id="q6n-F1-5FP"/>
@@ -30,6 +31,7 @@
                 <outlet property="provinceTextField" destination="LBi-S4-4da" id="5Qx-JI-fQ9"/>
                 <outlet property="statusTextField" destination="8gT-5Q-lPr" id="SxW-7R-903"/>
                 <outlet property="submitButton" destination="dpm-me-VOv" id="caJ-uf-wd5"/>
+                <outlet property="titleLabel" destination="nCw-4a-KIX" id="Ma0-2t-ezy"/>
                 <outlet property="typeTextField" destination="37u-1h-uA5" id="Ioy-Ce-Ts3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wardTextField" destination="Rvq-iz-0lR" id="2Ef-gc-row"/>
@@ -989,6 +991,21 @@
                     <color key="textColor" name="themeText"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnQ-8g-XOV">
+                    <rect key="frame" x="364" y="20" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="9zL-9u-7lL"/>
+                        <constraint firstAttribute="width" constant="30" id="BbX-EQ-Tt0"/>
+                    </constraints>
+                    <color key="tintColor" name="black"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="trash" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapDeleteProjectButton:" destination="-1" eventType="touchUpInside" id="3a2-dL-100"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="background"/>
@@ -996,13 +1013,15 @@
                 <constraint firstItem="Rvy-Ck-XV1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1fY-6b-eza"/>
                 <constraint firstItem="Rvy-Ck-XV1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="2CV-sQ-llJ"/>
                 <constraint firstItem="nCw-4a-KIX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="9Oc-2i-wof"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mnQ-8g-XOV" secondAttribute="trailing" constant="20" id="EoY-NN-t66"/>
                 <constraint firstItem="dzQ-Jq-Dfq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gt8-ci-c6R"/>
                 <constraint firstItem="nCw-4a-KIX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="I3S-EP-oCh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dzQ-Jq-Dfq" secondAttribute="bottom" id="Lzo-93-QQM"/>
                 <constraint firstItem="dzQ-Jq-Dfq" firstAttribute="top" secondItem="Rvy-Ck-XV1" secondAttribute="bottom" constant="10" id="eU6-CS-h9r"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dzQ-Jq-Dfq" secondAttribute="trailing" id="gz3-Fy-iNG"/>
+                <constraint firstItem="mnQ-8g-XOV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="mIj-1L-kXv"/>
             </constraints>
-            <point key="canvasLocation" x="-3732" y="77"/>
+            <point key="canvasLocation" x="-4655" y="49"/>
         </view>
     </objects>
     <resources>
@@ -1011,6 +1030,7 @@
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="location.fill" catalog="system" width="128" height="119"/>
         <image name="mappin" catalog="system" width="106" height="128"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <namedColor name="background">
             <color red="0.98000001907348633" green="0.92900002002716064" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

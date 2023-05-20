@@ -184,6 +184,15 @@ class PostDetailViewController: HuTiViewController {
         wayInView.isHidden = false
         facadeView.isHidden = false
     }
+    
+    @IBAction func didTapDeletePostButton(_ sender: UIButton) {
+        viewModel.deletePost().subscribe { [weak self] _ in
+            guard let self = self else { return }
+            self.backToPreviousView()
+            self.showAlert(title: "Xóa tin đăng thành công")
+        }.disposed(by: viewModel.bag)
+    }
+    
 }
 
 extension PostDetailViewController: CLLocationManagerDelegate {

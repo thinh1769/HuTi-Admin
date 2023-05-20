@@ -6,11 +6,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportViewController" customModule="HuTiAdmin" customModuleProvider="target">
             <connections>
+                <outlet property="processedView" destination="DKo-zq-o4D" id="rUq-Y1-ohG"/>
+                <outlet property="processingView" destination="Tcu-hO-g3c" id="Iio-20-cq9"/>
                 <outlet property="reportTableView" destination="Xao-xO-Nyk" id="BHp-21-Vcu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,35 +24,97 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Báo cáo tin đăng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRN-dh-NZi">
-                    <rect key="frame" x="93" y="20" width="189" height="30"/>
+                    <rect key="frame" x="93.5" y="20" width="188.5" height="30"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                     <color key="textColor" name="themeText"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xao-xO-Nyk">
-                    <rect key="frame" x="10" y="60" width="355" height="607"/>
+                    <rect key="frame" x="10" y="105" width="355" height="562"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5e5-RV-3sR">
+                    <rect key="frame" x="10" y="60" width="355" height="35"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcu-hO-g3c">
+                            <rect key="frame" x="0.0" y="0.0" width="175" height="35"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chờ xử lý" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQv-Rm-qv0">
+                                    <rect key="frame" x="49" y="7" width="77.5" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" name="black"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="darkBackground"/>
+                            <constraints>
+                                <constraint firstItem="RQv-Rm-qv0" firstAttribute="centerX" secondItem="Tcu-hO-g3c" secondAttribute="centerX" id="7Gg-3S-gBs"/>
+                                <constraint firstItem="RQv-Rm-qv0" firstAttribute="centerY" secondItem="Tcu-hO-g3c" secondAttribute="centerY" id="JOa-bj-o8M"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKo-zq-o4D">
+                            <rect key="frame" x="180" y="0.0" width="175" height="35"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã xử lý" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bC-wG-mRI">
+                                    <rect key="frame" x="54" y="7" width="67" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            <constraints>
+                                <constraint firstItem="5bC-wG-mRI" firstAttribute="centerY" secondItem="DKo-zq-o4D" secondAttribute="centerY" id="6xa-zO-oet"/>
+                                <constraint firstItem="5bC-wG-mRI" firstAttribute="centerX" secondItem="DKo-zq-o4D" secondAttribute="centerX" id="PRv-TN-qPr"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="S7w-5d-2ul"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="background"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xao-xO-Nyk" secondAttribute="bottom" id="IZq-1R-qSb"/>
-                <constraint firstItem="Xao-xO-Nyk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Irr-QI-I6h"/>
-                <constraint firstItem="Xao-xO-Nyk" firstAttribute="top" secondItem="qRN-dh-NZi" secondAttribute="bottom" constant="10" id="MS2-yU-Yk4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xao-xO-Nyk" secondAttribute="trailing" constant="10" id="UeH-wK-r2V"/>
+                <constraint firstItem="Xao-xO-Nyk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ECU-ZH-5FO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xao-xO-Nyk" secondAttribute="trailing" constant="10" id="FRL-e3-RH9"/>
+                <constraint firstItem="5e5-RV-3sR" firstAttribute="top" secondItem="qRN-dh-NZi" secondAttribute="bottom" constant="10" id="Ngl-xd-9MD"/>
+                <constraint firstItem="5e5-RV-3sR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Qy9-VX-szL"/>
                 <constraint firstItem="qRN-dh-NZi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="bt9-zQ-wOH"/>
+                <constraint firstItem="Xao-xO-Nyk" firstAttribute="top" secondItem="5e5-RV-3sR" secondAttribute="bottom" constant="10" id="eHa-Ia-PtH"/>
+                <constraint firstItem="Xao-xO-Nyk" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="h3Z-5j-l1d"/>
                 <constraint firstItem="qRN-dh-NZi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iF2-kI-HZ9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5e5-RV-3sR" secondAttribute="trailing" constant="10" id="klt-QH-pnC"/>
             </constraints>
-            <point key="canvasLocation" x="-214" y="27"/>
+            <point key="canvasLocation" x="197.59999999999999" y="27.436281859070466"/>
         </view>
     </objects>
     <resources>
         <namedColor name="background">
             <color red="0.98000001907348633" green="0.92900002002716064" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="darkBackground">
+            <color red="0.93900001049041748" green="0.79600000381469727" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="themeText">
             <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

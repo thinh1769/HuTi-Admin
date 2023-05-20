@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="KGk-i7-Jjw" customClass="ReportViewCell" customModule="HuTiAdmin" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="112" id="KGk-i7-Jjw" customClass="ReportViewCell" customModule="HuTiAdmin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRQ-fF-iAr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fti-jR-Ehd">
                                 <rect key="frame" x="10" y="10.000000000000002" width="300" height="21.666666666666671"/>
@@ -43,6 +43,12 @@
                                 <color key="textColor" name="themeText"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:34 20/05/2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlZ-f7-hjN">
+                                <rect key="frame" x="210" y="69.666666666666671" width="100" height="14.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" name="gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -50,10 +56,12 @@
                             <constraint firstAttribute="trailing" secondItem="Fti-jR-Ehd" secondAttribute="trailing" constant="10" id="APM-if-fpN"/>
                             <constraint firstItem="3bv-N3-IPD" firstAttribute="leading" secondItem="hRQ-fF-iAr" secondAttribute="leading" constant="10" id="Nsq-bG-6M2"/>
                             <constraint firstAttribute="trailing" secondItem="aqj-ll-tM6" secondAttribute="trailing" constant="10" id="Vdm-4d-OMB"/>
+                            <constraint firstItem="TlZ-f7-hjN" firstAttribute="top" secondItem="aqj-ll-tM6" secondAttribute="bottom" constant="10" id="a0G-c2-jRn"/>
                             <constraint firstItem="3bv-N3-IPD" firstAttribute="top" secondItem="Fti-jR-Ehd" secondAttribute="bottom" constant="10" id="hBT-cc-6Ns"/>
                             <constraint firstItem="aqj-ll-tM6" firstAttribute="leading" secondItem="3bv-N3-IPD" secondAttribute="trailing" constant="5" id="jwS-l5-loY"/>
                             <constraint firstItem="aqj-ll-tM6" firstAttribute="top" secondItem="Fti-jR-Ehd" secondAttribute="bottom" constant="10" id="rf1-Nd-zxj"/>
                             <constraint firstItem="Fti-jR-Ehd" firstAttribute="top" secondItem="hRQ-fF-iAr" secondAttribute="top" constant="10" id="tyS-Jw-LOH"/>
+                            <constraint firstAttribute="trailing" secondItem="TlZ-f7-hjN" secondAttribute="trailing" constant="10" id="zOg-Xm-YNS"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -72,15 +80,19 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="dateLabel" destination="TlZ-f7-hjN" id="hEB-IF-nX3"/>
                 <outlet property="reportUserNameLabel" destination="aqj-ll-tM6" id="3ZI-kg-rVO"/>
                 <outlet property="titleLabel" destination="Fti-jR-Ehd" id="oPV-cM-3cv"/>
             </connections>
-            <point key="canvasLocation" x="-154" y="-31"/>
+            <point key="canvasLocation" x="-139" y="14"/>
         </tableViewCell>
     </objects>
     <resources>
         <namedColor name="background">
             <color red="0.98000001907348633" green="0.92900002002716064" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="gray">
+            <color red="0.66299998760223389" green="0.65499997138977051" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="themeText">
             <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

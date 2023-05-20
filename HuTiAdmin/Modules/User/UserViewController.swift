@@ -60,7 +60,7 @@ class UserViewController: HuTiViewController {
             .modelSelected(User.self)
             .subscribe { [weak self] element in
                 guard let self = self else { return }
-                let vc = UserDetailViewController.instance(user: element)
+                let vc = UserDetailViewController.instance(userId: element.id ?? "")
                 self.navigateTo(vc)
             }.disposed(by: viewModel.bag)
         

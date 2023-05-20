@@ -300,6 +300,10 @@ class AddProjectViewModel {
         return projectService.updateProject(projectId: project?.id ?? "", param: updateProjectParams)
     }
     
+    func deleteProject() -> Observable<String> {
+        return projectService.deleteProject(projectId: project?.id ?? "")
+    }
+    
     func uploadImages(completion: @escaping () -> Void) {
         let dispatchGroup = DispatchGroup()
         

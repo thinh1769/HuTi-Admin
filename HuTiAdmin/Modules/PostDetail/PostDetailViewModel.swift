@@ -31,4 +31,8 @@ class PostDetailViewModel {
     func browsePost() -> Observable<Post> {
         return postService.updatePost(postId: postId, param: browsePostParams)
     }
+    
+    func deletePost() -> Observable<String> {
+        return postService.deletePost(postId: postId)
+    }
 }

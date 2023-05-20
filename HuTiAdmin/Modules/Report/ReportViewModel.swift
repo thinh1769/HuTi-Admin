@@ -14,8 +14,13 @@ class ReportViewModel {
     let reportService = ReportService()
     let report = BehaviorRelay<[Report]>(value: [])
     var page = 1
+    var reportListStatus = 0
+    
+    func getAllReport() -> Observable<[Report]> {
+        return reportService.getAllReport(page: page)
+    }
     
     func getListReport() -> Observable<[Report]> {
-        return reportService.getAllReport(page: page)
+        return reportService.getReportByStatus(status: reportListStatus, page: page)
     }
 }

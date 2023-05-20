@@ -57,7 +57,10 @@ enum APIConstants: String {
     case blockUser = "user/change-active-status/"
     case getPostByUserForAdmin = "post/get-post-by-user-for-admin/"
     case getAllReport = "report/get-all-report?page="
+    case getReportByStatus = "report/get-reports-by-status?page="
     case deleteReport = "report/delete-report/"
+    case processReport = "report/update-info-report/"
+    case sendReportEmail = "report/send-report-email"
     
     var method: HTTPMethodSupport {
         switch self {
@@ -119,6 +122,12 @@ enum APIConstants: String {
             return.get
         case .deleteReport:
             return .delete
+        case .getReportByStatus:
+            return .post
+        case .processReport:
+            return .put
+        case .sendReportEmail:
+            return .post
         }
     }
 }

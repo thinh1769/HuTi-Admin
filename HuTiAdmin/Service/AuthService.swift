@@ -60,5 +60,9 @@ class AuthService: BaseService {
     func blockUser(userId: String) -> Observable<User> {
         return request(api: APIConstants.blockUser.rawValue + userId, method: .put)
     }
+    
+    func getUserById(userId: String) -> Observable<User> {
+        return request(api: APIConstants.getAllUser.rawValue + userId, method: .get)
+    }
 }
 
