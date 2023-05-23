@@ -24,14 +24,6 @@ class UserDetailViewController: HuTiViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.mainTabBarController?.tabBar.isHidden = true
-        if let user = viewModel.user,
-           let isActive = user.isActive {
-            if isActive {
-                blockButton.setTitle("Chặn", for: .normal)
-            } else {
-                blockButton.setTitle("Bỏ chặn", for: .normal)
-            }
-        }
     }
     
     override func viewDidLoad() {
@@ -79,7 +71,15 @@ class UserDetailViewController: HuTiViewController {
         guard let user = viewModel.user else { return }
         nameLabel.text = user.name
         phoneLabel.text = user.phoneNumber
-        emailLabel.text = user.email 
+        emailLabel.text = user.email
+        
+        if let isActive = user.isActive {
+            if isActive {
+                blockButton.setTitle("Chặn", for: .normal)
+            } else {
+                blockButton.setTitle("Bỏ chặn", for: .normal)
+            }
+        }
     }
     
     private func setupPostTableView() {
