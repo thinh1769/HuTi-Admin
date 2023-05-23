@@ -51,6 +51,7 @@ class AddProjectViewController: HuTiViewController {
         super.viewWillAppear(animated)
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        self.mainTabBarController?.tabBar.isHidden = true
     }
     
     override func viewDidLoad() {
