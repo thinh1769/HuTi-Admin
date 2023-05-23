@@ -38,6 +38,7 @@ class PostDetailViewController: HuTiViewController {
     @IBOutlet weak var bedroomView: UIStackView!
     @IBOutlet weak var bathroomView: UIStackView!
     @IBOutlet weak var floorView: UIStackView!
+    @IBOutlet weak var houseView: UIStackView!
     @IBOutlet weak var balconyView: UIStackView!
     @IBOutlet weak var wayInView: UIStackView!
     @IBOutlet weak var facadeView: UIStackView!
@@ -73,37 +74,9 @@ class PostDetailViewController: HuTiViewController {
     
     private func loadPostDetail() {
         guard let post = viewModel.postDetail else { return }
-        titleLabel.text = post.title
-        addressLabel.text = post.getFullAddress()
-        typeLabel.text = post.realEstateType
-        if post.isSell {
-            isSellLabel.text = TabBarItemTitle.sell
-        } else {
-            isSellLabel.text = TabBarItemTitle.forRent
-        }
-        acreageLabel.text = "\(post.acreage) m2"
-        priceLabel.text = "\((post.price).formattedWithSeparator)đ"
-        legalLabel.text = post.legal
-        funitureLabel.text = post.funiture
-        bedroomLabel.text = "\(post.bedroom ?? 0)"
-        bathroomLabel.text = "\(post.bathroom ?? 0)"
-        floorLabel.text = "\(post.floor ?? 0)"
-        houseDirectionLabel.text = post.houseDirection
-        balconyDirectionLabel.text = post.balconyDirection
-        wayInLabel.text = "\(post.wayIn ?? 0) m"
-        facadeLabel.text = "\(post.facade ?? 0) m"
-        descriptionLabel.text = post.description
-        authorLabel.text = post.contactName
-        phoneLabel.text = post.contactPhoneNumber
-        if let project = post.projectName {
-            projectNameLabel.text = project
-        } else {
-            projectView.isHidden = true
-        }
-        pinRealEstateLocation()
-    
+        
         unhiddenAllView()
-        switch viewModel.postDetail?.realEstateType {
+        switch post.realEstateType {
         case RealEstateType.apartment:
             self.floorView.isHidden = true
             self.wayInView.isHidden = true
@@ -133,8 +106,92 @@ class PostDetailViewController: HuTiViewController {
         case RealEstateType.shopKiosk:
             self.bedroomView.isHidden = true
         default:
-            return
+            self.titleLabel.isHidden = false
         }
+        
+        titleLabel.text = post.title
+        addressLabel.text = post.getFullAddress()
+        typeLabel.text = post.realEstateType
+        if post.isSell {
+            isSellLabel.text = TabBarItemTitle.sell
+        } else {
+            isSellLabel.text = TabBarItemTitle.forRent
+        }
+        acreageLabel.text = "\(post.acreage)m2"
+        priceLabel.text = "\((post.price).formattedWithSeparator)đ"
+        legalLabel.text = post.legal
+        
+        if let funiture = post.funiture {
+            funitureLabel.text = funiture
+        } else {
+            funitureView.isHidden = true
+        }
+        if let bedroom = post.bedroom,
+           bedroom > 0 {
+            bedroomLabel.text = "\(bedroom)"
+        } else {
+            bedroomView.isHidden = true
+        }
+        
+        if let bathroom = post.bathroom,
+           bathroom > 0 {
+            bathroomLabel.text = "\(bathroom)"
+        } else {
+            bathroomView.isHidden = true
+        }
+        
+        if let floor = post.floor,
+           floor > 0 {
+            floorLabel.text = "\(floor)"
+        } else {
+            floorView.isHidden = true
+        }
+        
+        if let houseDirection = post.houseDirection {
+            houseDirectionLabel.text = houseDirection
+        } else {
+            houseView.isHidden = true
+        }
+        
+        if let balcony = post.balconyDirection {
+            balconyDirectionLabel.text = balcony
+        } else {
+            balconyView.isHidden = true
+        }
+        
+        if let wayIn = post.wayIn,
+           wayIn > 0 {
+            wayInLabel.text = "\(wayIn)"
+        } else {
+            wayInView.isHidden = true
+        }
+        
+        if let facade = post.facade,
+           facade > 0 {
+            facadeLabel.text = "\(facade)m"
+        } else {
+            facadeView.isHidden = true
+        }
+        
+//        funitureLabel.text = post.funiture
+//        bedroomLabel.text = "\(post.bedroom ?? 0)"
+//        bathroomLabel.text = "\(post.bathroom ?? 0)"
+//        floorLabel.text = "\(post.floor ?? 0)"
+//        houseDirectionLabel.text = post.houseDirection
+//        balconyDirectionLabel.text = post.balconyDirection
+//        wayInLabel.text = "\(post.wayIn ?? 0) m"
+//        facadeLabel.text = "\(post.facade ?? 0) m"
+        descriptionLabel.text = post.description
+        authorLabel.text = post.contactName
+        phoneLabel.text = post.contactPhoneNumber
+        if let project = post.projectName {
+            projectNameLabel.text = project
+        } else {
+            projectView.isHidden = true
+        }
+        pinRealEstateLocation()
+    
+        
     }
     
     private func setupImageCollectionView() {

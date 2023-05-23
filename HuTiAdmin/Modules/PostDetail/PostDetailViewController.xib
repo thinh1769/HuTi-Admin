@@ -30,6 +30,7 @@
                 <outlet property="funitureLabel" destination="m7f-FL-fXH" id="L8O-5g-tiV"/>
                 <outlet property="funitureView" destination="1Pd-lW-DAu" id="7sc-ud-AVF"/>
                 <outlet property="houseDirectionLabel" destination="llh-e0-JxT" id="lrT-dE-QUr"/>
+                <outlet property="houseView" destination="U9e-te-7lF" id="cNT-qA-hOK"/>
                 <outlet property="imageCollectionView" destination="mQC-3I-Hgw" id="Wu3-HW-t2t"/>
                 <outlet property="isSellLabel" destination="6Is-GL-EeV" id="Rqf-cZ-PXh"/>
                 <outlet property="legalLabel" destination="zgo-Vs-Dgg" id="PvD-nl-1lq"/>
@@ -639,7 +640,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x29-Sl-8lS" secondAttribute="bottom" constant="10" id="zG2-gw-nJz"/>
                 <constraint firstItem="ySV-Q4-NqZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="zxc-6E-CAw"/>
             </constraints>
-            <point key="canvasLocation" x="-5900" y="-19"/>
+            <point key="canvasLocation" x="-5934" y="-61"/>
         </view>
     </objects>
     <resources>
