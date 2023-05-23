@@ -16,6 +16,7 @@
                 <outlet property="blockButton" destination="UgW-bt-Rqs" id="Zxu-D5-T5t"/>
                 <outlet property="callButton" destination="PCI-wc-PjH" id="jxd-iq-a2M"/>
                 <outlet property="emailLabel" destination="kWP-SM-jnF" id="tch-CB-Utn"/>
+                <outlet property="emptyView" destination="8RE-hh-c8b" id="XLk-M8-rgS"/>
                 <outlet property="nameLabel" destination="Ds4-Jn-x9p" id="V4t-1m-1cf"/>
                 <outlet property="phoneLabel" destination="HyU-Uv-h5V" id="g4e-CF-cvk"/>
                 <outlet property="postTableView" destination="DPV-gE-0CG" id="lrc-oN-4be"/>
@@ -158,10 +159,36 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DPV-gE-0CG">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DPV-gE-0CG">
                     <rect key="frame" x="10" y="205" width="394" height="531"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8RE-hh-c8b">
+                    <rect key="frame" x="104" y="323" width="206" height="230"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="z1M-6t-cYq">
+                            <rect key="frame" x="0.0" y="0.0" width="206" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="206" id="Ugj-08-8ph"/>
+                                <constraint firstAttribute="height" constant="200" id="bQj-os-xV8"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Không có dữ liệu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJp-S9-4gZ">
+                            <rect key="frame" x="39.333333333333336" y="210" width="127.66666666666666" height="20.333333333333343"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="gray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="z1M-6t-cYq" firstAttribute="centerX" secondItem="8RE-hh-c8b" secondAttribute="centerX" id="Bpg-2U-Mrz"/>
+                        <constraint firstAttribute="height" constant="230" id="C3R-sx-r27"/>
+                        <constraint firstItem="z1M-6t-cYq" firstAttribute="top" secondItem="8RE-hh-c8b" secondAttribute="top" id="NGr-Am-Bst"/>
+                        <constraint firstAttribute="width" constant="206" id="XI6-5Q-6LC"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-bt-Rqs">
                     <rect key="frame" x="324" y="20" width="70" height="35"/>
                     <constraints>
@@ -191,6 +218,8 @@
                 <constraint firstItem="0Yz-d7-OA4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="iEp-wR-mIp"/>
                 <constraint firstItem="UgW-bt-Rqs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="mOT-NA-Nex"/>
                 <constraint firstItem="RtW-LO-XkQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="nk3-S2-lN6"/>
+                <constraint firstItem="8RE-hh-c8b" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ns8-SB-D6d"/>
+                <constraint firstItem="8RE-hh-c8b" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="70" id="pMK-eV-svj"/>
                 <constraint firstItem="cBU-38-XUS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pMU-T6-gbH"/>
                 <constraint firstItem="DPV-gE-0CG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="pa7-A4-Kfr"/>
             </constraints>
@@ -199,6 +228,7 @@
     </objects>
     <resources>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="empty" width="274.66665649414062" height="267.33334350585938"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
@@ -212,6 +242,9 @@
         </namedColor>
         <namedColor name="darkBackground">
             <color red="0.93900001049041748" green="0.79600000381469727" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="gray">
+            <color red="0.66299998760223389" green="0.65499997138977051" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="themeText">
             <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

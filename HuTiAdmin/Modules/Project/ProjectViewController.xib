@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectViewController" customModule="HuTiAdmin" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="noV-OY-q4h" id="yVZ-3Q-uLw"/>
                 <outlet property="projectTableView" destination="fw1-bv-4kM" id="fdH-Zd-TO0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,10 +27,36 @@
                     <color key="textColor" name="themeText"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fw1-bv-4kM">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fw1-bv-4kM">
                     <rect key="frame" x="10" y="60" width="394" height="676"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noV-OY-q4h">
+                    <rect key="frame" x="104" y="253" width="206" height="230"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="k0i-6S-4Br">
+                            <rect key="frame" x="0.0" y="0.0" width="206" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="206" id="U2n-00-yrV"/>
+                                <constraint firstAttribute="height" constant="200" id="kU6-5w-3Ie"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Không có dữ liệu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iu9-1D-fwK">
+                            <rect key="frame" x="39.333333333333336" y="210" width="127.66666666666666" height="20.333333333333343"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="gray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="k0i-6S-4Br" firstAttribute="top" secondItem="noV-OY-q4h" secondAttribute="top" id="VDJ-Rt-goh"/>
+                        <constraint firstItem="k0i-6S-4Br" firstAttribute="centerX" secondItem="noV-OY-q4h" secondAttribute="centerX" id="WDe-PE-Ee9"/>
+                        <constraint firstAttribute="width" constant="206" id="ZLC-qJ-diD"/>
+                        <constraint firstAttribute="height" constant="230" id="chX-KQ-crW"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iq0-XF-ALu">
                     <rect key="frame" x="364" y="20" width="30" height="30"/>
                     <constraints>
@@ -56,16 +83,22 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fw1-bv-4kM" secondAttribute="trailing" constant="10" id="LTu-gm-xZE"/>
                 <constraint firstItem="run-3W-C39" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="N8Z-DO-X01"/>
                 <constraint firstItem="Iq0-XF-ALu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Ymf-at-4D5"/>
+                <constraint firstItem="noV-OY-q4h" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="l7N-CQ-IOn"/>
+                <constraint firstItem="noV-OY-q4h" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="psu-oP-czv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Iq0-XF-ALu" secondAttribute="trailing" constant="20" id="qae-0b-5X8"/>
                 <constraint firstItem="fw1-bv-4kM" firstAttribute="top" secondItem="run-3W-C39" secondAttribute="bottom" constant="10" id="zOL-XY-bCk"/>
             </constraints>
-            <point key="canvasLocation" x="207" y="60"/>
+            <point key="canvasLocation" x="-193" y="46"/>
         </view>
     </objects>
     <resources>
+        <image name="empty" width="274.66665649414062" height="267.33334350585938"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="background">
             <color red="0.98000001907348633" green="0.92900002002716064" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="gray">
+            <color red="0.66299998760223389" green="0.65499997138977051" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="themeText">
             <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

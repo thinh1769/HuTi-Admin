@@ -12,12 +12,14 @@ import RxCocoa
 class ProjectViewController: HuTiViewController {
 
     @IBOutlet weak var projectTableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     var viewModel = ProjectViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.mainTabBarController?.tabBar.isHidden = false
+        getListProject()
     }
     
     override func viewDidLoad() {
@@ -26,8 +28,8 @@ class ProjectViewController: HuTiViewController {
     }
     
     private func setupUI() {
+        emptyView.isHidden = true
         setupTableView()
-        getListProject()
         addPullToRefresh()
         infiniteScroll()
     }
@@ -41,8 +43,10 @@ class ProjectViewController: HuTiViewController {
                 } else {
                     self.viewModel.project.accept(self.viewModel.project.value + projects)
                 }
+                self.emptyView.isHidden = true
             } else if self.viewModel.page == 1 {
                 self.viewModel.project.accept([])
+                self.emptyView.isHidden = false
             }
         }.disposed(by: viewModel.bag)
     }

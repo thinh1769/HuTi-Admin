@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportViewController" customModule="HuTiAdmin" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="94J-Hv-fEl" id="0h7-RI-psg"/>
                 <outlet property="processedView" destination="DKo-zq-o4D" id="rUq-Y1-ohG"/>
                 <outlet property="processingView" destination="Tcu-hO-g3c" id="Iio-20-cq9"/>
                 <outlet property="reportTableView" destination="Xao-xO-Nyk" id="BHp-21-Vcu"/>
@@ -29,10 +30,36 @@
                     <color key="textColor" name="themeText"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xao-xO-Nyk">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xao-xO-Nyk">
                     <rect key="frame" x="10" y="105" width="355" height="562"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94J-Hv-fEl">
+                    <rect key="frame" x="84.5" y="218.5" width="206" height="230"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="kA2-IH-m7z">
+                            <rect key="frame" x="0.0" y="0.0" width="206" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="206" id="5Wf-AA-aVj"/>
+                                <constraint firstAttribute="height" constant="200" id="KO2-TD-ND8"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Không có dữ liệu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eE7-gd-ar8">
+                            <rect key="frame" x="39.333333333333336" y="210" width="127.66666666666666" height="20.333333333333343"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="gray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="kA2-IH-m7z" firstAttribute="top" secondItem="94J-Hv-fEl" secondAttribute="top" id="F1N-Es-aZL"/>
+                        <constraint firstAttribute="height" constant="230" id="kGJ-Z5-cPt"/>
+                        <constraint firstAttribute="width" constant="206" id="lYn-iO-HTa"/>
+                        <constraint firstItem="kA2-IH-m7z" firstAttribute="centerX" secondItem="94J-Hv-fEl" secondAttribute="centerX" id="xm1-N3-gvY"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5e5-RV-3sR">
                     <rect key="frame" x="10" y="60" width="355" height="35"/>
                     <subviews>
@@ -92,15 +119,18 @@
                 <constraint firstItem="5e5-RV-3sR" firstAttribute="top" secondItem="qRN-dh-NZi" secondAttribute="bottom" constant="10" id="Ngl-xd-9MD"/>
                 <constraint firstItem="5e5-RV-3sR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Qy9-VX-szL"/>
                 <constraint firstItem="qRN-dh-NZi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="bt9-zQ-wOH"/>
+                <constraint firstItem="94J-Hv-fEl" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dNK-N3-yEN"/>
                 <constraint firstItem="Xao-xO-Nyk" firstAttribute="top" secondItem="5e5-RV-3sR" secondAttribute="bottom" constant="10" id="eHa-Ia-PtH"/>
                 <constraint firstItem="Xao-xO-Nyk" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="h3Z-5j-l1d"/>
                 <constraint firstItem="qRN-dh-NZi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iF2-kI-HZ9"/>
+                <constraint firstItem="94J-Hv-fEl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="j7y-nN-UwF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5e5-RV-3sR" secondAttribute="trailing" constant="10" id="klt-QH-pnC"/>
             </constraints>
             <point key="canvasLocation" x="197.59999999999999" y="27.436281859070466"/>
         </view>
     </objects>
     <resources>
+        <image name="empty" width="274.5" height="267"/>
         <namedColor name="background">
             <color red="0.98000001907348633" green="0.92900002002716064" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -109,6 +139,9 @@
         </namedColor>
         <namedColor name="darkBackground">
             <color red="0.93900001049041748" green="0.79600000381469727" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="gray">
+            <color red="0.66299998760223389" green="0.65499997138977051" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="themeText">
             <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

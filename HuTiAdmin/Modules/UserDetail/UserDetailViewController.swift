@@ -18,12 +18,14 @@ class UserDetailViewController: HuTiViewController {
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var userInfoView: UIView!
     @IBOutlet weak var blockButton: UIButton!
+    @IBOutlet weak var emptyView: UIView!
     
     var viewModel = UserDetailViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.mainTabBarController?.tabBar.isHidden = true
+        getUserInfo()
     }
     
     override func viewDidLoad() {
@@ -33,8 +35,7 @@ class UserDetailViewController: HuTiViewController {
 
     private func setupUI() {
         setupPostTableView()
-        getUserInfo()
-        
+        emptyView.isHidden = true
         userInfoView.layer.masksToBounds = true
         userInfoView.layer.borderColor = UIColor(named: ColorName.themeText)?.cgColor
         userInfoView.layer.borderWidth = 1
@@ -61,8 +62,10 @@ class UserDetailViewController: HuTiViewController {
                     let sortedPost = mergePost.sorted { $0.createdAt > $1.createdAt }
                     self.viewModel.post.accept(sortedPost)
                 }
+                self.emptyView.isHidden = true
             } else if self.viewModel.page == 1 {
                 self.viewModel.post.accept([])
+                self.emptyView.isHidden = false
             }
         }.disposed(by: viewModel.bag)
     }

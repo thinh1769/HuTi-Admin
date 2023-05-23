@@ -12,12 +12,14 @@ import RxCocoa
 class UserViewController: HuTiViewController {
 
     @IBOutlet weak var userTableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     var viewModel = UserViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.mainTabBarController?.tabBar.isHidden = false
+        getListUser()
     }
     
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class UserViewController: HuTiViewController {
 
     private func setupUI() {
         setupTableView()
-        getListUser()
+        self.emptyView.isHidden = true
     }
     
     private func getListUser() {
@@ -39,8 +41,10 @@ class UserViewController: HuTiViewController {
                 } else {
                     self.viewModel.user.accept(self.viewModel.user.value + users)
                 }
+                self.emptyView.isHidden = true
             } else if self.viewModel.page == 1 {
                 self.viewModel.user.accept([])
+                self.emptyView.isHidden = false
             }
         }.disposed(by: viewModel.bag)
     }

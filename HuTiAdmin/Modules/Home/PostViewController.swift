@@ -16,12 +16,14 @@ class PostViewController: HuTiViewController {
     @IBOutlet weak var pendingView: UIView!
     @IBOutlet weak var approvedView: UIView!
     @IBOutlet weak var rejectedView: UIView!
+    @IBOutlet weak var emptyView: UIView!
     
     var viewModel = PostViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         mainTabBarController?.tabBar.isHidden = false
+        findPost()
     }
     
     override func viewDidLoad() {
@@ -31,7 +33,7 @@ class PostViewController: HuTiViewController {
     }
 
     private func setupUI() {
-        findPost()
+        emptyView.isHidden = true
         setupPostTableView()
         setupBrowseView()
     }
@@ -48,8 +50,10 @@ class PostViewController: HuTiViewController {
                     let sortedPost = mergePost.sorted { $0.createdAt > $1.createdAt }
                     self.viewModel.post.accept(sortedPost)
                 }
+                self.emptyView.isHidden = true
             } else if self.viewModel.page == 1 {
                 self.viewModel.post.accept([])
+                self.emptyView.isHidden = false
             }
         }.disposed(by: viewModel.bag)
     }

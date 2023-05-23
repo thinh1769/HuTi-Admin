@@ -14,12 +14,14 @@ class ReportViewController: HuTiViewController {
     @IBOutlet weak var processingView: UIView!
     @IBOutlet weak var processedView: UIView!
     @IBOutlet weak var reportTableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     var viewModel = ReportViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.mainTabBarController?.tabBar.isHidden = false
+        getListReport()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +30,8 @@ class ReportViewController: HuTiViewController {
 
     private func setupUI() {
         setupTableView()
-        getListReport()
         setupProcessView()
+        self.emptyView.isHidden = true
     }
     
     private func getListReport() {
@@ -41,8 +43,10 @@ class ReportViewController: HuTiViewController {
                 } else {
                     self.viewModel.report.accept(self.viewModel.report.value + reports)
                 }
+                self.emptyView.isHidden = true
             } else if self.viewModel.page == 1 {
                 self.viewModel.report.accept([])
+                self.emptyView.isHidden = false
             }
         }.disposed(by: viewModel.bag)
     }
