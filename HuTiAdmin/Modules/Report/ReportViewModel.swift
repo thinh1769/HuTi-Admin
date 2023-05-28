@@ -17,7 +17,7 @@ class ReportViewModel {
     var reportListStatus = 0
     
     func getAllReport() -> Observable<[Report]> {
-        return reportService.getAllReport(page: page)
+        return reportService.getAllReport()
     }
     
     func getListReport() -> Observable<[Report]> {

@@ -8,27 +8,21 @@
 import Foundation
 
 struct Province: Codable {
-    var code: String
+    var id: String
+    var idProvince: String
     var name: String
-    var unit: String
 }
 
 struct District: Codable {
-    var code: String
+    var id: String
+    var idProvince: String
+    var idDistrict: String
     var name: String
-    var unit: String
-    var province_code: String
-    var province_name: String
-    var full_name: String
 }
 
 struct Ward: Codable {
-    var code: String
+    var id: String
+    var idDistrict: String
+    var idWard: String
     var name: String
-    var unit: String
-    var district_code: String
-    var district_name: String
-    var province_code: String
-    var province_name: String
-    var full_name: String
 }

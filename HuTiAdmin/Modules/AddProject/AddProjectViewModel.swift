@@ -156,7 +156,7 @@ class AddProjectViewModel {
     func parseProvincesArray(provinces: [Province]) -> [(id: String, name: String)] {
         var provinceArray = [(id: String, name: String)]()
         for (_, element) in provinces.enumerated() {
-            provinceArray.append((id: element.code, name: element.name))
+            provinceArray.append((id: element.idProvince, name: element.name))
         }
         let sortedProvince = provinceArray.sorted { $0.name < $1.name }
         return sortedProvince
@@ -165,7 +165,7 @@ class AddProjectViewModel {
     func parseDistrictsArray(districts: [District]) -> [(id: String, name: String)] {
         var districtArray = [(id: String, name: String)]()
         for (_, element) in districts.enumerated() {
-            districtArray.append((id: element.code, name: element.name))
+            districtArray.append((id: element.idDistrict, name: element.name))
         }
         let sortedDistrict = districtArray.sorted { $0.name < $1.name }
         return sortedDistrict
@@ -174,7 +174,7 @@ class AddProjectViewModel {
     func parseWardsArray(wards: [Ward]) -> [(id: String, name: String)] {
         var wardArray = [(id: String, name: String)]()
         for (_, element) in wards.enumerated() {
-            wardArray.append((id: element.code, name: element.name))
+            wardArray.append((id: element.idWard, name: element.name))
         }
         let sortedWard = wardArray.sorted { $0.name < $1.name }
         return sortedWard

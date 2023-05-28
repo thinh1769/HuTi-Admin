@@ -75,6 +75,10 @@
 		8289A8852A01E2180011DDA2 /* ProjectDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8289A8832A01E2180011DDA2 /* ProjectDetailViewController.xib */; };
 		8289A8872A01E2280011DDA2 /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A8862A01E2280011DDA2 /* ProjectDetailViewModel.swift */; };
 		82BCB3A42A190AB300F825B7 /* SendEmailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BCB3A32A190AB300F825B7 /* SendEmailPopupView.swift */; };
+		82D4F5D82A22156700EA400E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4F5D72A22156700EA400E /* StatisticsViewController.swift */; };
+		82D4F5DA2A226ECD00EA400E /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4F5D92A226ECD00EA400E /* StatisticsViewModel.swift */; };
+		82D4F5DC2A22723900EA400E /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4F5DB2A22723900EA400E /* Date+Ext.swift */; };
+		82D4F5DE2A23586400EA400E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D4F5DD2A23586400EA400E /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +152,10 @@
 		8289A8832A01E2180011DDA2 /* ProjectDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectDetailViewController.xib; sourceTree = "<group>"; };
 		8289A8862A01E2280011DDA2 /* ProjectDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewModel.swift; sourceTree = "<group>"; };
 		82BCB3A32A190AB300F825B7 /* SendEmailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailPopupView.swift; sourceTree = "<group>"; };
+		82D4F5D72A22156700EA400E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		82D4F5D92A226ECD00EA400E /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		82D4F5DB2A22723900EA400E /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		82D4F5DD2A23586400EA400E /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		880A79EF396BAA4E4BADC904 /* Pods_HuTiAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HuTiAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B51E711053E25DE6FBA4C6 /* Pods-HuTiAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HuTiAdmin.release.xcconfig"; path = "Target Support Files/Pods-HuTiAdmin/Pods-HuTiAdmin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,6 +276,7 @@
 				8276A1872A02614200F24D19 /* UserDetail */,
 				8209454B2A1647BE00D7DA25 /* Report */,
 				820945612A16692800D7DA25 /* ReportDetail */,
+				82D4F5D62A2213BE00EA400E /* Statistics */,
 				82BCB3A22A190A8800F825B7 /* SendEmail */,
 			);
 			path = Modules;
@@ -297,6 +306,8 @@
 				820AB79929FD2C4B00883112 /* UserDefault+Ext.swift */,
 				820AB7D829FFC66900883112 /* Numeric+Ext.swift */,
 				8221754B2A00E838001A0877 /* UIImage+Ext.swift */,
+				82D4F5DB2A22723900EA400E /* Date+Ext.swift */,
+				82D4F5DD2A23586400EA400E /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -466,6 +477,15 @@
 			path = SendEmail;
 			sourceTree = "<group>";
 		};
+		82D4F5D62A2213BE00EA400E /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				82D4F5D72A22156700EA400E /* StatisticsViewController.swift */,
+				82D4F5D92A226ECD00EA400E /* StatisticsViewModel.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
 		B2C4B8EA6B0D1DCB78A884DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +630,7 @@
 				820AB7E029FFEAAA00883112 /* ProjectViewModel.swift in Sources */,
 				8286F70A2A16974600AB669A /* ReportDetailViewModel.swift in Sources */,
 				820AB7BE29FD446C00883112 /* Asset.swift in Sources */,
+				82D4F5DC2A22723900EA400E /* Date+Ext.swift in Sources */,
 				820AB77529FD272E00883112 /* AppDelegate.swift in Sources */,
 				8289A8842A01E2180011DDA2 /* ProjectDetailViewController.swift in Sources */,
 				820AB7D629FE5E8E00883112 /* ImageCell.swift in Sources */,
@@ -627,6 +648,7 @@
 				820AB7A029FD3B8B00883112 /* PostViewController.swift in Sources */,
 				820AB7CB29FD495D00883112 /* SignInViewModel.swift in Sources */,
 				8221754C2A00E838001A0877 /* UIImage+Ext.swift in Sources */,
+				82D4F5D82A22156700EA400E /* StatisticsViewController.swift in Sources */,
 				8276A1802A02092700F24D19 /* UserViewModel.swift in Sources */,
 				820AB7B029FD43BE00883112 /* AddressService.swift in Sources */,
 				82BCB3A42A190AB300F825B7 /* SendEmailPopupView.swift in Sources */,
@@ -637,6 +659,7 @@
 				820AB79D29FD2C8500883112 /* User.swift in Sources */,
 				8276A18A2A02616000F24D19 /* UserDetailViewController.swift in Sources */,
 				8289A87F2A016F770011DDA2 /* ProjectViewCell.swift in Sources */,
+				82D4F5DE2A23586400EA400E /* String+Ext.swift in Sources */,
 				8276A18D2A02616C00F24D19 /* UserDetailViewModel.swift in Sources */,
 				8209454E2A1647E300D7DA25 /* ReportViewController.swift in Sources */,
 				820AB79529FD2ACE00883112 /* HuTiConstants.swift in Sources */,
@@ -649,6 +672,7 @@
 				820945572A16607600D7DA25 /* ReportService.swift in Sources */,
 				820AB7AC29FD437C00883112 /* BaseService.swift in Sources */,
 				820945512A1648F200D7DA25 /* ReportViewModel.swift in Sources */,
+				82D4F5DA2A226ECD00EA400E /* StatisticsViewModel.swift in Sources */,
 				820945532A16493600D7DA25 /* Report.swift in Sources */,
 				820AB7BA29FD444900883112 /* Project.swift in Sources */,
 				820AB7C229FD449F00883112 /* ResponseMain.swift in Sources */,

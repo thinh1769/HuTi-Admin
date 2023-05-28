@@ -24,6 +24,6 @@ struct Report: Codable {
     var createdAt: Int
     
     func getDate() -> String {
-        return createdAt.parseDate()
+        return createdAt.parseDateTime()
     }
 }

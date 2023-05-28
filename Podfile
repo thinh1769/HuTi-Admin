@@ -16,5 +16,6 @@ pod 'MBProgressHUD'
 pod 'AWSS3'
 pod 'SDWebImage'
 pod 'SVPullToRefresh'
+pod 'Charts'
 
 end

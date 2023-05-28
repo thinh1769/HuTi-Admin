@@ -17,7 +17,7 @@ class PostViewModel {
     var findPostParams = ["browseStatus": 0]
     
     func getAllPosts() -> Observable<[Post]> {
-        return postService.getAllPost(page: page)
+        return postService.getAllPost()
     }
     
     func findPost() -> Observable<[Post]> {

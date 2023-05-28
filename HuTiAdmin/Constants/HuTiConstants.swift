@@ -17,6 +17,8 @@ struct CommonConstants {
     static let edit = "Sửa"
     static let updateInfo = "Vui lòng cập nhật thông tin tài khoản!"
     static let DATE_FORMAT = "dd/MM/yyyy"
+    static let MONTH_FORMAT = "MM/yyyy"
+    static let YEAR_FORMAT = "yyyy"
     static let dateFormatAWSS3 = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     static let networkError = "Lỗi kết nối mạng"
     static let firstSubtitle = "Hiện tại có"
@@ -58,6 +60,7 @@ struct PickerTag {
     static let status = 12
     static let gender = 13
     static let dob = 14
+    static let date = 15
 }
 
 struct ImageName {
@@ -71,6 +74,7 @@ struct ImageName {
     static let checkmarkFill = "checkmark.circle.fill"
     static let save = "save"
     static let edit = "edit"
+    static let chart = "chart.bar.xaxis"
  }
 
 struct ColorName {
@@ -158,6 +162,7 @@ struct PickerData {
     static let gender = ["Nam", "Nữ", "Khác"]
     static let day = ["01", "02", "03"]
     static let projectPrice = ["Tất cả mức giá", "Dưới 5 triệu/m2", "5 - 10 triệu/m2", "10 - 20 triệu/m2", "20 - 35 triệu/m2", "35 - 50 triệu/m2", "50 - 80 triệu/m2", "Trên 80 triệu/m2"]
+    static let statisticsType = ["Theo ngày", "Theo tháng", "Theo năm"]
 }
 
 enum SubviewTag: Int {

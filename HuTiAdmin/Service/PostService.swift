@@ -10,8 +10,8 @@ import RxSwift
 import RxRelay
 
 class PostService: BaseService {
-    func getAllPost(page: Int) -> Observable<[Post]> {
-        return request(api: "\(APIConstants.getAllPosts.rawValue)\(page)", method: .get)
+    func getAllPost() -> Observable<[Post]> {
+        return request(api: APIConstants.getAllPosts.rawValue, method: .get)
     }
     
     func addPost(params: [String: Any]) -> Observable<PostDetail> {

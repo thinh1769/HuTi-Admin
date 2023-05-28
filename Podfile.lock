@@ -3,6 +3,10 @@ PODS:
   - AWSCore (2.30.4)
   - AWSS3 (2.30.4):
     - AWSCore (= 2.30.4)
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
   - IQKeyboardManagerSwift (6.5.11)
   - MBProgressHUD (1.2.0)
   - RxCocoa (6.5.0):
@@ -16,10 +20,12 @@ PODS:
   - SDWebImage/Core (5.15.6)
   - SnapKit (5.6.0)
   - SVPullToRefresh (0.4.1)
+  - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - AWSS3
+  - Charts
   - IQKeyboardManagerSwift
   - MBProgressHUD
   - RxCocoa
@@ -33,6 +39,7 @@ SPEC REPOS:
     - Alamofire
     - AWSCore
     - AWSS3
+    - Charts
     - IQKeyboardManagerSwift
     - MBProgressHUD
     - RxCocoa
@@ -41,11 +48,13 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - SVPullToRefresh
+    - SwiftAlgorithms
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   AWSCore: 19b8233fe2d0ed3ccf5cff833a615814282cdc90
   AWSS3: 1c5540cbe98d8ae5e24f44dcca25796ddba16058
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -54,7 +63,8 @@ SPEC CHECKSUMS:
   SDWebImage: d47d81bea8a77187896b620dc79c3c528e8906b9
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: acb65181b2a779f37eb9bd4827e37487c715ea32
+PODFILE CHECKSUM: 2bf97ca4bd1318d85a0cd938acbed415ec833350
 
 COCOAPODS: 1.12.1

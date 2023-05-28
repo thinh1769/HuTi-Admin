@@ -10,8 +10,8 @@ import RxSwift
 import RxRelay
 
 class ReportService: BaseService {
-    func getAllReport(page: Int) -> Observable<[Report]> {
-        return request(api: APIConstants.getAllReport.rawValue + "\(page)", method: .get)
+    func getAllReport() -> Observable<[Report]> {
+        return request(api: APIConstants.getAllReport.rawValue, method: .get)
     }
     
     func getReportByStatus(status: Int, page: Int) -> Observable<[Report]> {

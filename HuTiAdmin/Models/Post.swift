@@ -24,7 +24,7 @@ struct Post: Codable {
     var long: Double
     var userId: String
     var userName: String?
-    var createdAt: Double
+    var createdAt: Int
     var thumbnail: String? /// lấy image đầu tiên trong mảng images
     
     func getFullAddress() -> String {

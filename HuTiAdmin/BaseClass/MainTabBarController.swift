@@ -24,17 +24,22 @@ class MainTabBarController: UITabBarController {
         let reportTab = ReportViewController()
         let reportNaVC = UINavigationController(rootViewController: reportTab)
         
+        let statisticsTab = StatisticsViewController()
+        let statisticsNaVC = UINavigationController(rootViewController: statisticsTab)
+        
         postTab.title = "Tin đăng"
         projectTab.title = "Dự án"
         userTab.title = "Tài khoản"
         reportTab.title = "Báo cáo"
+        statisticsTab.title = "Thống kê"
 
         postTab.tabBarItem.image = UIImage(named: ImageName.house)
         projectTab.tabBarItem.image = UIImage(named: ImageName.project)
         userTab.tabBarItem.image = UIImage(named: ImageName.user)
         reportTab.tabBarItem.image = UIImage(systemName: "exclamationmark.triangle")
+        statisticsTab.tabBarItem.image = UIImage(systemName: ImageName.chart)
         
-        let tabBarItemList = [postNaVC, projectNaVC, userNaVC, reportNaVC]
+        let tabBarItemList = [postNaVC, projectNaVC, userNaVC, reportNaVC, statisticsNaVC]
         
         self.setViewControllers(tabBarItemList, animated: true)
         
