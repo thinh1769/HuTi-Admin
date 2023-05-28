@@ -22,6 +22,7 @@
                 <outlet property="bathroomView" destination="ROE-sR-Pld" id="RB3-uy-4dk"/>
                 <outlet property="bedroomLabel" destination="98H-Ed-gme" id="BMN-yS-5Hp"/>
                 <outlet property="bedroomView" destination="a98-Nd-K0L" id="ScP-T7-5Om"/>
+                <outlet property="bottomStackView" destination="x29-Sl-8lS" id="AwQ-Iy-lAE"/>
                 <outlet property="descriptionLabel" destination="wZu-Qo-aIQ" id="J78-qQ-gJe"/>
                 <outlet property="facadeLabel" destination="BtF-p1-cme" id="uIW-6o-kMg"/>
                 <outlet property="facadeView" destination="dOR-SZ-Hpq" id="4OR-YD-jI3"/>
@@ -39,7 +40,11 @@
                 <outlet property="priceLabel" destination="vTy-fH-vLK" id="w7J-jW-6aN"/>
                 <outlet property="projectNameLabel" destination="Wmc-qi-0aE" id="cnQ-dB-CMs"/>
                 <outlet property="projectView" destination="QBb-7a-Eos" id="q3g-1D-ldf"/>
+                <outlet property="scrollViewBottomConstraint" destination="79B-wI-xgQ" id="VCT-oT-qXK"/>
+                <outlet property="statusLabel" destination="gby-Cl-gH9" id="uSr-P9-eTH"/>
+                <outlet property="statusView" destination="Qmr-F3-6Sh" id="W3t-4H-qfd"/>
                 <outlet property="titleLabel" destination="CCT-0Q-b4B" id="Mev-Cj-L6y"/>
+                <outlet property="trashButton" destination="vaf-VD-Cwm" id="C97-8c-rDk"/>
                 <outlet property="typeLabel" destination="hNF-qg-dha" id="lqB-HL-UHv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wayInLabel" destination="Vbr-6n-QMh" id="GBK-f8-A1h"/>
@@ -571,9 +576,9 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3B-ia-D14">
                             <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
-                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <color key="backgroundColor" name="greenStatusBackground"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="greenStatusText"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Duyệt"/>
                             <userDefinedRuntimeAttributes>
@@ -587,9 +592,9 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43X-e9-SxZ">
                             <rect key="frame" x="210" y="0.0" width="200" height="40"/>
-                            <color key="backgroundColor" systemColor="systemRedColor"/>
+                            <color key="backgroundColor" name="darkBackground"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="redStatusText"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Từ chối"/>
                             <userDefinedRuntimeAttributes>
@@ -621,16 +626,42 @@
                         <action selector="didTapDeletePostButton:" destination="-1" eventType="touchUpInside" id="EqB-4Y-XWB"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qmr-F3-6Sh">
+                    <rect key="frame" x="20" y="848" width="390" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gby-Cl-gH9">
+                            <rect key="frame" x="164.66666666666666" y="5" width="61" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gby-Cl-gH9" firstAttribute="centerY" secondItem="Qmr-F3-6Sh" secondAttribute="centerY" id="9ZX-dC-8Hv"/>
+                        <constraint firstItem="gby-Cl-gH9" firstAttribute="centerX" secondItem="Qmr-F3-6Sh" secondAttribute="centerX" id="QBd-VF-MZ5"/>
+                        <constraint firstAttribute="height" constant="40" id="nNQ-c4-8CW"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="background"/>
             <constraints>
                 <constraint firstItem="CCT-0Q-b4B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="3Sc-Mm-A0c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qmr-F3-6Sh" secondAttribute="trailing" constant="20" id="3tA-sr-ekw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Qmr-F3-6Sh" secondAttribute="bottom" constant="10" id="6jw-R7-hxC">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lSd-Ys-tlq" secondAttribute="trailing" constant="10" id="6t8-rP-Fb6"/>
-                <constraint firstItem="x29-Sl-8lS" firstAttribute="top" secondItem="lSd-Ys-tlq" secondAttribute="bottom" constant="10" id="79B-wI-xgQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lSd-Ys-tlq" secondAttribute="bottom" constant="60" id="79B-wI-xgQ"/>
                 <constraint firstItem="CCT-0Q-b4B" firstAttribute="leading" secondItem="ySV-Q4-NqZ" secondAttribute="trailing" constant="10" id="AoA-Lx-bOK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x29-Sl-8lS" secondAttribute="trailing" constant="10" id="IJF-BU-LUD"/>
                 <constraint firstItem="x29-Sl-8lS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ST1-Kh-YCY"/>
+                <constraint firstItem="Qmr-F3-6Sh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SvU-P0-5x2"/>
                 <constraint firstItem="ySV-Q4-NqZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WZJ-5b-GfB"/>
                 <constraint firstItem="lSd-Ys-tlq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="dJ5-Kr-aW9"/>
                 <constraint firstItem="lSd-Ys-tlq" firstAttribute="top" secondItem="CCT-0Q-b4B" secondAttribute="bottom" constant="10" id="eAy-Pk-8Gy"/>
@@ -656,6 +687,18 @@
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="darkBackground">
+            <color red="0.93900001049041748" green="0.79600000381469727" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="greenStatusBackground">
+            <color red="0.9100000262260437" green="1" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="greenStatusText">
+            <color red="0.0" green="0.63700002431869507" blue="0.36899998784065247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="redStatusText">
+            <color red="0.9570000171661377" green="0.23499999940395355" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="themeText">
             <color red="0.75300002098083496" green="0.32600000500679016" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -664,12 +707,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

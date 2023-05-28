@@ -100,7 +100,7 @@ class UserDetailViewController: HuTiViewController {
             .modelSelected(Post.self)
             .subscribe { [weak self] element in
                 guard let self = self else { return }
-                let vc = PostDetailViewController.instance(postId: element.id ?? "")
+                let vc = PostDetailViewController.instance(postId: element.id ?? "", selectedTabIndex: 4)
                 self.navigateTo(vc)
             }.disposed(by: viewModel.bag)
         

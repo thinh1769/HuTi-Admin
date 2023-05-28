@@ -43,6 +43,11 @@ class PostDetailViewController: HuTiViewController {
     @IBOutlet weak var wayInView: UIStackView!
     @IBOutlet weak var facadeView: UIStackView!
     @IBOutlet weak var isSellLabel: UILabel!
+    @IBOutlet weak var bottomStackView: UIStackView!
+    @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trashButton: UIButton!
     
     var viewModel = PostDetailViewModel()
     private var locationManager = CLLocationManager()
@@ -60,6 +65,39 @@ class PostDetailViewController: HuTiViewController {
         mapView.layer.cornerRadius = 8
         getPostDetail()
         setupImageCollectionView()
+        statusView.layer.cornerRadius = 8
+        if viewModel.selectedTabIndex == 0 {
+            bottomStackView.isHidden = false
+            statusView.isHidden = true
+            scrollViewBottomConstraint.constant = 60
+            trashButton.isHidden = true
+        } else if viewModel.selectedTabIndex != 4 {
+            configStatusView(viewModel.selectedTabIndex)
+            bottomStackView.isHidden = true
+            statusView.isHidden = false
+            scrollViewBottomConstraint.constant = 60
+            trashButton.isHidden = true
+        } else {
+            bottomStackView.isHidden = true
+            statusView.isHidden = true
+            scrollViewBottomConstraint.constant = 10
+            trashButton.isHidden = false
+        }
+    }
+    
+    private func configStatusView(_ status: Int) {
+        switch status {
+        case 2:
+            statusView.backgroundColor = UIColor(named: ColorName.darkBackground)
+            statusLabel.textColor = UIColor(named: ColorName.redStatusText)
+            statusLabel.text = "Đã từ chối"
+        case 1:
+            statusView.backgroundColor = UIColor(named: ColorName.greenStatusBackground)
+            statusLabel.textColor = UIColor(named: ColorName.greenStatusText)
+            statusLabel.text = "Đã duyệt"
+        default:
+            return
+        }
     }
     
     private func getPostDetail() {
@@ -283,9 +321,10 @@ extension PostDetailViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension PostDetailViewController {
-    class func instance(postId: String) -> PostDetailViewController {
+    class func instance(postId: String, selectedTabIndex: Int) -> PostDetailViewController {
         let controller = PostDetailViewController(nibName: ClassNibName.PostDetailViewController, bundle: Bundle.main)
         controller.viewModel.postId = postId
+        controller.viewModel.selectedTabIndex = selectedTabIndex
         return controller
     }
 }

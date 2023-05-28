@@ -72,7 +72,7 @@ class PostViewController: HuTiViewController {
             .modelSelected(Post.self)
             .subscribe { [weak self] element in
                 guard let self = self else { return }
-                let vc = PostDetailViewController.instance(postId: element.id ?? "")
+                let vc = PostDetailViewController.instance(postId: element.id ?? "", selectedTabIndex: self.viewModel.selectedTabIndex)
                 self.navigateTo(vc)
             }.disposed(by: viewModel.bag)
         
@@ -116,6 +116,7 @@ class PostViewController: HuTiViewController {
     
     @objc private func didTapPendingView() {
         didSelectBrowseView(index: 0)
+        viewModel.selectedTabIndex = 0
         viewModel.page = 1
         self.viewModel.findPostParams = ["browseStatus": 0]
         findPost()
@@ -123,6 +124,7 @@ class PostViewController: HuTiViewController {
     
     @objc private func didTapApprovedView() {
         didSelectBrowseView(index: 1)
+        viewModel.selectedTabIndex = 1
         viewModel.page = 1
         self.viewModel.findPostParams = ["browseStatus": 1]
         findPost()
@@ -130,6 +132,7 @@ class PostViewController: HuTiViewController {
     
     @objc private func didTapRejectedView() {
         didSelectBrowseView(index: 2)
+        viewModel.selectedTabIndex = 2
         viewModel.page = 1
         self.viewModel.findPostParams = ["browseStatus": 2]
         findPost()

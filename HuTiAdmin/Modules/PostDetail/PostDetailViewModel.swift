@@ -17,6 +17,7 @@ class PostDetailViewModel {
     var postDetail: PostDetail?
     var project: Project?
     var isFavorite = false
+    var selectedTabIndex = 0
     let bag = DisposeBag()
     var browsePostParams = [String: Any]()
     

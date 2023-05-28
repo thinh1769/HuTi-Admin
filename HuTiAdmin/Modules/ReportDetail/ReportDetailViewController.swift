@@ -121,7 +121,7 @@ class ReportDetailViewController: HuTiViewController {
     }
     
     @IBAction func didTapPostDetailButton(_ sender: UIButton) {
-        let vc = PostDetailViewController.instance(postId: viewModel.report?.postId ?? "")
+        let vc = PostDetailViewController.instance(postId: viewModel.report?.postId ?? "", selectedTabIndex: 4)
         self.navigateTo(vc)
     }
     

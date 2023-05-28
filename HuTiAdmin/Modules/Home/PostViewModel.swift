@@ -15,6 +15,7 @@ class PostViewModel {
     let postService = PostService()
     var page = 1
     var findPostParams = ["browseStatus": 0]
+    var selectedTabIndex = 0
     
     func getAllPosts() -> Observable<[Post]> {
         return postService.getAllPost()
