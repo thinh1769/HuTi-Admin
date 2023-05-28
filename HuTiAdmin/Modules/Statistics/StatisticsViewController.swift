@@ -51,7 +51,7 @@ class StatisticsViewController: HuTiViewController {
         chevronDown1.setImageColor(color: UIColor(named: ColorName.themeText) ?? .white)
         chevronDown2.setImageColor(color: UIColor(named: ColorName.themeText) ?? .white)
         topSafeAreaPadding = self.window?.safeAreaInsets.top
-        dateTextField.isUserInteractionEnabled = false
+        resetTextField()
         setupTypePickerView()
         setupDatePickerView()
         
@@ -160,12 +160,32 @@ class StatisticsViewController: HuTiViewController {
         viewModel.getAllPosts().subscribe { [weak self] posts in
             guard let self = self else { return }
             let data = self.viewModel.parsePostArray(posts: posts)
-            if let chartView = self.chartView {
-                self.chartView?.removeFromSuperview()
-            }
+            self.removeChartView()
             self.chartView = self.makeChartView(data: data)
             self.layoutChartView()
         }.disposed(by: viewModel.bag)
+    }
+    
+    private func getAllReport() {
+        viewModel.getAllReport().subscribe { [weak self] reports in
+            guard let self = self else { return }
+            let data = self.viewModel.parseReportArray(reports: reports)
+            self.removeChartView()
+            self.chartView = self.makeChartView(data: data)
+            self.layoutChartView()
+        }.disposed(by: viewModel.bag)
+    }
+    
+    private func removeChartView() {
+        if self.chartView != nil {
+            self.chartView?.removeFromSuperview()
+        }
+    }
+    
+    private func resetTextField() {
+        typeTextField.text = ""
+        dateTextField.text = ""
+        dateTextField.isUserInteractionEnabled = false
     }
     
     private func setupContainerView() {
@@ -175,10 +195,14 @@ class StatisticsViewController: HuTiViewController {
     
     @objc private func didTapPostView() {
         didSelectContainerView(index: 0)
+        removeChartView()
+        resetTextField()
     }
     
     @objc private func didTapReportView() {
         didSelectContainerView(index: 1)
+        removeChartView()
+        resetTextField()
     }
     
     private func didSelectContainerView(index: Int) {
@@ -186,9 +210,11 @@ class StatisticsViewController: HuTiViewController {
         case 0:
             postView.backgroundColor = UIColor(named: ColorName.darkBackground)
             reportView.backgroundColor = .systemGray5
+            viewModel.isStatisticsPost = true
         default:
             postView.backgroundColor = .systemGray5
             reportView.backgroundColor = UIColor(named: ColorName.darkBackground)
+            viewModel.isStatisticsPost = false
         }
     }
 }
@@ -287,18 +313,29 @@ extension StatisticsViewController {
     private func makeChartView(data: [BarChartDataEntry]) -> BarChartView {
         let chartView = BarChartView()
         let dataEntries = data
-        let dataSet = BarChartDataSet(entries: dataEntries, label: "Số tin đăng")
-//        dataSet.drawIconsEnabled = false
+        var chartViewLabel = ""
+        if viewModel.isStatisticsPost {
+            chartViewLabel = "Số tin đăng"
+        } else {
+            chartViewLabel = "Số báo cáo"
+        }
+        let dataSet = BarChartDataSet(entries: dataEntries, label: chartViewLabel)
         dataSet.setColor(UIColor(named: ColorName.themeText) ?? .clear)
         let data = BarChartData(dataSet: dataSet)
         data.barWidth = 0.5
         chartView.data = data
-//        chartView.legend.form = .none
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
         xAxis.valueFormatter = IndexAxisValueFormatter(values: viewModel.chartYLabel)
         xAxis.labelCount = dataEntries.count
-        
+        chartView.rightAxis.drawLabelsEnabled = false
+        chartView.leftAxis.drawLabelsEnabled = false
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.rightAxis.drawGridLinesEnabled = false
+        chartView.leftAxis.drawAxisLineEnabled = false
+        chartView.rightAxis.drawAxisLineEnabled = false
+        chartView.xAxis.drawAxisLineEnabled = false
+        chartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
         chartView.isUserInteractionEnabled = false
         return chartView
     }

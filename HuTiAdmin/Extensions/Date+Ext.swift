@@ -30,10 +30,8 @@ extension Date {
     }
     
     func getMinimumDate() -> Date {
-        let date = Date()
-        
         let calendar = Calendar.current
-        let components = DateComponents(year: 1900, month: 1, day: 1)
+        let components = DateComponents(year: 2000, month: 1, day: 1)
         if let minimum = calendar.date(from: components) {
             return minimum
         } else {

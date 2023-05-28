@@ -18,8 +18,11 @@ class StatisticsViewModel {
     let date = BehaviorRelay<[String]>(value: [])
     var selectedType = -1
     var selectedDate = ""
+    var previousDate = ""
+    var nextDate = ""
     var formatString = ""
     var chartYLabel = [String]()
+    var isStatisticsPost = true
     
     func pickItem(pickerTag: Int) -> String? {
         switch pickerTag{
@@ -48,22 +51,76 @@ class StatisticsViewModel {
     func parsePostArray(posts: [Post]) -> [BarChartDataEntry] {
         let dateFormatter = DateFormatter.instance(formatString: formatString)
 
-        let yesterday = selectedDate.getYesterday()
-
-        let currentDayPosts = posts.filter { post in
+        switch formatString {
+        case CommonConstants.DATE_FORMAT:
+            previousDate = selectedDate.getYesterday() ?? ""
+            nextDate = selectedDate.getTomorrow() ?? ""
+        case CommonConstants.MONTH_FORMAT:
+            previousDate = selectedDate.getLastMonth() ?? ""
+            nextDate = selectedDate.getNextMonth() ?? ""
+        default:
+            previousDate = selectedDate.getLastYear() ?? ""
+            nextDate = selectedDate.getNextYear() ?? ""
+        }
+        
+        let currentDatePosts = posts.filter { post in
             let postDate = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(post.createdAt/1000)))
             return postDate == selectedDate
         }
 
-        let previousDayPosts = posts.filter { post in
+        let previousDatePosts = posts.filter { post in
             let postDate = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(post.createdAt/1000)))
-            guard let yesterday = yesterday else { return false }
-            return postDate == yesterday
+            return postDate == previousDate
+        }
+        
+        let nextDatePosts = posts.filter { post in
+            let postDate = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(post.createdAt/1000)))
+            return postDate == nextDate
         }
         let data: [BarChartDataEntry] = [
-            BarChartDataEntry(x: 0, y: Double(previousDayPosts.count)),
-            BarChartDataEntry(x: 1, y: Double(currentDayPosts.count))]
-        chartYLabel = [yesterday ?? "", selectedDate]
+            BarChartDataEntry(x: 0, y: Double(previousDatePosts.count)),
+            BarChartDataEntry(x: 1, y: Double(currentDatePosts.count)),
+            BarChartDataEntry(x: 2, y: Double(nextDatePosts.count)),
+        ]
+        chartYLabel = [previousDate, selectedDate, nextDate]
+        return data
+    }
+    
+    func parseReportArray(reports: [Report]) -> [BarChartDataEntry] {
+        let dateFormatter = DateFormatter.instance(formatString: formatString)
+
+        switch formatString {
+        case CommonConstants.DATE_FORMAT:
+            previousDate = selectedDate.getYesterday() ?? ""
+            nextDate = selectedDate.getTomorrow() ?? ""
+        case CommonConstants.MONTH_FORMAT:
+            previousDate = selectedDate.getLastMonth() ?? ""
+            nextDate = selectedDate.getNextMonth() ?? ""
+        default:
+            previousDate = selectedDate.getLastYear() ?? ""
+            nextDate = selectedDate.getNextYear() ?? ""
+        }
+        
+        let currentDatePosts = reports.filter { report in
+            let postDate = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(report.createdAt/1000)))
+            return postDate == selectedDate
+        }
+
+        let previousDatePosts = reports.filter { report in
+            let postDate = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(report.createdAt/1000)))
+            return postDate == previousDate
+        }
+        
+        let nextDatePosts = reports.filter { report in
+            let postDate = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(report.createdAt/1000)))
+            return postDate == nextDate
+        }
+        let data: [BarChartDataEntry] = [
+            BarChartDataEntry(x: 0, y: Double(previousDatePosts.count)),
+            BarChartDataEntry(x: 1, y: Double(currentDatePosts.count)),
+            BarChartDataEntry(x: 2, y: Double(nextDatePosts.count)),
+        ]
+        chartYLabel = [previousDate, selectedDate, nextDate]
         return data
     }
 }
